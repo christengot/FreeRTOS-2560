@@ -1,0 +1,5314 @@
+
+FreeRTOS.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000c  00800200  000019fa  00001a8e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000019fa  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000286e  0080020c  0080020c  00001a9a  2**0
+                  ALLOC
+  3 .stab         000008a0  00000000  00000000  00001a9c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000001ac  00000000  00000000  0000233c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_aranges 00000140  00000000  00000000  000024e8  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001f6c  00000000  00000000  00002628  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000838  00000000  00000000  00004594  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000c3a  00000000  00000000  00004dcc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000073c  00000000  00000000  00005a08  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000cbc  00000000  00000000  00006144  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001ebc  00000000  00000000  00006e00  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000a8  00000000  00000000  00008cbc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 72 00 	jmp	0xe4	; 0xe4 <__ctors_end>
+       4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+       8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+       c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      10:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      14:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      18:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      1c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      20:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      24:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      28:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      2c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      30:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      34:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      38:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      3c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      40:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      44:	0c 94 51 03 	jmp	0x6a2	; 0x6a2 <__vector_17>
+      48:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      4c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      50:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      54:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      58:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      5c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      60:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      64:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      68:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      6c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      70:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      74:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      78:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      7c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      80:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      84:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      88:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      8c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      90:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      94:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      98:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      9c:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      a0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      a4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      a8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      ac:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      b0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      b4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      b8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      bc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      c0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      c4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      c8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      cc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      d0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      d4:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      d8:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      dc:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+      e0:	0c 94 93 00 	jmp	0x126	; 0x126 <__bad_interrupt>
+
+000000e4 <__ctors_end>:
+      e4:	11 24       	eor	r1, r1
+      e6:	1f be       	out	0x3f, r1	; 63
+      e8:	cf ef       	ldi	r28, 0xFF	; 255
+      ea:	d1 e2       	ldi	r29, 0x21	; 33
+      ec:	de bf       	out	0x3e, r29	; 62
+      ee:	cd bf       	out	0x3d, r28	; 61
+      f0:	00 e0       	ldi	r16, 0x00	; 0
+      f2:	0c bf       	out	0x3c, r16	; 60
+
+000000f4 <__do_copy_data>:
+      f4:	12 e0       	ldi	r17, 0x02	; 2
+      f6:	a0 e0       	ldi	r26, 0x00	; 0
+      f8:	b2 e0       	ldi	r27, 0x02	; 2
+      fa:	ea ef       	ldi	r30, 0xFA	; 250
+      fc:	f9 e1       	ldi	r31, 0x19	; 25
+      fe:	00 e0       	ldi	r16, 0x00	; 0
+     100:	0b bf       	out	0x3b, r16	; 59
+     102:	02 c0       	rjmp	.+4      	; 0x108 <__do_copy_data+0x14>
+     104:	07 90       	elpm	r0, Z+
+     106:	0d 92       	st	X+, r0
+     108:	ac 30       	cpi	r26, 0x0C	; 12
+     10a:	b1 07       	cpc	r27, r17
+     10c:	d9 f7       	brne	.-10     	; 0x104 <__do_copy_data+0x10>
+
+0000010e <__do_clear_bss>:
+     10e:	1a e2       	ldi	r17, 0x2A	; 42
+     110:	ac e0       	ldi	r26, 0x0C	; 12
+     112:	b2 e0       	ldi	r27, 0x02	; 2
+     114:	01 c0       	rjmp	.+2      	; 0x118 <.do_clear_bss_start>
+
+00000116 <.do_clear_bss_loop>:
+     116:	1d 92       	st	X+, r1
+
+00000118 <.do_clear_bss_start>:
+     118:	aa 37       	cpi	r26, 0x7A	; 122
+     11a:	b1 07       	cpc	r27, r17
+     11c:	e1 f7       	brne	.-8      	; 0x116 <.do_clear_bss_loop>
+     11e:	0e 94 6b 01 	call	0x2d6	; 0x2d6 <main>
+     122:	0c 94 fb 0c 	jmp	0x19f6	; 0x19f6 <_exit>
+
+00000126 <__bad_interrupt>:
+     126:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000012a <pvPortMalloc>:
+
+static size_t xNextFreeByte = ( size_t ) 0;
+/*-----------------------------------------------------------*/
+
+void *pvPortMalloc( size_t xWantedSize )
+{
+     12a:	0f 93       	push	r16
+     12c:	1f 93       	push	r17
+     12e:	cf 93       	push	r28
+     130:	df 93       	push	r29
+     132:	ec 01       	movw	r28, r24
+			/* Byte alignment required. */
+			xWantedSize += ( portBYTE_ALIGNMENT - ( xWantedSize & portBYTE_ALIGNMENT_MASK ) );
+		}
+	#endif
+
+	vTaskSuspendAll();
+     134:	0e 94 54 09 	call	0x12a8	; 0x12a8 <vTaskSuspendAll>
+	{
+		/* Check there is enough room left for the allocation. */
+		if( ( ( xNextFreeByte + xWantedSize ) < configTOTAL_HEAP_SIZE ) &&
+     138:	00 91 0c 02 	lds	r16, 0x020C
+     13c:	10 91 0d 02 	lds	r17, 0x020D
+     140:	c0 0f       	add	r28, r16
+     142:	d1 1f       	adc	r29, r17
+     144:	88 e2       	ldi	r24, 0x28	; 40
+     146:	c0 30       	cpi	r28, 0x00	; 0
+     148:	d8 07       	cpc	r29, r24
+     14a:	50 f4       	brcc	.+20     	; 0x160 <pvPortMalloc+0x36>
+     14c:	0c 17       	cp	r16, r28
+     14e:	1d 07       	cpc	r17, r29
+     150:	50 f4       	brcc	.+20     	; 0x166 <pvPortMalloc+0x3c>
+			( ( xNextFreeByte + xWantedSize ) > xNextFreeByte )	)/* Check for overflow. */
+		{
+			/* Return the next free byte then increment the index past this
+			block. */
+			pvReturn = &( xHeap.ucHeap[ xNextFreeByte ] );
+     152:	02 5f       	subi	r16, 0xF2	; 242
+     154:	1d 4f       	sbci	r17, 0xFD	; 253
+			xNextFreeByte += xWantedSize;			
+     156:	d0 93 0d 02 	sts	0x020D, r29
+     15a:	c0 93 0c 02 	sts	0x020C, r28
+     15e:	05 c0       	rjmp	.+10     	; 0x16a <pvPortMalloc+0x40>
+static size_t xNextFreeByte = ( size_t ) 0;
+/*-----------------------------------------------------------*/
+
+void *pvPortMalloc( size_t xWantedSize )
+{
+void *pvReturn = NULL; 
+     160:	00 e0       	ldi	r16, 0x00	; 0
+     162:	10 e0       	ldi	r17, 0x00	; 0
+     164:	02 c0       	rjmp	.+4      	; 0x16a <pvPortMalloc+0x40>
+     166:	00 e0       	ldi	r16, 0x00	; 0
+     168:	10 e0       	ldi	r17, 0x00	; 0
+			block. */
+			pvReturn = &( xHeap.ucHeap[ xNextFreeByte ] );
+			xNextFreeByte += xWantedSize;			
+		}	
+	}
+	xTaskResumeAll();
+     16a:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+		}
+	}
+	#endif	
+
+	return pvReturn;
+}
+     16e:	80 2f       	mov	r24, r16
+     170:	91 2f       	mov	r25, r17
+     172:	df 91       	pop	r29
+     174:	cf 91       	pop	r28
+     176:	1f 91       	pop	r17
+     178:	0f 91       	pop	r16
+     17a:	08 95       	ret
+
+0000017c <vPortFree>:
+	http://www.FreeRTOS.org for more information. */
+	( void ) pv;
+	
+	/* Force an assert as it is invalid to call this function. */
+	configASSERT( pv == NULL );
+}
+     17c:	08 95       	ret
+
+0000017e <vPortInitialiseBlocks>:
+/*-----------------------------------------------------------*/
+
+void vPortInitialiseBlocks( void )
+{
+	/* Only required when static memory is not cleared. */
+	xNextFreeByte = ( size_t ) 0;
+     17e:	10 92 0d 02 	sts	0x020D, r1
+     182:	10 92 0c 02 	sts	0x020C, r1
+}
+     186:	08 95       	ret
+
+00000188 <xPortGetFreeHeapSize>:
+/*-----------------------------------------------------------*/
+
+size_t xPortGetFreeHeapSize( void )
+{
+	return ( configTOTAL_HEAP_SIZE - xNextFreeByte );
+     188:	20 91 0c 02 	lds	r18, 0x020C
+     18c:	30 91 0d 02 	lds	r19, 0x020D
+     190:	80 e0       	ldi	r24, 0x00	; 0
+     192:	98 e2       	ldi	r25, 0x28	; 40
+     194:	82 1b       	sub	r24, r18
+     196:	93 0b       	sbc	r25, r19
+}
+     198:	08 95       	ret
+
+0000019a <vListInitialise>:
+/*-----------------------------------------------------------
+ * PUBLIC LIST API documented in list.h
+ *----------------------------------------------------------*/
+
+void vListInitialise( xList *pxList )
+{
+     19a:	fc 01       	movw	r30, r24
+	/* The list structure contains a list item which is used to mark the
+	end of the list.  To initialise the list the list end is inserted
+	as the only list entry. */
+	pxList->pxIndex = ( xListItem * ) &( pxList->xListEnd );
+     19c:	03 96       	adiw	r24, 0x03	; 3
+     19e:	92 83       	std	Z+2, r25	; 0x02
+     1a0:	81 83       	std	Z+1, r24	; 0x01
+
+	/* The list end value is the highest possible value in the list to
+	ensure it remains at the end of the list. */
+	pxList->xListEnd.xItemValue = portMAX_DELAY;
+     1a2:	2f ef       	ldi	r18, 0xFF	; 255
+     1a4:	3f ef       	ldi	r19, 0xFF	; 255
+     1a6:	34 83       	std	Z+4, r19	; 0x04
+     1a8:	23 83       	std	Z+3, r18	; 0x03
+
+	/* The list end next and previous pointers point to itself so we know
+	when the list is empty. */
+	pxList->xListEnd.pxNext = ( xListItem * ) &( pxList->xListEnd );
+     1aa:	96 83       	std	Z+6, r25	; 0x06
+     1ac:	85 83       	std	Z+5, r24	; 0x05
+	pxList->xListEnd.pxPrevious = ( xListItem * ) &( pxList->xListEnd );
+     1ae:	90 87       	std	Z+8, r25	; 0x08
+     1b0:	87 83       	std	Z+7, r24	; 0x07
+
+	pxList->uxNumberOfItems = ( unsigned portBASE_TYPE ) 0U;
+     1b2:	10 82       	st	Z, r1
+}
+     1b4:	08 95       	ret
+
+000001b6 <vListInitialiseItem>:
+/*-----------------------------------------------------------*/
+
+void vListInitialiseItem( xListItem *pxItem )
+{
+	/* Make sure the list item is not recorded as being on a list. */
+	pxItem->pvContainer = NULL;
+     1b6:	fc 01       	movw	r30, r24
+     1b8:	11 86       	std	Z+9, r1	; 0x09
+     1ba:	10 86       	std	Z+8, r1	; 0x08
+}
+     1bc:	08 95       	ret
+
+000001be <vListInsertEnd>:
+/*-----------------------------------------------------------*/
+
+void vListInsertEnd( xList *pxList, xListItem *pxNewListItem )
+{
+     1be:	cf 93       	push	r28
+     1c0:	df 93       	push	r29
+     1c2:	ec 01       	movw	r28, r24
+     1c4:	fb 01       	movw	r30, r22
+
+	/* Insert a new list item into pxList, but rather than sort the list,
+	makes the new list item the last item to be removed by a call to
+	pvListGetOwnerOfNextEntry.  This means it has to be the item pointed to by
+	the pxIndex member. */
+	pxIndex = pxList->pxIndex;
+     1c6:	89 81       	ldd	r24, Y+1	; 0x01
+     1c8:	9a 81       	ldd	r25, Y+2	; 0x02
+
+	pxNewListItem->pxNext = pxIndex->pxNext;
+     1ca:	dc 01       	movw	r26, r24
+     1cc:	12 96       	adiw	r26, 0x02	; 2
+     1ce:	2d 91       	ld	r18, X+
+     1d0:	3c 91       	ld	r19, X
+     1d2:	13 97       	sbiw	r26, 0x03	; 3
+     1d4:	33 83       	std	Z+3, r19	; 0x03
+     1d6:	22 83       	std	Z+2, r18	; 0x02
+	pxNewListItem->pxPrevious = pxList->pxIndex;
+     1d8:	29 81       	ldd	r18, Y+1	; 0x01
+     1da:	3a 81       	ldd	r19, Y+2	; 0x02
+     1dc:	35 83       	std	Z+5, r19	; 0x05
+     1de:	24 83       	std	Z+4, r18	; 0x04
+	pxIndex->pxNext->pxPrevious = ( volatile xListItem * ) pxNewListItem;
+     1e0:	12 96       	adiw	r26, 0x02	; 2
+     1e2:	2d 91       	ld	r18, X+
+     1e4:	3c 91       	ld	r19, X
+     1e6:	13 97       	sbiw	r26, 0x03	; 3
+     1e8:	d9 01       	movw	r26, r18
+     1ea:	15 96       	adiw	r26, 0x05	; 5
+     1ec:	7c 93       	st	X, r23
+     1ee:	6e 93       	st	-X, r22
+     1f0:	14 97       	sbiw	r26, 0x04	; 4
+	pxIndex->pxNext = ( volatile xListItem * ) pxNewListItem;
+     1f2:	dc 01       	movw	r26, r24
+     1f4:	13 96       	adiw	r26, 0x03	; 3
+     1f6:	7c 93       	st	X, r23
+     1f8:	6e 93       	st	-X, r22
+     1fa:	12 97       	sbiw	r26, 0x02	; 2
+	pxList->pxIndex = ( volatile xListItem * ) pxNewListItem;
+     1fc:	7a 83       	std	Y+2, r23	; 0x02
+     1fe:	69 83       	std	Y+1, r22	; 0x01
+
+	/* Remember which list the item is in. */
+	pxNewListItem->pvContainer = ( void * ) pxList;
+     200:	d1 87       	std	Z+9, r29	; 0x09
+     202:	c0 87       	std	Z+8, r28	; 0x08
+
+	( pxList->uxNumberOfItems )++;
+     204:	88 81       	ld	r24, Y
+     206:	8f 5f       	subi	r24, 0xFF	; 255
+     208:	88 83       	st	Y, r24
+}
+     20a:	df 91       	pop	r29
+     20c:	cf 91       	pop	r28
+     20e:	08 95       	ret
+
+00000210 <vListInsert>:
+/*-----------------------------------------------------------*/
+
+void vListInsert( xList *pxList, xListItem *pxNewListItem )
+{
+     210:	cf 93       	push	r28
+     212:	df 93       	push	r29
+     214:	ac 01       	movw	r20, r24
+     216:	eb 01       	movw	r28, r22
+volatile xListItem *pxIterator;
+portTickType xValueOfInsertion;
+
+	/* Insert the new list item into the list, sorted in ulListItem order. */
+	xValueOfInsertion = pxNewListItem->xItemValue;
+     218:	28 81       	ld	r18, Y
+     21a:	39 81       	ldd	r19, Y+1	; 0x01
+	are stored in ready lists (all of which have the same ulListItem value)
+	get an equal share of the CPU.  However, if the xItemValue is the same as
+	the back marker the iteration loop below will not end.  This means we need
+	to guard against this by checking the value first and modifying the
+	algorithm slightly if necessary. */
+	if( xValueOfInsertion == portMAX_DELAY )
+     21c:	8f ef       	ldi	r24, 0xFF	; 255
+     21e:	2f 3f       	cpi	r18, 0xFF	; 255
+     220:	38 07       	cpc	r19, r24
+     222:	21 f4       	brne	.+8      	; 0x22c <vListInsert+0x1c>
+	{
+		pxIterator = pxList->xListEnd.pxPrevious;
+     224:	fa 01       	movw	r30, r20
+     226:	a7 81       	ldd	r26, Z+7	; 0x07
+     228:	b0 85       	ldd	r27, Z+8	; 0x08
+     22a:	18 c0       	rjmp	.+48     	; 0x25c <vListInsert+0x4c>
+			   before the scheduler has been started (are interrupts firing
+			   before vTaskStartScheduler() has been called?).
+		See http://www.freertos.org/FAQHelp.html for more tips.
+		**********************************************************************/
+		
+		for( pxIterator = ( xListItem * ) &( pxList->xListEnd ); pxIterator->pxNext->xItemValue <= xValueOfInsertion; pxIterator = pxIterator->pxNext )
+     22c:	da 01       	movw	r26, r20
+     22e:	13 96       	adiw	r26, 0x03	; 3
+     230:	fa 01       	movw	r30, r20
+     232:	85 81       	ldd	r24, Z+5	; 0x05
+     234:	96 81       	ldd	r25, Z+6	; 0x06
+     236:	fc 01       	movw	r30, r24
+     238:	80 81       	ld	r24, Z
+     23a:	91 81       	ldd	r25, Z+1	; 0x01
+     23c:	28 17       	cp	r18, r24
+     23e:	39 07       	cpc	r19, r25
+     240:	68 f0       	brcs	.+26     	; 0x25c <vListInsert+0x4c>
+     242:	12 96       	adiw	r26, 0x02	; 2
+     244:	0d 90       	ld	r0, X+
+     246:	bc 91       	ld	r27, X
+     248:	a0 2d       	mov	r26, r0
+     24a:	12 96       	adiw	r26, 0x02	; 2
+     24c:	ed 91       	ld	r30, X+
+     24e:	fc 91       	ld	r31, X
+     250:	13 97       	sbiw	r26, 0x03	; 3
+     252:	80 81       	ld	r24, Z
+     254:	91 81       	ldd	r25, Z+1	; 0x01
+     256:	28 17       	cp	r18, r24
+     258:	39 07       	cpc	r19, r25
+     25a:	98 f7       	brcc	.-26     	; 0x242 <vListInsert+0x32>
+			/* There is nothing to do here, we are just iterating to the
+			wanted insertion position. */
+		}
+	}
+
+	pxNewListItem->pxNext = pxIterator->pxNext;
+     25c:	12 96       	adiw	r26, 0x02	; 2
+     25e:	ed 91       	ld	r30, X+
+     260:	fc 91       	ld	r31, X
+     262:	13 97       	sbiw	r26, 0x03	; 3
+     264:	fb 83       	std	Y+3, r31	; 0x03
+     266:	ea 83       	std	Y+2, r30	; 0x02
+	pxNewListItem->pxNext->pxPrevious = ( volatile xListItem * ) pxNewListItem;
+     268:	d5 83       	std	Z+5, r29	; 0x05
+     26a:	c4 83       	std	Z+4, r28	; 0x04
+	pxNewListItem->pxPrevious = pxIterator;
+     26c:	bd 83       	std	Y+5, r27	; 0x05
+     26e:	ac 83       	std	Y+4, r26	; 0x04
+	pxIterator->pxNext = ( volatile xListItem * ) pxNewListItem;
+     270:	13 96       	adiw	r26, 0x03	; 3
+     272:	dc 93       	st	X, r29
+     274:	ce 93       	st	-X, r28
+     276:	12 97       	sbiw	r26, 0x02	; 2
+
+	/* Remember which list the item is in.  This allows fast removal of the
+	item later. */
+	pxNewListItem->pvContainer = ( void * ) pxList;
+     278:	59 87       	std	Y+9, r21	; 0x09
+     27a:	48 87       	std	Y+8, r20	; 0x08
+
+	( pxList->uxNumberOfItems )++;
+     27c:	fa 01       	movw	r30, r20
+     27e:	80 81       	ld	r24, Z
+     280:	8f 5f       	subi	r24, 0xFF	; 255
+     282:	80 83       	st	Z, r24
+}
+     284:	df 91       	pop	r29
+     286:	cf 91       	pop	r28
+     288:	08 95       	ret
+
+0000028a <vListRemove>:
+/*-----------------------------------------------------------*/
+
+void vListRemove( xListItem *pxItemToRemove )
+{
+     28a:	fc 01       	movw	r30, r24
+xList * pxList;
+
+	pxItemToRemove->pxNext->pxPrevious = pxItemToRemove->pxPrevious;
+     28c:	a2 81       	ldd	r26, Z+2	; 0x02
+     28e:	b3 81       	ldd	r27, Z+3	; 0x03
+     290:	84 81       	ldd	r24, Z+4	; 0x04
+     292:	95 81       	ldd	r25, Z+5	; 0x05
+     294:	15 96       	adiw	r26, 0x05	; 5
+     296:	9c 93       	st	X, r25
+     298:	8e 93       	st	-X, r24
+     29a:	14 97       	sbiw	r26, 0x04	; 4
+	pxItemToRemove->pxPrevious->pxNext = pxItemToRemove->pxNext;
+     29c:	a4 81       	ldd	r26, Z+4	; 0x04
+     29e:	b5 81       	ldd	r27, Z+5	; 0x05
+     2a0:	82 81       	ldd	r24, Z+2	; 0x02
+     2a2:	93 81       	ldd	r25, Z+3	; 0x03
+     2a4:	13 96       	adiw	r26, 0x03	; 3
+     2a6:	9c 93       	st	X, r25
+     2a8:	8e 93       	st	-X, r24
+     2aa:	12 97       	sbiw	r26, 0x02	; 2
+	
+	/* The list item knows which list it is in.  Obtain the list from the list
+	item. */
+	pxList = ( xList * ) pxItemToRemove->pvContainer;
+     2ac:	a0 85       	ldd	r26, Z+8	; 0x08
+     2ae:	b1 85       	ldd	r27, Z+9	; 0x09
+
+	/* Make sure the index is left pointing to a valid item. */
+	if( pxList->pxIndex == pxItemToRemove )
+     2b0:	11 96       	adiw	r26, 0x01	; 1
+     2b2:	8d 91       	ld	r24, X+
+     2b4:	9c 91       	ld	r25, X
+     2b6:	12 97       	sbiw	r26, 0x02	; 2
+     2b8:	8e 17       	cp	r24, r30
+     2ba:	9f 07       	cpc	r25, r31
+     2bc:	31 f4       	brne	.+12     	; 0x2ca <vListRemove+0x40>
+	{
+		pxList->pxIndex = pxItemToRemove->pxPrevious;
+     2be:	84 81       	ldd	r24, Z+4	; 0x04
+     2c0:	95 81       	ldd	r25, Z+5	; 0x05
+     2c2:	12 96       	adiw	r26, 0x02	; 2
+     2c4:	9c 93       	st	X, r25
+     2c6:	8e 93       	st	-X, r24
+     2c8:	11 97       	sbiw	r26, 0x01	; 1
+	}
+
+	pxItemToRemove->pvContainer = NULL;
+     2ca:	11 86       	std	Z+9, r1	; 0x09
+     2cc:	10 86       	std	Z+8, r1	; 0x08
+	( pxList->uxNumberOfItems )--;
+     2ce:	8c 91       	ld	r24, X
+     2d0:	81 50       	subi	r24, 0x01	; 1
+     2d2:	8c 93       	st	X, r24
+}
+     2d4:	08 95       	ret
+
+000002d6 <main>:
+#include "FreeRTOSConfig.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "mytasks.h"
+
+int main(void) {
+     2d6:	af 92       	push	r10
+     2d8:	bf 92       	push	r11
+     2da:	cf 92       	push	r12
+     2dc:	df 92       	push	r13
+     2de:	ef 92       	push	r14
+     2e0:	ff 92       	push	r15
+     2e2:	0f 93       	push	r16
+
+	DDRB = 0xFF;
+     2e4:	8f ef       	ldi	r24, 0xFF	; 255
+     2e6:	84 b9       	out	0x04, r24	; 4
+	
+	/* Create ready light task */
+	xTaskCreate( vLEDFlashTask, (signed char *) "LED", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
+     2e8:	8e e9       	ldi	r24, 0x9E	; 158
+     2ea:	91 e0       	ldi	r25, 0x01	; 1
+     2ec:	60 e0       	ldi	r22, 0x00	; 0
+     2ee:	72 e0       	ldi	r23, 0x02	; 2
+     2f0:	40 e8       	ldi	r20, 0x80	; 128
+     2f2:	50 e0       	ldi	r21, 0x00	; 0
+     2f4:	20 e0       	ldi	r18, 0x00	; 0
+     2f6:	30 e0       	ldi	r19, 0x00	; 0
+     2f8:	00 e0       	ldi	r16, 0x00	; 0
+     2fa:	ee 24       	eor	r14, r14
+     2fc:	ff 24       	eor	r15, r15
+     2fe:	cc 24       	eor	r12, r12
+     300:	dd 24       	eor	r13, r13
+     302:	aa 24       	eor	r10, r10
+     304:	bb 24       	eor	r11, r11
+     306:	0e 94 99 06 	call	0xd32	; 0xd32 <xTaskGenericCreate>
+	
+	/* Start scheduler */
+	vTaskStartScheduler();		// OC1A now toggles, at approximately 970 Hz.
+     30a:	0e 94 23 09 	call	0x1246	; 0x1246 <vTaskStartScheduler>
+	
+	
+	PORTA = 0xBC;	// Not reaching here, which is good
+     30e:	8c eb       	ldi	r24, 0xBC	; 188
+     310:	82 b9       	out	0x02, r24	; 2
+	
+	return 0;
+     312:	80 e0       	ldi	r24, 0x00	; 0
+     314:	90 e0       	ldi	r25, 0x00	; 0
+     316:	0f 91       	pop	r16
+     318:	ff 90       	pop	r15
+     31a:	ef 90       	pop	r14
+     31c:	df 90       	pop	r13
+     31e:	cf 90       	pop	r12
+     320:	bf 90       	pop	r11
+     322:	af 90       	pop	r10
+     324:	08 95       	ret
+
+00000326 <vLEDInit>:
+#include <avr/io.h>
+#include "FreeRTOS.h"
+#include "task.h"
+
+void vLEDInit(void) {
+	DDRA = 0xFF;
+     326:	8f ef       	ldi	r24, 0xFF	; 255
+     328:	81 b9       	out	0x01, r24	; 1
+	DDRB = 0xFF;		// OC1A pin output
+     32a:	84 b9       	out	0x04, r24	; 4
+	PORTA = 0b01011011;
+     32c:	8b e5       	ldi	r24, 0x5B	; 91
+     32e:	82 b9       	out	0x02, r24	; 2
+}
+     330:	08 95       	ret
+
+00000332 <vLEDToggle>:
+
+void vLEDToggle(void) {
+	PORTA = ~(PINA & (1<<PINA0));
+     332:	80 b1       	in	r24, 0x00	; 0
+     334:	81 70       	andi	r24, 0x01	; 1
+     336:	80 95       	com	r24
+     338:	82 b9       	out	0x02, r24	; 2
+}	
+     33a:	08 95       	ret
+
+0000033c <vLEDFlashTask>:
+
+/* Task that simply blinks an LED every one second */
+void vLEDFlashTask(void *pvParameters) {
+     33c:	cf 93       	push	r28
+     33e:	df 93       	push	r29
+     340:	0f 92       	push	r0
+     342:	0f 92       	push	r0
+     344:	cd b7       	in	r28, 0x3d	; 61
+     346:	de b7       	in	r29, 0x3e	; 62
+	portTickType xLastWakeTime;
+	const portTickType xFrequency = 2;
+	vLEDInit();
+     348:	0e 94 93 01 	call	0x326	; 0x326 <vLEDInit>
+	
+	/* Get current time */
+	xLastWakeTime = xTaskGetTickCount();
+     34c:	0e 94 5a 09 	call	0x12b4	; 0x12b4 <xTaskGetTickCount>
+     350:	9a 83       	std	Y+2, r25	; 0x02
+     352:	89 83       	std	Y+1, r24	; 0x01
+	
+	for(;;) {
+		/* Wait half a second */
+		vTaskDelayUntil( &xLastWakeTime, 500);
+     354:	ce 01       	movw	r24, r28
+     356:	01 96       	adiw	r24, 0x01	; 1
+     358:	64 ef       	ldi	r22, 0xF4	; 244
+     35a:	71 e0       	ldi	r23, 0x01	; 1
+     35c:	0e 94 24 0b 	call	0x1648	; 0x1648 <vTaskDelayUntil>
+		
+		/* Toggle LED */
+		vLEDToggle();
+     360:	0e 94 99 01 	call	0x332	; 0x332 <vLEDToggle>
+     364:	f7 cf       	rjmp	.-18     	; 0x354 <vLEDFlashTask+0x18>
+
+00000366 <vApplicationIdleHook>:
+	}
+}
+
+     366:	08 95       	ret
+
+00000368 <pxPortInitialiseStack>:
+unsigned short usAddress;
+
+	/* Place a few bytes of known values on the bottom of the stack. 
+	This is just useful for debugging. */
+
+	*pxTopOfStack = 0x11;
+     368:	21 e1       	ldi	r18, 0x11	; 17
+     36a:	fc 01       	movw	r30, r24
+     36c:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = 0x22;
+     36e:	31 97       	sbiw	r30, 0x01	; 1
+     370:	32 e2       	ldi	r19, 0x22	; 34
+     372:	30 83       	st	Z, r19
+	pxTopOfStack--;
+	*pxTopOfStack = 0x33;
+     374:	fc 01       	movw	r30, r24
+     376:	32 97       	sbiw	r30, 0x02	; 2
+     378:	a3 e3       	ldi	r26, 0x33	; 51
+     37a:	a0 83       	st	Z, r26
+	/*lint -e950 -e611 -e923 Lint doesn't like this much - but nothing I can do about it. */
+
+	/* The start of the task code will be popped off the stack last, so place
+	it on first. */
+	usAddress = ( unsigned short ) pxCode;
+	*pxTopOfStack = ( portSTACK_TYPE ) ( usAddress & ( unsigned short ) 0x00ff );
+     37c:	fc 01       	movw	r30, r24
+     37e:	33 97       	sbiw	r30, 0x03	; 3
+     380:	60 83       	st	Z, r22
+	pxTopOfStack--;
+
+	usAddress >>= 8;
+	*pxTopOfStack = ( portSTACK_TYPE ) ( usAddress & ( unsigned short ) 0x00ff );
+     382:	fc 01       	movw	r30, r24
+     384:	34 97       	sbiw	r30, 0x04	; 4
+     386:	70 83       	st	Z, r23
+
+	/* Next simulate the stack as if after a call to portSAVE_CONTEXT().  
+	portSAVE_CONTEXT places the flags on the stack immediately after r0
+	to ensure the interrupts get disabled as soon as possible, and so ensuring
+	the stack use is minimal should a context switch interrupt occur. */
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x00;	/* R0 */
+     388:	fc 01       	movw	r30, r24
+     38a:	35 97       	sbiw	r30, 0x05	; 5
+     38c:	10 82       	st	Z, r1
+	pxTopOfStack--;
+	*pxTopOfStack = portFLAGS_INT_ENABLED;
+     38e:	fc 01       	movw	r30, r24
+     390:	36 97       	sbiw	r30, 0x06	; 6
+     392:	60 e8       	ldi	r22, 0x80	; 128
+     394:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	
+	/* I think EIND and ZRAMP go here */
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x00;	/* EIND */
+     396:	fc 01       	movw	r30, r24
+     398:	37 97       	sbiw	r30, 0x07	; 7
+     39a:	10 82       	st	Z, r1
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x00;	/* RAMPZ */
+     39c:	fc 01       	movw	r30, r24
+     39e:	38 97       	sbiw	r30, 0x08	; 8
+     3a0:	10 82       	st	Z, r1
+	pxTopOfStack--;
+
+
+	/* Now the remaining registers.   The compiler expects R1 to be 0. */
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x00;	/* R1 */
+     3a2:	fc 01       	movw	r30, r24
+     3a4:	39 97       	sbiw	r30, 0x09	; 9
+     3a6:	10 82       	st	Z, r1
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x02;	/* R2 */
+     3a8:	fc 01       	movw	r30, r24
+     3aa:	3a 97       	sbiw	r30, 0x0a	; 10
+     3ac:	62 e0       	ldi	r22, 0x02	; 2
+     3ae:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x03;	/* R3 */
+     3b0:	fc 01       	movw	r30, r24
+     3b2:	3b 97       	sbiw	r30, 0x0b	; 11
+     3b4:	63 e0       	ldi	r22, 0x03	; 3
+     3b6:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x04;	/* R4 */
+     3b8:	fc 01       	movw	r30, r24
+     3ba:	3c 97       	sbiw	r30, 0x0c	; 12
+     3bc:	64 e0       	ldi	r22, 0x04	; 4
+     3be:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x05;	/* R5 */
+     3c0:	fc 01       	movw	r30, r24
+     3c2:	3d 97       	sbiw	r30, 0x0d	; 13
+     3c4:	65 e0       	ldi	r22, 0x05	; 5
+     3c6:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x06;	/* R6 */
+     3c8:	fc 01       	movw	r30, r24
+     3ca:	3e 97       	sbiw	r30, 0x0e	; 14
+     3cc:	66 e0       	ldi	r22, 0x06	; 6
+     3ce:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x07;	/* R7 */
+     3d0:	fc 01       	movw	r30, r24
+     3d2:	3f 97       	sbiw	r30, 0x0f	; 15
+     3d4:	67 e0       	ldi	r22, 0x07	; 7
+     3d6:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x08;	/* R8 */
+     3d8:	fc 01       	movw	r30, r24
+     3da:	70 97       	sbiw	r30, 0x10	; 16
+     3dc:	68 e0       	ldi	r22, 0x08	; 8
+     3de:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x09;	/* R9 */
+     3e0:	fc 01       	movw	r30, r24
+     3e2:	71 97       	sbiw	r30, 0x11	; 17
+     3e4:	69 e0       	ldi	r22, 0x09	; 9
+     3e6:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x10;	/* R10 */
+     3e8:	fc 01       	movw	r30, r24
+     3ea:	72 97       	sbiw	r30, 0x12	; 18
+     3ec:	60 e1       	ldi	r22, 0x10	; 16
+     3ee:	60 83       	st	Z, r22
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x11;	/* R11 */
+     3f0:	fc 01       	movw	r30, r24
+     3f2:	73 97       	sbiw	r30, 0x13	; 19
+     3f4:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x12;	/* R12 */
+     3f6:	fc 01       	movw	r30, r24
+     3f8:	74 97       	sbiw	r30, 0x14	; 20
+     3fa:	22 e1       	ldi	r18, 0x12	; 18
+     3fc:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x13;	/* R13 */
+     3fe:	fc 01       	movw	r30, r24
+     400:	75 97       	sbiw	r30, 0x15	; 21
+     402:	23 e1       	ldi	r18, 0x13	; 19
+     404:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x14;	/* R14 */
+     406:	fc 01       	movw	r30, r24
+     408:	76 97       	sbiw	r30, 0x16	; 22
+     40a:	24 e1       	ldi	r18, 0x14	; 20
+     40c:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x15;	/* R15 */
+     40e:	fc 01       	movw	r30, r24
+     410:	77 97       	sbiw	r30, 0x17	; 23
+     412:	25 e1       	ldi	r18, 0x15	; 21
+     414:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x16;	/* R16 */
+     416:	fc 01       	movw	r30, r24
+     418:	78 97       	sbiw	r30, 0x18	; 24
+     41a:	26 e1       	ldi	r18, 0x16	; 22
+     41c:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x17;	/* R17 */
+     41e:	fc 01       	movw	r30, r24
+     420:	79 97       	sbiw	r30, 0x19	; 25
+     422:	27 e1       	ldi	r18, 0x17	; 23
+     424:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x18;	/* R18 */
+     426:	fc 01       	movw	r30, r24
+     428:	7a 97       	sbiw	r30, 0x1a	; 26
+     42a:	28 e1       	ldi	r18, 0x18	; 24
+     42c:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x19;	/* R19 */
+     42e:	fc 01       	movw	r30, r24
+     430:	7b 97       	sbiw	r30, 0x1b	; 27
+     432:	29 e1       	ldi	r18, 0x19	; 25
+     434:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x20;	/* R20 */
+     436:	fc 01       	movw	r30, r24
+     438:	7c 97       	sbiw	r30, 0x1c	; 28
+     43a:	20 e2       	ldi	r18, 0x20	; 32
+     43c:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x21;	/* R21 */
+     43e:	fc 01       	movw	r30, r24
+     440:	7d 97       	sbiw	r30, 0x1d	; 29
+     442:	21 e2       	ldi	r18, 0x21	; 33
+     444:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x22;	/* R22 */
+     446:	fc 01       	movw	r30, r24
+     448:	7e 97       	sbiw	r30, 0x1e	; 30
+     44a:	30 83       	st	Z, r19
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x23;	/* R23 */
+     44c:	fc 01       	movw	r30, r24
+     44e:	7f 97       	sbiw	r30, 0x1f	; 31
+     450:	23 e2       	ldi	r18, 0x23	; 35
+     452:	20 83       	st	Z, r18
+	pxTopOfStack--;
+
+	/* Place the parameter on the stack in the expected location. */
+	usAddress = ( unsigned short ) pvParameters;
+	*pxTopOfStack = ( portSTACK_TYPE ) ( usAddress & ( unsigned short ) 0x00ff );
+     454:	fc 01       	movw	r30, r24
+     456:	b0 97       	sbiw	r30, 0x20	; 32
+     458:	40 83       	st	Z, r20
+	pxTopOfStack--;
+
+	usAddress >>= 8;
+	*pxTopOfStack = ( portSTACK_TYPE ) ( usAddress & ( unsigned short ) 0x00ff );
+     45a:	fc 01       	movw	r30, r24
+     45c:	b1 97       	sbiw	r30, 0x21	; 33
+     45e:	50 83       	st	Z, r21
+	pxTopOfStack--;
+
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x26;	/* R26 X */
+     460:	fc 01       	movw	r30, r24
+     462:	b2 97       	sbiw	r30, 0x22	; 34
+     464:	26 e2       	ldi	r18, 0x26	; 38
+     466:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x27;	/* R27 */
+     468:	fc 01       	movw	r30, r24
+     46a:	b3 97       	sbiw	r30, 0x23	; 35
+     46c:	27 e2       	ldi	r18, 0x27	; 39
+     46e:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x28;	/* R28 Y */
+     470:	fc 01       	movw	r30, r24
+     472:	b4 97       	sbiw	r30, 0x24	; 36
+     474:	28 e2       	ldi	r18, 0x28	; 40
+     476:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x29;	/* R29 */
+     478:	fc 01       	movw	r30, r24
+     47a:	b5 97       	sbiw	r30, 0x25	; 37
+     47c:	29 e2       	ldi	r18, 0x29	; 41
+     47e:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x30;	/* R30 Z */
+     480:	fc 01       	movw	r30, r24
+     482:	b6 97       	sbiw	r30, 0x26	; 38
+     484:	20 e3       	ldi	r18, 0x30	; 48
+     486:	20 83       	st	Z, r18
+	pxTopOfStack--;
+	*pxTopOfStack = ( portSTACK_TYPE ) 0x31;	/* R31 */
+     488:	fc 01       	movw	r30, r24
+     48a:	b7 97       	sbiw	r30, 0x27	; 39
+     48c:	21 e3       	ldi	r18, 0x31	; 49
+     48e:	20 83       	st	Z, r18
+	pxTopOfStack--;
+
+	/*lint +e950 +e611 +e923 */
+
+	return pxTopOfStack;
+     490:	88 97       	sbiw	r24, 0x28	; 40
+}
+     492:	08 95       	ret
+
+00000494 <xPortStartScheduler>:
+	/* Setup compare match value for compare match A.  Interrupts are disabled 
+	before this is called so we need not worry here. */
+	ucLowByte = ( unsigned char ) ( ulCompareMatch & ( unsigned long ) 0xff );
+	ulCompareMatch >>= 8;
+	ucHighByte = ( unsigned char ) ( ulCompareMatch & ( unsigned long ) 0xff );
+	OCR1AH = ucHighByte;
+     494:	81 e0       	ldi	r24, 0x01	; 1
+     496:	80 93 89 00 	sts	0x0089, r24
+	OCR1AL = ucLowByte;
+     49a:	83 ef       	ldi	r24, 0xF3	; 243
+     49c:	80 93 88 00 	sts	0x0088, r24
+
+	/* Setup clock source and compare match behaviour. */
+	TCCR1B = portPRESCALE_64;
+     4a0:	83 e0       	ldi	r24, 0x03	; 3
+     4a2:	80 93 81 00 	sts	0x0081, r24
+	TCCR1A = (portCLEAR_COUNTER_ON_MATCH) | (1<<COM1A0);	//second argument enables OC1A
+     4a6:	80 ec       	ldi	r24, 0xC0	; 192
+     4a8:	80 93 80 00 	sts	0x0080, r24
+
+	/* Enable the interrupt - this is okay as interrupt are currently globally
+	disabled. */
+	ucLowByte = TIMSK1;
+     4ac:	ef e6       	ldi	r30, 0x6F	; 111
+     4ae:	f0 e0       	ldi	r31, 0x00	; 0
+     4b0:	80 81       	ld	r24, Z
+	ucLowByte |= portCOMPARE_MATCH_A_INTERRUPT_ENABLE;
+     4b2:	82 60       	ori	r24, 0x02	; 2
+	TIMSK1 = ucLowByte;
+     4b4:	80 83       	st	Z, r24
+{
+	/* Setup the hardware to generate the tick. */
+	prvSetupTimerInterrupt();
+
+	/* Restore the context of the first task that is going to run. */
+	portRESTORE_CONTEXT();
+     4b6:	a0 91 0e 2a 	lds	r26, 0x2A0E
+     4ba:	b0 91 0f 2a 	lds	r27, 0x2A0F
+     4be:	cd 91       	ld	r28, X+
+     4c0:	cd bf       	out	0x3d, r28	; 61
+     4c2:	dd 91       	ld	r29, X+
+     4c4:	de bf       	out	0x3e, r29	; 62
+     4c6:	ff 91       	pop	r31
+     4c8:	ef 91       	pop	r30
+     4ca:	df 91       	pop	r29
+     4cc:	cf 91       	pop	r28
+     4ce:	bf 91       	pop	r27
+     4d0:	af 91       	pop	r26
+     4d2:	9f 91       	pop	r25
+     4d4:	8f 91       	pop	r24
+     4d6:	7f 91       	pop	r23
+     4d8:	6f 91       	pop	r22
+     4da:	5f 91       	pop	r21
+     4dc:	4f 91       	pop	r20
+     4de:	3f 91       	pop	r19
+     4e0:	2f 91       	pop	r18
+     4e2:	1f 91       	pop	r17
+     4e4:	0f 91       	pop	r16
+     4e6:	ff 90       	pop	r15
+     4e8:	ef 90       	pop	r14
+     4ea:	df 90       	pop	r13
+     4ec:	cf 90       	pop	r12
+     4ee:	bf 90       	pop	r11
+     4f0:	af 90       	pop	r10
+     4f2:	9f 90       	pop	r9
+     4f4:	8f 90       	pop	r8
+     4f6:	7f 90       	pop	r7
+     4f8:	6f 90       	pop	r6
+     4fa:	5f 90       	pop	r5
+     4fc:	4f 90       	pop	r4
+     4fe:	3f 90       	pop	r3
+     500:	2f 90       	pop	r2
+     502:	1f 90       	pop	r1
+     504:	0f 90       	pop	r0
+     506:	0c be       	out	0x3c, r0	; 60
+     508:	0f 90       	pop	r0
+     50a:	0b be       	out	0x3b, r0	; 59
+     50c:	0f 90       	pop	r0
+     50e:	0f be       	out	0x3f, r0	; 63
+     510:	0f 90       	pop	r0
+
+	/* Simulate a function call end as generated by the compiler.  We will now
+	jump to the start of the task the context of which we have just restored. */
+	asm volatile ( "ret" );
+     512:	08 95       	ret
+
+	/* Should not get here. */
+	return pdTRUE;
+}
+     514:	81 e0       	ldi	r24, 0x01	; 1
+     516:	08 95       	ret
+
+00000518 <vPortEndScheduler>:
+
+void vPortEndScheduler( void )
+{
+	/* It is unlikely that the AVR port will get stopped.  If required simply
+	disable the tick interrupt here. */
+}
+     518:	08 95       	ret
+
+0000051a <vPortYield>:
+ * can use a naked attribute.
+ */
+void vPortYield( void ) __attribute__ ( ( naked ) );
+void vPortYield( void )
+{
+	portSAVE_CONTEXT();
+     51a:	0f 92       	push	r0
+     51c:	0f b6       	in	r0, 0x3f	; 63
+     51e:	f8 94       	cli
+     520:	0f 92       	push	r0
+     522:	0b b6       	in	r0, 0x3b	; 59
+     524:	0f 92       	push	r0
+     526:	0c b6       	in	r0, 0x3c	; 60
+     528:	0f 92       	push	r0
+     52a:	1f 92       	push	r1
+     52c:	11 24       	eor	r1, r1
+     52e:	2f 92       	push	r2
+     530:	3f 92       	push	r3
+     532:	4f 92       	push	r4
+     534:	5f 92       	push	r5
+     536:	6f 92       	push	r6
+     538:	7f 92       	push	r7
+     53a:	8f 92       	push	r8
+     53c:	9f 92       	push	r9
+     53e:	af 92       	push	r10
+     540:	bf 92       	push	r11
+     542:	cf 92       	push	r12
+     544:	df 92       	push	r13
+     546:	ef 92       	push	r14
+     548:	ff 92       	push	r15
+     54a:	0f 93       	push	r16
+     54c:	1f 93       	push	r17
+     54e:	2f 93       	push	r18
+     550:	3f 93       	push	r19
+     552:	4f 93       	push	r20
+     554:	5f 93       	push	r21
+     556:	6f 93       	push	r22
+     558:	7f 93       	push	r23
+     55a:	8f 93       	push	r24
+     55c:	9f 93       	push	r25
+     55e:	af 93       	push	r26
+     560:	bf 93       	push	r27
+     562:	cf 93       	push	r28
+     564:	df 93       	push	r29
+     566:	ef 93       	push	r30
+     568:	ff 93       	push	r31
+     56a:	a0 91 0e 2a 	lds	r26, 0x2A0E
+     56e:	b0 91 0f 2a 	lds	r27, 0x2A0F
+     572:	0d b6       	in	r0, 0x3d	; 61
+     574:	0d 92       	st	X+, r0
+     576:	0e b6       	in	r0, 0x3e	; 62
+     578:	0d 92       	st	X+, r0
+	vTaskSwitchContext();
+     57a:	0e 94 6e 0b 	call	0x16dc	; 0x16dc <vTaskSwitchContext>
+	portRESTORE_CONTEXT();
+     57e:	a0 91 0e 2a 	lds	r26, 0x2A0E
+     582:	b0 91 0f 2a 	lds	r27, 0x2A0F
+     586:	cd 91       	ld	r28, X+
+     588:	cd bf       	out	0x3d, r28	; 61
+     58a:	dd 91       	ld	r29, X+
+     58c:	de bf       	out	0x3e, r29	; 62
+     58e:	ff 91       	pop	r31
+     590:	ef 91       	pop	r30
+     592:	df 91       	pop	r29
+     594:	cf 91       	pop	r28
+     596:	bf 91       	pop	r27
+     598:	af 91       	pop	r26
+     59a:	9f 91       	pop	r25
+     59c:	8f 91       	pop	r24
+     59e:	7f 91       	pop	r23
+     5a0:	6f 91       	pop	r22
+     5a2:	5f 91       	pop	r21
+     5a4:	4f 91       	pop	r20
+     5a6:	3f 91       	pop	r19
+     5a8:	2f 91       	pop	r18
+     5aa:	1f 91       	pop	r17
+     5ac:	0f 91       	pop	r16
+     5ae:	ff 90       	pop	r15
+     5b0:	ef 90       	pop	r14
+     5b2:	df 90       	pop	r13
+     5b4:	cf 90       	pop	r12
+     5b6:	bf 90       	pop	r11
+     5b8:	af 90       	pop	r10
+     5ba:	9f 90       	pop	r9
+     5bc:	8f 90       	pop	r8
+     5be:	7f 90       	pop	r7
+     5c0:	6f 90       	pop	r6
+     5c2:	5f 90       	pop	r5
+     5c4:	4f 90       	pop	r4
+     5c6:	3f 90       	pop	r3
+     5c8:	2f 90       	pop	r2
+     5ca:	1f 90       	pop	r1
+     5cc:	0f 90       	pop	r0
+     5ce:	0c be       	out	0x3c, r0	; 60
+     5d0:	0f 90       	pop	r0
+     5d2:	0b be       	out	0x3b, r0	; 59
+     5d4:	0f 90       	pop	r0
+     5d6:	0f be       	out	0x3f, r0	; 63
+     5d8:	0f 90       	pop	r0
+
+	asm volatile ( "ret" );
+     5da:	08 95       	ret
+
+000005dc <vPortYieldFromTick>:
+ * call comes from the tick ISR.
+ */
+void vPortYieldFromTick( void ) __attribute__ ( ( naked ) );
+void vPortYieldFromTick( void )
+{
+	portSAVE_CONTEXT();
+     5dc:	0f 92       	push	r0
+     5de:	0f b6       	in	r0, 0x3f	; 63
+     5e0:	f8 94       	cli
+     5e2:	0f 92       	push	r0
+     5e4:	0b b6       	in	r0, 0x3b	; 59
+     5e6:	0f 92       	push	r0
+     5e8:	0c b6       	in	r0, 0x3c	; 60
+     5ea:	0f 92       	push	r0
+     5ec:	1f 92       	push	r1
+     5ee:	11 24       	eor	r1, r1
+     5f0:	2f 92       	push	r2
+     5f2:	3f 92       	push	r3
+     5f4:	4f 92       	push	r4
+     5f6:	5f 92       	push	r5
+     5f8:	6f 92       	push	r6
+     5fa:	7f 92       	push	r7
+     5fc:	8f 92       	push	r8
+     5fe:	9f 92       	push	r9
+     600:	af 92       	push	r10
+     602:	bf 92       	push	r11
+     604:	cf 92       	push	r12
+     606:	df 92       	push	r13
+     608:	ef 92       	push	r14
+     60a:	ff 92       	push	r15
+     60c:	0f 93       	push	r16
+     60e:	1f 93       	push	r17
+     610:	2f 93       	push	r18
+     612:	3f 93       	push	r19
+     614:	4f 93       	push	r20
+     616:	5f 93       	push	r21
+     618:	6f 93       	push	r22
+     61a:	7f 93       	push	r23
+     61c:	8f 93       	push	r24
+     61e:	9f 93       	push	r25
+     620:	af 93       	push	r26
+     622:	bf 93       	push	r27
+     624:	cf 93       	push	r28
+     626:	df 93       	push	r29
+     628:	ef 93       	push	r30
+     62a:	ff 93       	push	r31
+     62c:	a0 91 0e 2a 	lds	r26, 0x2A0E
+     630:	b0 91 0f 2a 	lds	r27, 0x2A0F
+     634:	0d b6       	in	r0, 0x3d	; 61
+     636:	0d 92       	st	X+, r0
+     638:	0e b6       	in	r0, 0x3e	; 62
+     63a:	0d 92       	st	X+, r0
+	vTaskIncrementTick();
+     63c:	0e 94 6c 09 	call	0x12d8	; 0x12d8 <vTaskIncrementTick>
+	vTaskSwitchContext();
+     640:	0e 94 6e 0b 	call	0x16dc	; 0x16dc <vTaskSwitchContext>
+	portRESTORE_CONTEXT();
+     644:	a0 91 0e 2a 	lds	r26, 0x2A0E
+     648:	b0 91 0f 2a 	lds	r27, 0x2A0F
+     64c:	cd 91       	ld	r28, X+
+     64e:	cd bf       	out	0x3d, r28	; 61
+     650:	dd 91       	ld	r29, X+
+     652:	de bf       	out	0x3e, r29	; 62
+     654:	ff 91       	pop	r31
+     656:	ef 91       	pop	r30
+     658:	df 91       	pop	r29
+     65a:	cf 91       	pop	r28
+     65c:	bf 91       	pop	r27
+     65e:	af 91       	pop	r26
+     660:	9f 91       	pop	r25
+     662:	8f 91       	pop	r24
+     664:	7f 91       	pop	r23
+     666:	6f 91       	pop	r22
+     668:	5f 91       	pop	r21
+     66a:	4f 91       	pop	r20
+     66c:	3f 91       	pop	r19
+     66e:	2f 91       	pop	r18
+     670:	1f 91       	pop	r17
+     672:	0f 91       	pop	r16
+     674:	ff 90       	pop	r15
+     676:	ef 90       	pop	r14
+     678:	df 90       	pop	r13
+     67a:	cf 90       	pop	r12
+     67c:	bf 90       	pop	r11
+     67e:	af 90       	pop	r10
+     680:	9f 90       	pop	r9
+     682:	8f 90       	pop	r8
+     684:	7f 90       	pop	r7
+     686:	6f 90       	pop	r6
+     688:	5f 90       	pop	r5
+     68a:	4f 90       	pop	r4
+     68c:	3f 90       	pop	r3
+     68e:	2f 90       	pop	r2
+     690:	1f 90       	pop	r1
+     692:	0f 90       	pop	r0
+     694:	0c be       	out	0x3c, r0	; 60
+     696:	0f 90       	pop	r0
+     698:	0b be       	out	0x3b, r0	; 59
+     69a:	0f 90       	pop	r0
+     69c:	0f be       	out	0x3f, r0	; 63
+     69e:	0f 90       	pop	r0
+
+	asm volatile ( "ret" );
+     6a0:	08 95       	ret
+
+000006a2 <__vector_17>:
+	 * count is incremented after the context is saved.
+	 */
+	void SIG_OUTPUT_COMPARE1A( void ) __attribute__ ( ( signal, naked ) );
+	void SIG_OUTPUT_COMPARE1A( void )
+	{
+		vPortYieldFromTick();
+     6a2:	0e 94 ee 02 	call	0x5dc	; 0x5dc <vPortYieldFromTick>
+		asm volatile ( "reti" );
+     6a6:	18 95       	reti
+
+000006a8 <prvCopyDataFromQueue>:
+	++( pxQueue->uxMessagesWaiting );
+}
+/*-----------------------------------------------------------*/
+
+static void prvCopyDataFromQueue( xQUEUE * const pxQueue, const void *pvBuffer )
+{
+     6a8:	cf 93       	push	r28
+     6aa:	df 93       	push	r29
+     6ac:	dc 01       	movw	r26, r24
+	if( pxQueue->uxQueueType != queueQUEUE_IS_MUTEX )
+     6ae:	cd 91       	ld	r28, X+
+     6b0:	dc 91       	ld	r29, X
+     6b2:	11 97       	sbiw	r26, 0x01	; 1
+     6b4:	20 97       	sbiw	r28, 0x00	; 0
+     6b6:	21 f1       	breq	.+72     	; 0x700 <prvCopyDataFromQueue+0x58>
+	{
+		pxQueue->pcReadFrom += pxQueue->uxItemSize;
+     6b8:	5c 96       	adiw	r26, 0x1c	; 28
+     6ba:	4c 91       	ld	r20, X
+     6bc:	5c 97       	sbiw	r26, 0x1c	; 28
+     6be:	16 96       	adiw	r26, 0x06	; 6
+     6c0:	2d 91       	ld	r18, X+
+     6c2:	3c 91       	ld	r19, X
+     6c4:	17 97       	sbiw	r26, 0x07	; 7
+     6c6:	24 0f       	add	r18, r20
+     6c8:	31 1d       	adc	r19, r1
+     6ca:	17 96       	adiw	r26, 0x07	; 7
+     6cc:	3c 93       	st	X, r19
+     6ce:	2e 93       	st	-X, r18
+     6d0:	16 97       	sbiw	r26, 0x06	; 6
+		if( pxQueue->pcReadFrom >= pxQueue->pcTail )
+     6d2:	12 96       	adiw	r26, 0x02	; 2
+     6d4:	ed 91       	ld	r30, X+
+     6d6:	fc 91       	ld	r31, X
+     6d8:	13 97       	sbiw	r26, 0x03	; 3
+     6da:	2e 17       	cp	r18, r30
+     6dc:	3f 07       	cpc	r19, r31
+     6de:	20 f0       	brcs	.+8      	; 0x6e8 <prvCopyDataFromQueue+0x40>
+		{
+			pxQueue->pcReadFrom = pxQueue->pcHead;
+     6e0:	17 96       	adiw	r26, 0x07	; 7
+     6e2:	dc 93       	st	X, r29
+     6e4:	ce 93       	st	-X, r28
+     6e6:	16 97       	sbiw	r26, 0x06	; 6
+		}
+		memcpy( ( void * ) pvBuffer, ( void * ) pxQueue->pcReadFrom, ( unsigned ) pxQueue->uxItemSize );
+     6e8:	16 96       	adiw	r26, 0x06	; 6
+     6ea:	3c 91       	ld	r19, X
+     6ec:	16 97       	sbiw	r26, 0x06	; 6
+     6ee:	17 96       	adiw	r26, 0x07	; 7
+     6f0:	2c 91       	ld	r18, X
+     6f2:	86 2f       	mov	r24, r22
+     6f4:	97 2f       	mov	r25, r23
+     6f6:	63 2f       	mov	r22, r19
+     6f8:	72 2f       	mov	r23, r18
+     6fa:	50 e0       	ldi	r21, 0x00	; 0
+     6fc:	0e 94 dc 0c 	call	0x19b8	; 0x19b8 <memcpy>
+	}
+}
+     700:	df 91       	pop	r29
+     702:	cf 91       	pop	r28
+     704:	08 95       	ret
+
+00000706 <prvCopyDataToQueue>:
+
+#endif
+/*-----------------------------------------------------------*/
+
+static void prvCopyDataToQueue( xQUEUE *pxQueue, const void *pvItemToQueue, portBASE_TYPE xPosition )
+{
+     706:	cf 93       	push	r28
+     708:	df 93       	push	r29
+     70a:	ec 01       	movw	r28, r24
+	if( pxQueue->uxItemSize == ( unsigned portBASE_TYPE ) 0 )
+     70c:	2c 8d       	ldd	r18, Y+28	; 0x1c
+     70e:	22 23       	and	r18, r18
+     710:	a9 f1       	breq	.+106    	; 0x77c <prvCopyDataToQueue+0x76>
+				pxQueue->pxMutexHolder = NULL;
+			}
+		}
+		#endif
+	}
+	else if( xPosition == queueSEND_TO_BACK )
+     712:	44 23       	and	r20, r20
+     714:	b9 f4       	brne	.+46     	; 0x744 <prvCopyDataToQueue+0x3e>
+	{
+		memcpy( ( void * ) pxQueue->pcWriteTo, pvItemToQueue, ( unsigned ) pxQueue->uxItemSize );
+     716:	8c 81       	ldd	r24, Y+4	; 0x04
+     718:	9d 81       	ldd	r25, Y+5	; 0x05
+     71a:	42 2f       	mov	r20, r18
+     71c:	50 e0       	ldi	r21, 0x00	; 0
+     71e:	0e 94 dc 0c 	call	0x19b8	; 0x19b8 <memcpy>
+		pxQueue->pcWriteTo += pxQueue->uxItemSize;
+     722:	2c 8d       	ldd	r18, Y+28	; 0x1c
+     724:	8c 81       	ldd	r24, Y+4	; 0x04
+     726:	9d 81       	ldd	r25, Y+5	; 0x05
+     728:	82 0f       	add	r24, r18
+     72a:	91 1d       	adc	r25, r1
+     72c:	9d 83       	std	Y+5, r25	; 0x05
+     72e:	8c 83       	std	Y+4, r24	; 0x04
+		if( pxQueue->pcWriteTo >= pxQueue->pcTail )
+     730:	2a 81       	ldd	r18, Y+2	; 0x02
+     732:	3b 81       	ldd	r19, Y+3	; 0x03
+     734:	82 17       	cp	r24, r18
+     736:	93 07       	cpc	r25, r19
+     738:	08 f1       	brcs	.+66     	; 0x77c <prvCopyDataToQueue+0x76>
+		{
+			pxQueue->pcWriteTo = pxQueue->pcHead;
+     73a:	88 81       	ld	r24, Y
+     73c:	99 81       	ldd	r25, Y+1	; 0x01
+     73e:	9d 83       	std	Y+5, r25	; 0x05
+     740:	8c 83       	std	Y+4, r24	; 0x04
+     742:	1c c0       	rjmp	.+56     	; 0x77c <prvCopyDataToQueue+0x76>
+		}
+	}
+	else
+	{
+		memcpy( ( void * ) pxQueue->pcReadFrom, pvItemToQueue, ( unsigned ) pxQueue->uxItemSize );
+     744:	8e 81       	ldd	r24, Y+6	; 0x06
+     746:	9f 81       	ldd	r25, Y+7	; 0x07
+     748:	42 2f       	mov	r20, r18
+     74a:	50 e0       	ldi	r21, 0x00	; 0
+     74c:	0e 94 dc 0c 	call	0x19b8	; 0x19b8 <memcpy>
+		pxQueue->pcReadFrom -= pxQueue->uxItemSize;
+     750:	4c 8d       	ldd	r20, Y+28	; 0x1c
+     752:	50 e0       	ldi	r21, 0x00	; 0
+     754:	50 95       	com	r21
+     756:	41 95       	neg	r20
+     758:	5f 4f       	sbci	r21, 0xFF	; 255
+     75a:	8e 81       	ldd	r24, Y+6	; 0x06
+     75c:	9f 81       	ldd	r25, Y+7	; 0x07
+     75e:	84 0f       	add	r24, r20
+     760:	95 1f       	adc	r25, r21
+     762:	9f 83       	std	Y+7, r25	; 0x07
+     764:	8e 83       	std	Y+6, r24	; 0x06
+		if( pxQueue->pcReadFrom < pxQueue->pcHead )
+     766:	28 81       	ld	r18, Y
+     768:	39 81       	ldd	r19, Y+1	; 0x01
+     76a:	82 17       	cp	r24, r18
+     76c:	93 07       	cpc	r25, r19
+     76e:	30 f4       	brcc	.+12     	; 0x77c <prvCopyDataToQueue+0x76>
+		{
+			pxQueue->pcReadFrom = ( pxQueue->pcTail - pxQueue->uxItemSize );
+     770:	8a 81       	ldd	r24, Y+2	; 0x02
+     772:	9b 81       	ldd	r25, Y+3	; 0x03
+     774:	48 0f       	add	r20, r24
+     776:	59 1f       	adc	r21, r25
+     778:	5f 83       	std	Y+7, r21	; 0x07
+     77a:	4e 83       	std	Y+6, r20	; 0x06
+		}
+	}
+
+	++( pxQueue->uxMessagesWaiting );
+     77c:	8a 8d       	ldd	r24, Y+26	; 0x1a
+     77e:	8f 5f       	subi	r24, 0xFF	; 255
+     780:	8a 8f       	std	Y+26, r24	; 0x1a
+}
+     782:	df 91       	pop	r29
+     784:	cf 91       	pop	r28
+     786:	08 95       	ret
+
+00000788 <prvUnlockQueue>:
+	}
+}
+/*-----------------------------------------------------------*/
+
+static void prvUnlockQueue( xQueueHandle pxQueue )
+{
+     788:	0f 93       	push	r16
+     78a:	1f 93       	push	r17
+     78c:	cf 93       	push	r28
+     78e:	df 93       	push	r29
+     790:	ec 01       	movw	r28, r24
+
+	/* The lock counts contains the number of extra data items placed or
+	removed from the queue while the queue was locked.  When a queue is
+	locked items can be added or removed, but the event lists cannot be
+	updated. */
+	taskENTER_CRITICAL();
+     792:	0f b6       	in	r0, 0x3f	; 63
+     794:	f8 94       	cli
+     796:	0f 92       	push	r0
+	{
+		/* See if data was added to the queue while it was locked. */
+		while( pxQueue->xTxLock > queueLOCKED_UNMODIFIED )
+     798:	8e 8d       	ldd	r24, Y+30	; 0x1e
+     79a:	18 16       	cp	r1, r24
+     79c:	c4 f4       	brge	.+48     	; 0x7ce <prvUnlockQueue+0x46>
+		{
+			/* Data was posted while the queue was locked.  Are any tasks
+			blocked waiting for data to become available? */
+			if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToReceive ) ) == pdFALSE )
+     79e:	89 89       	ldd	r24, Y+17	; 0x11
+     7a0:	88 23       	and	r24, r24
+     7a2:	29 f4       	brne	.+10     	; 0x7ae <prvUnlockQueue+0x26>
+     7a4:	14 c0       	rjmp	.+40     	; 0x7ce <prvUnlockQueue+0x46>
+     7a6:	89 89       	ldd	r24, Y+17	; 0x11
+     7a8:	88 23       	and	r24, r24
+     7aa:	21 f4       	brne	.+8      	; 0x7b4 <prvUnlockQueue+0x2c>
+     7ac:	10 c0       	rjmp	.+32     	; 0x7ce <prvUnlockQueue+0x46>
+			{
+				/* Tasks that are removed from the event list will get added to
+				the pending ready list as the scheduler is still suspended. */
+				if( xTaskRemoveFromEventList( &( pxQueue->xTasksWaitingToReceive ) ) != pdFALSE )
+     7ae:	8e 01       	movw	r16, r28
+     7b0:	0f 5e       	subi	r16, 0xEF	; 239
+     7b2:	1f 4f       	sbci	r17, 0xFF	; 255
+     7b4:	c8 01       	movw	r24, r16
+     7b6:	0e 94 47 0c 	call	0x188e	; 0x188e <xTaskRemoveFromEventList>
+     7ba:	88 23       	and	r24, r24
+     7bc:	11 f0       	breq	.+4      	; 0x7c2 <prvUnlockQueue+0x3a>
+				{
+					/* The task waiting has a higher priority so record that a
+					context	switch is required. */
+					vTaskMissedYield();
+     7be:	0e 94 d8 0c 	call	0x19b0	; 0x19b0 <vTaskMissedYield>
+				}
+
+				--( pxQueue->xTxLock );
+     7c2:	8e 8d       	ldd	r24, Y+30	; 0x1e
+     7c4:	81 50       	subi	r24, 0x01	; 1
+     7c6:	8e 8f       	std	Y+30, r24	; 0x1e
+	locked items can be added or removed, but the event lists cannot be
+	updated. */
+	taskENTER_CRITICAL();
+	{
+		/* See if data was added to the queue while it was locked. */
+		while( pxQueue->xTxLock > queueLOCKED_UNMODIFIED )
+     7c8:	8e 8d       	ldd	r24, Y+30	; 0x1e
+     7ca:	18 16       	cp	r1, r24
+     7cc:	64 f3       	brlt	.-40     	; 0x7a6 <prvUnlockQueue+0x1e>
+			{
+				break;
+			}
+		}
+
+		pxQueue->xTxLock = queueUNLOCKED;
+     7ce:	8f ef       	ldi	r24, 0xFF	; 255
+     7d0:	8e 8f       	std	Y+30, r24	; 0x1e
+	}
+	taskEXIT_CRITICAL();
+     7d2:	0f 90       	pop	r0
+     7d4:	0f be       	out	0x3f, r0	; 63
+
+	/* Do the same for the Rx lock. */
+	taskENTER_CRITICAL();
+     7d6:	0f b6       	in	r0, 0x3f	; 63
+     7d8:	f8 94       	cli
+     7da:	0f 92       	push	r0
+	{
+		while( pxQueue->xRxLock > queueLOCKED_UNMODIFIED )
+     7dc:	8d 8d       	ldd	r24, Y+29	; 0x1d
+     7de:	18 16       	cp	r1, r24
+     7e0:	c4 f4       	brge	.+48     	; 0x812 <prvUnlockQueue+0x8a>
+		{
+			if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToSend ) ) == pdFALSE )
+     7e2:	88 85       	ldd	r24, Y+8	; 0x08
+     7e4:	88 23       	and	r24, r24
+     7e6:	29 f4       	brne	.+10     	; 0x7f2 <prvUnlockQueue+0x6a>
+     7e8:	14 c0       	rjmp	.+40     	; 0x812 <prvUnlockQueue+0x8a>
+     7ea:	88 85       	ldd	r24, Y+8	; 0x08
+     7ec:	88 23       	and	r24, r24
+     7ee:	21 f4       	brne	.+8      	; 0x7f8 <prvUnlockQueue+0x70>
+     7f0:	10 c0       	rjmp	.+32     	; 0x812 <prvUnlockQueue+0x8a>
+			{
+				if( xTaskRemoveFromEventList( &( pxQueue->xTasksWaitingToSend ) ) != pdFALSE )
+     7f2:	8e 01       	movw	r16, r28
+     7f4:	08 5f       	subi	r16, 0xF8	; 248
+     7f6:	1f 4f       	sbci	r17, 0xFF	; 255
+     7f8:	c8 01       	movw	r24, r16
+     7fa:	0e 94 47 0c 	call	0x188e	; 0x188e <xTaskRemoveFromEventList>
+     7fe:	88 23       	and	r24, r24
+     800:	11 f0       	breq	.+4      	; 0x806 <prvUnlockQueue+0x7e>
+				{
+					vTaskMissedYield();
+     802:	0e 94 d8 0c 	call	0x19b0	; 0x19b0 <vTaskMissedYield>
+				}
+
+				--( pxQueue->xRxLock );
+     806:	8d 8d       	ldd	r24, Y+29	; 0x1d
+     808:	81 50       	subi	r24, 0x01	; 1
+     80a:	8d 8f       	std	Y+29, r24	; 0x1d
+	taskEXIT_CRITICAL();
+
+	/* Do the same for the Rx lock. */
+	taskENTER_CRITICAL();
+	{
+		while( pxQueue->xRxLock > queueLOCKED_UNMODIFIED )
+     80c:	8d 8d       	ldd	r24, Y+29	; 0x1d
+     80e:	18 16       	cp	r1, r24
+     810:	64 f3       	brlt	.-40     	; 0x7ea <prvUnlockQueue+0x62>
+			{
+				break;
+			}
+		}
+
+		pxQueue->xRxLock = queueUNLOCKED;
+     812:	8f ef       	ldi	r24, 0xFF	; 255
+     814:	8d 8f       	std	Y+29, r24	; 0x1d
+	}
+	taskEXIT_CRITICAL();
+     816:	0f 90       	pop	r0
+     818:	0f be       	out	0x3f, r0	; 63
+}
+     81a:	df 91       	pop	r29
+     81c:	cf 91       	pop	r28
+     81e:	1f 91       	pop	r17
+     820:	0f 91       	pop	r16
+     822:	08 95       	ret
+
+00000824 <xQueueGenericReset>:
+/*-----------------------------------------------------------
+ * PUBLIC QUEUE MANAGEMENT API documented in queue.h
+ *----------------------------------------------------------*/
+
+portBASE_TYPE xQueueGenericReset( xQueueHandle pxQueue, portBASE_TYPE xNewQueue )
+{
+     824:	cf 93       	push	r28
+     826:	df 93       	push	r29
+     828:	ec 01       	movw	r28, r24
+	configASSERT( pxQueue );
+
+	taskENTER_CRITICAL();
+     82a:	0f b6       	in	r0, 0x3f	; 63
+     82c:	f8 94       	cli
+     82e:	0f 92       	push	r0
+	{
+		pxQueue->pcTail = pxQueue->pcHead + ( pxQueue->uxLength * pxQueue->uxItemSize );
+     830:	48 81       	ld	r20, Y
+     832:	59 81       	ldd	r21, Y+1	; 0x01
+     834:	2b 8d       	ldd	r18, Y+27	; 0x1b
+     836:	30 e0       	ldi	r19, 0x00	; 0
+     838:	ec 8d       	ldd	r30, Y+28	; 0x1c
+     83a:	f0 e0       	ldi	r31, 0x00	; 0
+     83c:	2e 9f       	mul	r18, r30
+     83e:	c0 01       	movw	r24, r0
+     840:	2f 9f       	mul	r18, r31
+     842:	90 0d       	add	r25, r0
+     844:	3e 9f       	mul	r19, r30
+     846:	90 0d       	add	r25, r0
+     848:	11 24       	eor	r1, r1
+     84a:	84 0f       	add	r24, r20
+     84c:	95 1f       	adc	r25, r21
+     84e:	9b 83       	std	Y+3, r25	; 0x03
+     850:	8a 83       	std	Y+2, r24	; 0x02
+		pxQueue->uxMessagesWaiting = ( unsigned portBASE_TYPE ) 0U;
+     852:	1a 8e       	std	Y+26, r1	; 0x1a
+		pxQueue->pcWriteTo = pxQueue->pcHead;
+     854:	5d 83       	std	Y+5, r21	; 0x05
+     856:	4c 83       	std	Y+4, r20	; 0x04
+		pxQueue->pcReadFrom = pxQueue->pcHead + ( ( pxQueue->uxLength - ( unsigned portBASE_TYPE ) 1U ) * pxQueue->uxItemSize );
+     858:	c9 01       	movw	r24, r18
+     85a:	01 97       	sbiw	r24, 0x01	; 1
+     85c:	e8 9f       	mul	r30, r24
+     85e:	90 01       	movw	r18, r0
+     860:	e9 9f       	mul	r30, r25
+     862:	30 0d       	add	r19, r0
+     864:	f8 9f       	mul	r31, r24
+     866:	30 0d       	add	r19, r0
+     868:	11 24       	eor	r1, r1
+     86a:	24 0f       	add	r18, r20
+     86c:	35 1f       	adc	r19, r21
+     86e:	3f 83       	std	Y+7, r19	; 0x07
+     870:	2e 83       	std	Y+6, r18	; 0x06
+		pxQueue->xRxLock = queueUNLOCKED;
+     872:	8f ef       	ldi	r24, 0xFF	; 255
+     874:	8d 8f       	std	Y+29, r24	; 0x1d
+		pxQueue->xTxLock = queueUNLOCKED;
+     876:	8e 8f       	std	Y+30, r24	; 0x1e
+
+		if( xNewQueue == pdFALSE )
+     878:	66 23       	and	r22, r22
+     87a:	61 f4       	brne	.+24     	; 0x894 <xQueueGenericReset+0x70>
+			/* If there are tasks blocked waiting to read from the queue, then 
+			the tasks will remain blocked as after this function exits the queue 
+			will still be empty.  If there are tasks blocked waiting to	write to 
+			the queue, then one should be unblocked as after this function exits 
+			it will be possible to write to it. */
+			if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToSend ) ) == pdFALSE )
+     87c:	88 85       	ldd	r24, Y+8	; 0x08
+     87e:	88 23       	and	r24, r24
+     880:	89 f0       	breq	.+34     	; 0x8a4 <xQueueGenericReset+0x80>
+			{
+				if( xTaskRemoveFromEventList( &( pxQueue->xTasksWaitingToSend ) ) == pdTRUE )
+     882:	ce 01       	movw	r24, r28
+     884:	08 96       	adiw	r24, 0x08	; 8
+     886:	0e 94 47 0c 	call	0x188e	; 0x188e <xTaskRemoveFromEventList>
+     88a:	81 30       	cpi	r24, 0x01	; 1
+     88c:	59 f4       	brne	.+22     	; 0x8a4 <xQueueGenericReset+0x80>
+				{
+					portYIELD_WITHIN_API();
+     88e:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+     892:	08 c0       	rjmp	.+16     	; 0x8a4 <xQueueGenericReset+0x80>
+			}
+		}
+		else
+		{
+			/* Ensure the event queues start in the correct state. */
+			vListInitialise( &( pxQueue->xTasksWaitingToSend ) );
+     894:	ce 01       	movw	r24, r28
+     896:	08 96       	adiw	r24, 0x08	; 8
+     898:	0e 94 cd 00 	call	0x19a	; 0x19a <vListInitialise>
+			vListInitialise( &( pxQueue->xTasksWaitingToReceive ) );		
+     89c:	ce 01       	movw	r24, r28
+     89e:	41 96       	adiw	r24, 0x11	; 17
+     8a0:	0e 94 cd 00 	call	0x19a	; 0x19a <vListInitialise>
+		}
+	}
+	taskEXIT_CRITICAL();
+     8a4:	0f 90       	pop	r0
+     8a6:	0f be       	out	0x3f, r0	; 63
+
+	/* A value is returned for calling semantic consistency with previous
+	versions. */
+	return pdPASS;
+}
+     8a8:	81 e0       	ldi	r24, 0x01	; 1
+     8aa:	df 91       	pop	r29
+     8ac:	cf 91       	pop	r28
+     8ae:	08 95       	ret
+
+000008b0 <xQueueGenericCreate>:
+/*-----------------------------------------------------------*/
+
+xQueueHandle xQueueGenericCreate( unsigned portBASE_TYPE uxQueueLength, unsigned portBASE_TYPE uxItemSize, unsigned char ucQueueType )
+{
+     8b0:	0f 93       	push	r16
+     8b2:	1f 93       	push	r17
+     8b4:	cf 93       	push	r28
+     8b6:	df 93       	push	r29
+     8b8:	18 2f       	mov	r17, r24
+     8ba:	06 2f       	mov	r16, r22
+	/* Remove compiler warnings about unused parameters should
+	configUSE_TRACE_FACILITY not be set to 1. */
+	( void ) ucQueueType;
+
+	/* Allocate the new queue structure. */
+	if( uxQueueLength > ( unsigned portBASE_TYPE ) 0 )
+     8bc:	88 23       	and	r24, r24
+     8be:	f9 f0       	breq	.+62     	; 0x8fe <xQueueGenericCreate+0x4e>
+	{
+		pxNewQueue = ( xQUEUE * ) pvPortMalloc( sizeof( xQUEUE ) );
+     8c0:	8f e1       	ldi	r24, 0x1F	; 31
+     8c2:	90 e0       	ldi	r25, 0x00	; 0
+     8c4:	0e 94 95 00 	call	0x12a	; 0x12a <pvPortMalloc>
+     8c8:	ec 01       	movw	r28, r24
+		if( pxNewQueue != NULL )
+     8ca:	00 97       	sbiw	r24, 0x00	; 0
+     8cc:	d9 f0       	breq	.+54     	; 0x904 <xQueueGenericCreate+0x54>
+		{
+			/* Create the list of pointers to queue items.  The queue is one byte
+			longer than asked for to make wrap checking easier/faster. */
+			xQueueSizeInBytes = ( size_t ) ( uxQueueLength * uxItemSize ) + ( size_t ) 1;
+     8ce:	01 9f       	mul	r16, r17
+     8d0:	c0 01       	movw	r24, r0
+     8d2:	11 24       	eor	r1, r1
+
+			pxNewQueue->pcHead = ( signed char * ) pvPortMalloc( xQueueSizeInBytes );
+     8d4:	01 96       	adiw	r24, 0x01	; 1
+     8d6:	0e 94 95 00 	call	0x12a	; 0x12a <pvPortMalloc>
+     8da:	99 83       	std	Y+1, r25	; 0x01
+     8dc:	88 83       	st	Y, r24
+			if( pxNewQueue->pcHead != NULL )
+     8de:	00 97       	sbiw	r24, 0x00	; 0
+     8e0:	41 f0       	breq	.+16     	; 0x8f2 <xQueueGenericCreate+0x42>
+			{
+				/* Initialise the queue members as described above where the
+				queue type is defined. */
+				pxNewQueue->uxLength = uxQueueLength;
+     8e2:	1b 8f       	std	Y+27, r17	; 0x1b
+				pxNewQueue->uxItemSize = uxItemSize;
+     8e4:	0c 8f       	std	Y+28, r16	; 0x1c
+				xQueueGenericReset( pxNewQueue, pdTRUE );
+     8e6:	ce 01       	movw	r24, r28
+     8e8:	61 e0       	ldi	r22, 0x01	; 1
+     8ea:	0e 94 12 04 	call	0x824	; 0x824 <xQueueGenericReset>
+					pxNewQueue->ucQueueType = ucQueueType;
+				}
+				#endif /* configUSE_TRACE_FACILITY */
+
+				traceQUEUE_CREATE( pxNewQueue );
+				xReturn = pxNewQueue;
+     8ee:	ce 01       	movw	r24, r28
+     8f0:	0b c0       	rjmp	.+22     	; 0x908 <xQueueGenericCreate+0x58>
+			}
+			else
+			{
+				traceQUEUE_CREATE_FAILED( ucQueueType );
+				vPortFree( pxNewQueue );
+     8f2:	ce 01       	movw	r24, r28
+     8f4:	0e 94 be 00 	call	0x17c	; 0x17c <vPortFree>
+
+xQueueHandle xQueueGenericCreate( unsigned portBASE_TYPE uxQueueLength, unsigned portBASE_TYPE uxItemSize, unsigned char ucQueueType )
+{
+xQUEUE *pxNewQueue;
+size_t xQueueSizeInBytes;
+xQueueHandle xReturn = NULL;
+     8f8:	80 e0       	ldi	r24, 0x00	; 0
+     8fa:	90 e0       	ldi	r25, 0x00	; 0
+     8fc:	05 c0       	rjmp	.+10     	; 0x908 <xQueueGenericCreate+0x58>
+     8fe:	80 e0       	ldi	r24, 0x00	; 0
+     900:	90 e0       	ldi	r25, 0x00	; 0
+     902:	02 c0       	rjmp	.+4      	; 0x908 <xQueueGenericCreate+0x58>
+     904:	80 e0       	ldi	r24, 0x00	; 0
+     906:	90 e0       	ldi	r25, 0x00	; 0
+	}
+
+	configASSERT( xReturn );
+
+	return xReturn;
+}
+     908:	df 91       	pop	r29
+     90a:	cf 91       	pop	r28
+     90c:	1f 91       	pop	r17
+     90e:	0f 91       	pop	r16
+     910:	08 95       	ret
+
+00000912 <xQueueGenericSend>:
+
+#endif /* configUSE_COUNTING_SEMAPHORES */
+/*-----------------------------------------------------------*/
+
+signed portBASE_TYPE xQueueGenericSend( xQueueHandle pxQueue, const void * const pvItemToQueue, portTickType xTicksToWait, portBASE_TYPE xCopyPosition )
+{
+     912:	8f 92       	push	r8
+     914:	9f 92       	push	r9
+     916:	bf 92       	push	r11
+     918:	cf 92       	push	r12
+     91a:	df 92       	push	r13
+     91c:	ef 92       	push	r14
+     91e:	ff 92       	push	r15
+     920:	0f 93       	push	r16
+     922:	1f 93       	push	r17
+     924:	cf 93       	push	r28
+     926:	df 93       	push	r29
+     928:	00 d0       	rcall	.+0      	; 0x92a <xQueueGenericSend+0x18>
+     92a:	0f 92       	push	r0
+     92c:	0f 92       	push	r0
+     92e:	cd b7       	in	r28, 0x3d	; 61
+     930:	de b7       	in	r29, 0x3e	; 62
+     932:	8c 01       	movw	r16, r24
+     934:	4b 01       	movw	r8, r22
+     936:	5d 83       	std	Y+5, r21	; 0x05
+     938:	4c 83       	std	Y+4, r20	; 0x04
+     93a:	b2 2e       	mov	r11, r18
+signed portBASE_TYPE xEntryTimeSet = pdFALSE;
+     93c:	ff 24       	eor	r15, r15
+				else if( xEntryTimeSet == pdFALSE )
+				{
+					/* The queue was full and a block time was specified so
+					configure the timeout structure. */
+					vTaskSetTimeOutState( &xTimeOut );
+					xEntryTimeSet = pdTRUE;
+     93e:	ee 24       	eor	r14, r14
+     940:	e3 94       	inc	r14
+		if( xTaskCheckForTimeOut( &xTimeOut, &xTicksToWait ) == pdFALSE )
+		{
+			if( prvIsQueueFull( pxQueue ) != pdFALSE )
+			{
+				traceBLOCKING_ON_QUEUE_SEND( pxQueue );
+				vTaskPlaceOnEventList( &( pxQueue->xTasksWaitingToSend ), xTicksToWait );
+     942:	cc 24       	eor	r12, r12
+     944:	dd 24       	eor	r13, r13
+     946:	68 94       	set
+     948:	c3 f8       	bld	r12, 3
+     94a:	c8 0e       	add	r12, r24
+     94c:	d9 1e       	adc	r13, r25
+	/* This function relaxes the coding standard somewhat to allow return
+	statements within the function itself.  This is done in the interest
+	of execution time efficiency. */
+	for( ;; )
+	{
+		taskENTER_CRITICAL();
+     94e:	0f b6       	in	r0, 0x3f	; 63
+     950:	f8 94       	cli
+     952:	0f 92       	push	r0
+		{
+			/* Is there room on the queue now?  To be running we must be
+			the highest priority task wanting to access the queue. */
+			if( pxQueue->uxMessagesWaiting < pxQueue->uxLength )
+     954:	f8 01       	movw	r30, r16
+     956:	92 8d       	ldd	r25, Z+26	; 0x1a
+     958:	83 8d       	ldd	r24, Z+27	; 0x1b
+     95a:	98 17       	cp	r25, r24
+     95c:	a8 f4       	brcc	.+42     	; 0x988 <xQueueGenericSend+0x76>
+			{
+				traceQUEUE_SEND( pxQueue );
+				prvCopyDataToQueue( pxQueue, pvItemToQueue, xCopyPosition );
+     95e:	c8 01       	movw	r24, r16
+     960:	b4 01       	movw	r22, r8
+     962:	4b 2d       	mov	r20, r11
+     964:	0e 94 83 03 	call	0x706	; 0x706 <prvCopyDataToQueue>
+
+				/* If there was a task waiting for data to arrive on the
+				queue then unblock it now. */
+				if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToReceive ) ) == pdFALSE )
+     968:	f8 01       	movw	r30, r16
+     96a:	81 89       	ldd	r24, Z+17	; 0x11
+     96c:	88 23       	and	r24, r24
+     96e:	41 f0       	breq	.+16     	; 0x980 <xQueueGenericSend+0x6e>
+				{
+					if( xTaskRemoveFromEventList( &( pxQueue->xTasksWaitingToReceive ) ) == pdTRUE )
+     970:	c8 01       	movw	r24, r16
+     972:	41 96       	adiw	r24, 0x11	; 17
+     974:	0e 94 47 0c 	call	0x188e	; 0x188e <xTaskRemoveFromEventList>
+     978:	81 30       	cpi	r24, 0x01	; 1
+     97a:	11 f4       	brne	.+4      	; 0x980 <xQueueGenericSend+0x6e>
+					{
+						/* The unblocked task has a priority higher than
+						our own so yield immediately.  Yes it is ok to do
+						this from within the critical section - the kernel
+						takes care of that. */
+						portYIELD_WITHIN_API();
+     97c:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+					}
+				}
+
+				taskEXIT_CRITICAL();
+     980:	0f 90       	pop	r0
+     982:	0f be       	out	0x3f, r0	; 63
+
+				/* Return to the original privilege level before exiting the
+				function. */
+				return pdPASS;
+     984:	81 e0       	ldi	r24, 0x01	; 1
+     986:	52 c0       	rjmp	.+164    	; 0xa2c <xQueueGenericSend+0x11a>
+			}
+			else
+			{
+				if( xTicksToWait == ( portTickType ) 0 )
+     988:	8c 81       	ldd	r24, Y+4	; 0x04
+     98a:	9d 81       	ldd	r25, Y+5	; 0x05
+     98c:	00 97       	sbiw	r24, 0x00	; 0
+     98e:	21 f4       	brne	.+8      	; 0x998 <xQueueGenericSend+0x86>
+				{
+					/* The queue was full and no block time is specified (or
+					the block time has expired) so leave now. */
+					taskEXIT_CRITICAL();
+     990:	0f 90       	pop	r0
+     992:	0f be       	out	0x3f, r0	; 63
+
+					/* Return to the original privilege level before exiting
+					the function. */
+					traceQUEUE_SEND_FAILED( pxQueue );
+					return errQUEUE_FULL;
+     994:	80 e0       	ldi	r24, 0x00	; 0
+     996:	4a c0       	rjmp	.+148    	; 0xa2c <xQueueGenericSend+0x11a>
+				}
+				else if( xEntryTimeSet == pdFALSE )
+     998:	ff 20       	and	r15, r15
+     99a:	29 f4       	brne	.+10     	; 0x9a6 <xQueueGenericSend+0x94>
+				{
+					/* The queue was full and a block time was specified so
+					configure the timeout structure. */
+					vTaskSetTimeOutState( &xTimeOut );
+     99c:	ce 01       	movw	r24, r28
+     99e:	01 96       	adiw	r24, 0x01	; 1
+     9a0:	0e 94 8f 0c 	call	0x191e	; 0x191e <vTaskSetTimeOutState>
+					xEntryTimeSet = pdTRUE;
+     9a4:	fe 2c       	mov	r15, r14
+				}
+			}
+		}
+		taskEXIT_CRITICAL();
+     9a6:	0f 90       	pop	r0
+     9a8:	0f be       	out	0x3f, r0	; 63
+
+		/* Interrupts and other tasks can send to and receive from the queue
+		now the critical section has been exited. */
+
+		vTaskSuspendAll();
+     9aa:	0e 94 54 09 	call	0x12a8	; 0x12a8 <vTaskSuspendAll>
+		prvLockQueue( pxQueue );
+     9ae:	0f b6       	in	r0, 0x3f	; 63
+     9b0:	f8 94       	cli
+     9b2:	0f 92       	push	r0
+     9b4:	f8 01       	movw	r30, r16
+     9b6:	85 8d       	ldd	r24, Z+29	; 0x1d
+     9b8:	8f 3f       	cpi	r24, 0xFF	; 255
+     9ba:	09 f4       	brne	.+2      	; 0x9be <xQueueGenericSend+0xac>
+     9bc:	15 8e       	std	Z+29, r1	; 0x1d
+     9be:	f8 01       	movw	r30, r16
+     9c0:	86 8d       	ldd	r24, Z+30	; 0x1e
+     9c2:	8f 3f       	cpi	r24, 0xFF	; 255
+     9c4:	09 f4       	brne	.+2      	; 0x9c8 <xQueueGenericSend+0xb6>
+     9c6:	16 8e       	std	Z+30, r1	; 0x1e
+     9c8:	0f 90       	pop	r0
+     9ca:	0f be       	out	0x3f, r0	; 63
+
+		/* Update the timeout state to see if it has expired yet. */
+		if( xTaskCheckForTimeOut( &xTimeOut, &xTicksToWait ) == pdFALSE )
+     9cc:	ce 01       	movw	r24, r28
+     9ce:	01 96       	adiw	r24, 0x01	; 1
+     9d0:	be 01       	movw	r22, r28
+     9d2:	6c 5f       	subi	r22, 0xFC	; 252
+     9d4:	7f 4f       	sbci	r23, 0xFF	; 255
+     9d6:	0e 94 9a 0c 	call	0x1934	; 0x1934 <xTaskCheckForTimeOut>
+     9da:	88 23       	and	r24, r24
+     9dc:	09 f5       	brne	.+66     	; 0xa20 <xQueueGenericSend+0x10e>
+
+static signed portBASE_TYPE prvIsQueueFull( const xQueueHandle pxQueue )
+{
+signed portBASE_TYPE xReturn;
+
+	taskENTER_CRITICAL();
+     9de:	0f b6       	in	r0, 0x3f	; 63
+     9e0:	f8 94       	cli
+     9e2:	0f 92       	push	r0
+		xReturn = ( pxQueue->uxMessagesWaiting == pxQueue->uxLength );
+     9e4:	f8 01       	movw	r30, r16
+     9e6:	92 8d       	ldd	r25, Z+26	; 0x1a
+	taskEXIT_CRITICAL();
+     9e8:	0f 90       	pop	r0
+     9ea:	0f be       	out	0x3f, r0	; 63
+		prvLockQueue( pxQueue );
+
+		/* Update the timeout state to see if it has expired yet. */
+		if( xTaskCheckForTimeOut( &xTimeOut, &xTicksToWait ) == pdFALSE )
+		{
+			if( prvIsQueueFull( pxQueue ) != pdFALSE )
+     9ec:	f8 01       	movw	r30, r16
+     9ee:	83 8d       	ldd	r24, Z+27	; 0x1b
+     9f0:	98 17       	cp	r25, r24
+     9f2:	81 f4       	brne	.+32     	; 0xa14 <xQueueGenericSend+0x102>
+			{
+				traceBLOCKING_ON_QUEUE_SEND( pxQueue );
+				vTaskPlaceOnEventList( &( pxQueue->xTasksWaitingToSend ), xTicksToWait );
+     9f4:	6c 81       	ldd	r22, Y+4	; 0x04
+     9f6:	7d 81       	ldd	r23, Y+5	; 0x05
+     9f8:	c6 01       	movw	r24, r12
+     9fa:	0e 94 1b 0c 	call	0x1836	; 0x1836 <vTaskPlaceOnEventList>
+				/* Unlocking the queue means queue events can effect the
+				event list.  It is possible	that interrupts occurring now
+				remove this task from the event	list again - but as the
+				scheduler is suspended the task will go onto the pending
+				ready last instead of the actual ready list. */
+				prvUnlockQueue( pxQueue );
+     9fe:	c8 01       	movw	r24, r16
+     a00:	0e 94 c4 03 	call	0x788	; 0x788 <prvUnlockQueue>
+				/* Resuming the scheduler will move tasks from the pending
+				ready list into the ready list - so it is feasible that this
+				task is already in a ready list before it yields - in which
+				case the yield will not cause a context switch unless there
+				is also a higher priority task in the pending ready list. */
+				if( xTaskResumeAll() == pdFALSE )
+     a04:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+     a08:	88 23       	and	r24, r24
+     a0a:	09 f0       	breq	.+2      	; 0xa0e <xQueueGenericSend+0xfc>
+     a0c:	a0 cf       	rjmp	.-192    	; 0x94e <xQueueGenericSend+0x3c>
+				{
+					portYIELD_WITHIN_API();
+     a0e:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+     a12:	9d cf       	rjmp	.-198    	; 0x94e <xQueueGenericSend+0x3c>
+				}
+			}
+			else
+			{
+				/* Try again. */
+				prvUnlockQueue( pxQueue );
+     a14:	c8 01       	movw	r24, r16
+     a16:	0e 94 c4 03 	call	0x788	; 0x788 <prvUnlockQueue>
+				( void ) xTaskResumeAll();
+     a1a:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+     a1e:	97 cf       	rjmp	.-210    	; 0x94e <xQueueGenericSend+0x3c>
+			}
+		}
+		else
+		{
+			/* The timeout has expired. */
+			prvUnlockQueue( pxQueue );
+     a20:	c8 01       	movw	r24, r16
+     a22:	0e 94 c4 03 	call	0x788	; 0x788 <prvUnlockQueue>
+			( void ) xTaskResumeAll();
+     a26:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+
+			/* Return to the original privilege level before exiting the
+			function. */
+			traceQUEUE_SEND_FAILED( pxQueue );
+			return errQUEUE_FULL;
+     a2a:	80 e0       	ldi	r24, 0x00	; 0
+		}
+	}
+}
+     a2c:	0f 90       	pop	r0
+     a2e:	0f 90       	pop	r0
+     a30:	0f 90       	pop	r0
+     a32:	0f 90       	pop	r0
+     a34:	0f 90       	pop	r0
+     a36:	df 91       	pop	r29
+     a38:	cf 91       	pop	r28
+     a3a:	1f 91       	pop	r17
+     a3c:	0f 91       	pop	r16
+     a3e:	ff 90       	pop	r15
+     a40:	ef 90       	pop	r14
+     a42:	df 90       	pop	r13
+     a44:	cf 90       	pop	r12
+     a46:	bf 90       	pop	r11
+     a48:	9f 90       	pop	r9
+     a4a:	8f 90       	pop	r8
+     a4c:	08 95       	ret
+
+00000a4e <xQueueGenericSendFromISR>:
+
+#endif /* configUSE_ALTERNATIVE_API */
+/*-----------------------------------------------------------*/
+
+signed portBASE_TYPE xQueueGenericSendFromISR( xQueueHandle pxQueue, const void * const pvItemToQueue, signed portBASE_TYPE *pxHigherPriorityTaskWoken, portBASE_TYPE xCopyPosition )
+{
+     a4e:	0f 93       	push	r16
+     a50:	1f 93       	push	r17
+     a52:	cf 93       	push	r28
+     a54:	df 93       	push	r29
+     a56:	ec 01       	movw	r28, r24
+     a58:	8a 01       	movw	r16, r20
+	queue read, instead we return a flag to say whether a context switch is
+	required or not (i.e. has a task with a higher priority than us been woken
+	by this	post). */
+	uxSavedInterruptStatus = portSET_INTERRUPT_MASK_FROM_ISR();
+	{
+		if( pxQueue->uxMessagesWaiting < pxQueue->uxLength )
+     a5a:	9a 8d       	ldd	r25, Y+26	; 0x1a
+     a5c:	8b 8d       	ldd	r24, Y+27	; 0x1b
+     a5e:	98 17       	cp	r25, r24
+     a60:	e0 f4       	brcc	.+56     	; 0xa9a <xQueueGenericSendFromISR+0x4c>
+		{
+			traceQUEUE_SEND_FROM_ISR( pxQueue );
+
+			prvCopyDataToQueue( pxQueue, pvItemToQueue, xCopyPosition );
+     a62:	ce 01       	movw	r24, r28
+     a64:	42 2f       	mov	r20, r18
+     a66:	0e 94 83 03 	call	0x706	; 0x706 <prvCopyDataToQueue>
+
+			/* If the queue is locked we do not alter the event list.  This will
+			be done when the queue is unlocked later. */
+			if( pxQueue->xTxLock == queueUNLOCKED )
+     a6a:	8e 8d       	ldd	r24, Y+30	; 0x1e
+     a6c:	8f 3f       	cpi	r24, 0xFF	; 255
+     a6e:	81 f4       	brne	.+32     	; 0xa90 <xQueueGenericSendFromISR+0x42>
+			{
+				if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToReceive ) ) == pdFALSE )
+     a70:	89 89       	ldd	r24, Y+17	; 0x11
+     a72:	88 23       	and	r24, r24
+     a74:	a1 f0       	breq	.+40     	; 0xa9e <xQueueGenericSendFromISR+0x50>
+				{
+					if( xTaskRemoveFromEventList( &( pxQueue->xTasksWaitingToReceive ) ) != pdFALSE )
+     a76:	ce 01       	movw	r24, r28
+     a78:	41 96       	adiw	r24, 0x11	; 17
+     a7a:	0e 94 47 0c 	call	0x188e	; 0x188e <xTaskRemoveFromEventList>
+     a7e:	88 23       	and	r24, r24
+     a80:	81 f0       	breq	.+32     	; 0xaa2 <xQueueGenericSendFromISR+0x54>
+					{
+						/* The task waiting has a higher priority so record that a
+						context	switch is required. */
+						if( pxHigherPriorityTaskWoken != NULL )
+     a82:	01 15       	cp	r16, r1
+     a84:	11 05       	cpc	r17, r1
+     a86:	79 f0       	breq	.+30     	; 0xaa6 <xQueueGenericSendFromISR+0x58>
+						{
+							*pxHigherPriorityTaskWoken = pdTRUE;
+     a88:	81 e0       	ldi	r24, 0x01	; 1
+     a8a:	f8 01       	movw	r30, r16
+     a8c:	80 83       	st	Z, r24
+     a8e:	0c c0       	rjmp	.+24     	; 0xaa8 <xQueueGenericSendFromISR+0x5a>
+			}
+			else
+			{
+				/* Increment the lock count so the task that unlocks the queue
+				knows that data was posted while it was locked. */
+				++( pxQueue->xTxLock );
+     a90:	8e 8d       	ldd	r24, Y+30	; 0x1e
+     a92:	8f 5f       	subi	r24, 0xFF	; 255
+     a94:	8e 8f       	std	Y+30, r24	; 0x1e
+			}
+
+			xReturn = pdPASS;
+     a96:	81 e0       	ldi	r24, 0x01	; 1
+     a98:	07 c0       	rjmp	.+14     	; 0xaa8 <xQueueGenericSendFromISR+0x5a>
+		}
+		else
+		{
+			traceQUEUE_SEND_FROM_ISR_FAILED( pxQueue );
+			xReturn = errQUEUE_FULL;
+     a9a:	80 e0       	ldi	r24, 0x00	; 0
+     a9c:	05 c0       	rjmp	.+10     	; 0xaa8 <xQueueGenericSendFromISR+0x5a>
+				/* Increment the lock count so the task that unlocks the queue
+				knows that data was posted while it was locked. */
+				++( pxQueue->xTxLock );
+			}
+
+			xReturn = pdPASS;
+     a9e:	81 e0       	ldi	r24, 0x01	; 1
+     aa0:	03 c0       	rjmp	.+6      	; 0xaa8 <xQueueGenericSendFromISR+0x5a>
+     aa2:	81 e0       	ldi	r24, 0x01	; 1
+     aa4:	01 c0       	rjmp	.+2      	; 0xaa8 <xQueueGenericSendFromISR+0x5a>
+     aa6:	81 e0       	ldi	r24, 0x01	; 1
+		}
+	}
+	portCLEAR_INTERRUPT_MASK_FROM_ISR( uxSavedInterruptStatus );
+
+	return xReturn;
+}
+     aa8:	df 91       	pop	r29
+     aaa:	cf 91       	pop	r28
+     aac:	1f 91       	pop	r17
+     aae:	0f 91       	pop	r16
+     ab0:	08 95       	ret
+
+00000ab2 <xQueueGenericReceive>:
+/*-----------------------------------------------------------*/
+
+signed portBASE_TYPE xQueueGenericReceive( xQueueHandle pxQueue, void * const pvBuffer, portTickType xTicksToWait, portBASE_TYPE xJustPeeking )
+{
+     ab2:	8f 92       	push	r8
+     ab4:	9f 92       	push	r9
+     ab6:	bf 92       	push	r11
+     ab8:	cf 92       	push	r12
+     aba:	df 92       	push	r13
+     abc:	ef 92       	push	r14
+     abe:	ff 92       	push	r15
+     ac0:	0f 93       	push	r16
+     ac2:	1f 93       	push	r17
+     ac4:	cf 93       	push	r28
+     ac6:	df 93       	push	r29
+     ac8:	00 d0       	rcall	.+0      	; 0xaca <xQueueGenericReceive+0x18>
+     aca:	0f 92       	push	r0
+     acc:	0f 92       	push	r0
+     ace:	cd b7       	in	r28, 0x3d	; 61
+     ad0:	de b7       	in	r29, 0x3e	; 62
+     ad2:	8c 01       	movw	r16, r24
+     ad4:	4b 01       	movw	r8, r22
+     ad6:	5d 83       	std	Y+5, r21	; 0x05
+     ad8:	4c 83       	std	Y+4, r20	; 0x04
+     ada:	b2 2e       	mov	r11, r18
+signed portBASE_TYPE xEntryTimeSet = pdFALSE;
+     adc:	ff 24       	eor	r15, r15
+				else if( xEntryTimeSet == pdFALSE )
+				{
+					/* The queue was empty and a block time was specified so
+					configure the timeout structure. */
+					vTaskSetTimeOutState( &xTimeOut );
+					xEntryTimeSet = pdTRUE;
+     ade:	ee 24       	eor	r14, r14
+     ae0:	e3 94       	inc	r14
+						portEXIT_CRITICAL();
+					}
+				}
+				#endif
+
+				vTaskPlaceOnEventList( &( pxQueue->xTasksWaitingToReceive ), xTicksToWait );
+     ae2:	0f 2e       	mov	r0, r31
+     ae4:	f1 e1       	ldi	r31, 0x11	; 17
+     ae6:	cf 2e       	mov	r12, r31
+     ae8:	dd 24       	eor	r13, r13
+     aea:	f0 2d       	mov	r31, r0
+     aec:	c8 0e       	add	r12, r24
+     aee:	d9 1e       	adc	r13, r25
+	statements within the function itself.  This is done in the interest
+	of execution time efficiency. */
+
+	for( ;; )
+	{
+		taskENTER_CRITICAL();
+     af0:	0f b6       	in	r0, 0x3f	; 63
+     af2:	f8 94       	cli
+     af4:	0f 92       	push	r0
+		{
+			/* Is there data in the queue now?  To be running we must be
+			the highest priority task wanting to access the queue. */
+			if( pxQueue->uxMessagesWaiting > ( unsigned portBASE_TYPE ) 0 )
+     af6:	f8 01       	movw	r30, r16
+     af8:	82 8d       	ldd	r24, Z+26	; 0x1a
+     afa:	88 23       	and	r24, r24
+     afc:	51 f1       	breq	.+84     	; 0xb52 <xQueueGenericReceive+0xa0>
+			{
+				/* Remember our read position in case we are just peeking. */
+				pcOriginalReadPosition = pxQueue->pcReadFrom;
+     afe:	e6 80       	ldd	r14, Z+6	; 0x06
+     b00:	f7 80       	ldd	r15, Z+7	; 0x07
+
+				prvCopyDataFromQueue( pxQueue, pvBuffer );
+     b02:	c8 01       	movw	r24, r16
+     b04:	b4 01       	movw	r22, r8
+     b06:	0e 94 54 03 	call	0x6a8	; 0x6a8 <prvCopyDataFromQueue>
+
+				if( xJustPeeking == pdFALSE )
+     b0a:	bb 20       	and	r11, r11
+     b0c:	81 f4       	brne	.+32     	; 0xb2e <xQueueGenericReceive+0x7c>
+				{
+					traceQUEUE_RECEIVE( pxQueue );
+
+					/* We are actually removing data. */
+					--( pxQueue->uxMessagesWaiting );
+     b0e:	f8 01       	movw	r30, r16
+     b10:	82 8d       	ldd	r24, Z+26	; 0x1a
+     b12:	81 50       	subi	r24, 0x01	; 1
+     b14:	82 8f       	std	Z+26, r24	; 0x1a
+							pxQueue->pxMutexHolder = xTaskGetCurrentTaskHandle();
+						}
+					}
+					#endif
+
+					if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToSend ) ) == pdFALSE )
+     b16:	80 85       	ldd	r24, Z+8	; 0x08
+     b18:	88 23       	and	r24, r24
+     b1a:	b9 f0       	breq	.+46     	; 0xb4a <xQueueGenericReceive+0x98>
+					{
+						if( xTaskRemoveFromEventList( &( pxQueue->xTasksWaitingToSend ) ) == pdTRUE )
+     b1c:	c8 01       	movw	r24, r16
+     b1e:	08 96       	adiw	r24, 0x08	; 8
+     b20:	0e 94 47 0c 	call	0x188e	; 0x188e <xTaskRemoveFromEventList>
+     b24:	81 30       	cpi	r24, 0x01	; 1
+     b26:	89 f4       	brne	.+34     	; 0xb4a <xQueueGenericReceive+0x98>
+						{
+							portYIELD_WITHIN_API();
+     b28:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+     b2c:	0e c0       	rjmp	.+28     	; 0xb4a <xQueueGenericReceive+0x98>
+				{
+					traceQUEUE_PEEK( pxQueue );
+
+					/* We are not removing the data, so reset our read
+					pointer. */
+					pxQueue->pcReadFrom = pcOriginalReadPosition;
+     b2e:	f8 01       	movw	r30, r16
+     b30:	f7 82       	std	Z+7, r15	; 0x07
+     b32:	e6 82       	std	Z+6, r14	; 0x06
+
+					/* The data is being left in the queue, so see if there are
+					any other tasks waiting for the data. */
+					if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToReceive ) ) == pdFALSE )
+     b34:	81 89       	ldd	r24, Z+17	; 0x11
+     b36:	88 23       	and	r24, r24
+     b38:	41 f0       	breq	.+16     	; 0xb4a <xQueueGenericReceive+0x98>
+					{
+						/* Tasks that are removed from the event list will get added to
+						the pending ready list as the scheduler is still suspended. */
+						if( xTaskRemoveFromEventList( &( pxQueue->xTasksWaitingToReceive ) ) != pdFALSE )
+     b3a:	c8 01       	movw	r24, r16
+     b3c:	41 96       	adiw	r24, 0x11	; 17
+     b3e:	0e 94 47 0c 	call	0x188e	; 0x188e <xTaskRemoveFromEventList>
+     b42:	88 23       	and	r24, r24
+     b44:	11 f0       	breq	.+4      	; 0xb4a <xQueueGenericReceive+0x98>
+						{
+							/* The task waiting has a higher priority than this task. */
+							portYIELD_WITHIN_API();
+     b46:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+						}
+					}
+				}
+
+				taskEXIT_CRITICAL();
+     b4a:	0f 90       	pop	r0
+     b4c:	0f be       	out	0x3f, r0	; 63
+				return pdPASS;
+     b4e:	81 e0       	ldi	r24, 0x01	; 1
+     b50:	50 c0       	rjmp	.+160    	; 0xbf2 <xQueueGenericReceive+0x140>
+			}
+			else
+			{
+				if( xTicksToWait == ( portTickType ) 0 )
+     b52:	8c 81       	ldd	r24, Y+4	; 0x04
+     b54:	9d 81       	ldd	r25, Y+5	; 0x05
+     b56:	00 97       	sbiw	r24, 0x00	; 0
+     b58:	21 f4       	brne	.+8      	; 0xb62 <xQueueGenericReceive+0xb0>
+				{
+					/* The queue was empty and no block time is specified (or
+					the block time has expired) so leave now. */
+					taskEXIT_CRITICAL();
+     b5a:	0f 90       	pop	r0
+     b5c:	0f be       	out	0x3f, r0	; 63
+					traceQUEUE_RECEIVE_FAILED( pxQueue );
+					return errQUEUE_EMPTY;
+     b5e:	80 e0       	ldi	r24, 0x00	; 0
+     b60:	48 c0       	rjmp	.+144    	; 0xbf2 <xQueueGenericReceive+0x140>
+				}
+				else if( xEntryTimeSet == pdFALSE )
+     b62:	ff 20       	and	r15, r15
+     b64:	29 f4       	brne	.+10     	; 0xb70 <xQueueGenericReceive+0xbe>
+				{
+					/* The queue was empty and a block time was specified so
+					configure the timeout structure. */
+					vTaskSetTimeOutState( &xTimeOut );
+     b66:	ce 01       	movw	r24, r28
+     b68:	01 96       	adiw	r24, 0x01	; 1
+     b6a:	0e 94 8f 0c 	call	0x191e	; 0x191e <vTaskSetTimeOutState>
+					xEntryTimeSet = pdTRUE;
+     b6e:	fe 2c       	mov	r15, r14
+				}
+			}
+		}
+		taskEXIT_CRITICAL();
+     b70:	0f 90       	pop	r0
+     b72:	0f be       	out	0x3f, r0	; 63
+
+		/* Interrupts and other tasks can send to and receive from the queue
+		now the critical section has been exited. */
+
+		vTaskSuspendAll();
+     b74:	0e 94 54 09 	call	0x12a8	; 0x12a8 <vTaskSuspendAll>
+		prvLockQueue( pxQueue );
+     b78:	0f b6       	in	r0, 0x3f	; 63
+     b7a:	f8 94       	cli
+     b7c:	0f 92       	push	r0
+     b7e:	f8 01       	movw	r30, r16
+     b80:	85 8d       	ldd	r24, Z+29	; 0x1d
+     b82:	8f 3f       	cpi	r24, 0xFF	; 255
+     b84:	09 f4       	brne	.+2      	; 0xb88 <xQueueGenericReceive+0xd6>
+     b86:	15 8e       	std	Z+29, r1	; 0x1d
+     b88:	f8 01       	movw	r30, r16
+     b8a:	86 8d       	ldd	r24, Z+30	; 0x1e
+     b8c:	8f 3f       	cpi	r24, 0xFF	; 255
+     b8e:	09 f4       	brne	.+2      	; 0xb92 <xQueueGenericReceive+0xe0>
+     b90:	16 8e       	std	Z+30, r1	; 0x1e
+     b92:	0f 90       	pop	r0
+     b94:	0f be       	out	0x3f, r0	; 63
+
+		/* Update the timeout state to see if it has expired yet. */
+		if( xTaskCheckForTimeOut( &xTimeOut, &xTicksToWait ) == pdFALSE )
+     b96:	ce 01       	movw	r24, r28
+     b98:	01 96       	adiw	r24, 0x01	; 1
+     b9a:	be 01       	movw	r22, r28
+     b9c:	6c 5f       	subi	r22, 0xFC	; 252
+     b9e:	7f 4f       	sbci	r23, 0xFF	; 255
+     ba0:	0e 94 9a 0c 	call	0x1934	; 0x1934 <xTaskCheckForTimeOut>
+     ba4:	88 23       	and	r24, r24
+     ba6:	f9 f4       	brne	.+62     	; 0xbe6 <xQueueGenericReceive+0x134>
+
+static signed portBASE_TYPE prvIsQueueEmpty( const xQueueHandle pxQueue )
+{
+signed portBASE_TYPE xReturn;
+
+	taskENTER_CRITICAL();
+     ba8:	0f b6       	in	r0, 0x3f	; 63
+     baa:	f8 94       	cli
+     bac:	0f 92       	push	r0
+		xReturn = ( pxQueue->uxMessagesWaiting == ( unsigned portBASE_TYPE ) 0 );
+     bae:	f8 01       	movw	r30, r16
+     bb0:	82 8d       	ldd	r24, Z+26	; 0x1a
+	taskEXIT_CRITICAL();
+     bb2:	0f 90       	pop	r0
+     bb4:	0f be       	out	0x3f, r0	; 63
+		prvLockQueue( pxQueue );
+
+		/* Update the timeout state to see if it has expired yet. */
+		if( xTaskCheckForTimeOut( &xTimeOut, &xTicksToWait ) == pdFALSE )
+		{
+			if( prvIsQueueEmpty( pxQueue ) != pdFALSE )
+     bb6:	88 23       	and	r24, r24
+     bb8:	81 f4       	brne	.+32     	; 0xbda <xQueueGenericReceive+0x128>
+						portEXIT_CRITICAL();
+					}
+				}
+				#endif
+
+				vTaskPlaceOnEventList( &( pxQueue->xTasksWaitingToReceive ), xTicksToWait );
+     bba:	6c 81       	ldd	r22, Y+4	; 0x04
+     bbc:	7d 81       	ldd	r23, Y+5	; 0x05
+     bbe:	c6 01       	movw	r24, r12
+     bc0:	0e 94 1b 0c 	call	0x1836	; 0x1836 <vTaskPlaceOnEventList>
+				prvUnlockQueue( pxQueue );
+     bc4:	c8 01       	movw	r24, r16
+     bc6:	0e 94 c4 03 	call	0x788	; 0x788 <prvUnlockQueue>
+				if( xTaskResumeAll() == pdFALSE )
+     bca:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+     bce:	88 23       	and	r24, r24
+     bd0:	09 f0       	breq	.+2      	; 0xbd4 <xQueueGenericReceive+0x122>
+     bd2:	8e cf       	rjmp	.-228    	; 0xaf0 <xQueueGenericReceive+0x3e>
+				{
+					portYIELD_WITHIN_API();
+     bd4:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+     bd8:	8b cf       	rjmp	.-234    	; 0xaf0 <xQueueGenericReceive+0x3e>
+				}
+			}
+			else
+			{
+				/* Try again. */
+				prvUnlockQueue( pxQueue );
+     bda:	c8 01       	movw	r24, r16
+     bdc:	0e 94 c4 03 	call	0x788	; 0x788 <prvUnlockQueue>
+				( void ) xTaskResumeAll();
+     be0:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+     be4:	85 cf       	rjmp	.-246    	; 0xaf0 <xQueueGenericReceive+0x3e>
+			}
+		}
+		else
+		{
+			prvUnlockQueue( pxQueue );
+     be6:	c8 01       	movw	r24, r16
+     be8:	0e 94 c4 03 	call	0x788	; 0x788 <prvUnlockQueue>
+			( void ) xTaskResumeAll();
+     bec:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+			traceQUEUE_RECEIVE_FAILED( pxQueue );
+			return errQUEUE_EMPTY;
+     bf0:	80 e0       	ldi	r24, 0x00	; 0
+		}
+	}
+}
+     bf2:	0f 90       	pop	r0
+     bf4:	0f 90       	pop	r0
+     bf6:	0f 90       	pop	r0
+     bf8:	0f 90       	pop	r0
+     bfa:	0f 90       	pop	r0
+     bfc:	df 91       	pop	r29
+     bfe:	cf 91       	pop	r28
+     c00:	1f 91       	pop	r17
+     c02:	0f 91       	pop	r16
+     c04:	ff 90       	pop	r15
+     c06:	ef 90       	pop	r14
+     c08:	df 90       	pop	r13
+     c0a:	cf 90       	pop	r12
+     c0c:	bf 90       	pop	r11
+     c0e:	9f 90       	pop	r9
+     c10:	8f 90       	pop	r8
+     c12:	08 95       	ret
+
+00000c14 <xQueueReceiveFromISR>:
+/*-----------------------------------------------------------*/
+
+signed portBASE_TYPE xQueueReceiveFromISR( xQueueHandle pxQueue, void * const pvBuffer, signed portBASE_TYPE *pxHigherPriorityTaskWoken )
+{
+     c14:	0f 93       	push	r16
+     c16:	1f 93       	push	r17
+     c18:	cf 93       	push	r28
+     c1a:	df 93       	push	r29
+     c1c:	ec 01       	movw	r28, r24
+     c1e:	8a 01       	movw	r16, r20
+	configASSERT( !( ( pvBuffer == NULL ) && ( pxQueue->uxItemSize != ( unsigned portBASE_TYPE ) 0U ) ) );
+
+	uxSavedInterruptStatus = portSET_INTERRUPT_MASK_FROM_ISR();
+	{
+		/* We cannot block from an ISR, so check there is data available. */
+		if( pxQueue->uxMessagesWaiting > ( unsigned portBASE_TYPE ) 0 )
+     c20:	8a 8d       	ldd	r24, Y+26	; 0x1a
+     c22:	88 23       	and	r24, r24
+     c24:	f1 f0       	breq	.+60     	; 0xc62 <xQueueReceiveFromISR+0x4e>
+		{
+			traceQUEUE_RECEIVE_FROM_ISR( pxQueue );
+
+			prvCopyDataFromQueue( pxQueue, pvBuffer );
+     c26:	ce 01       	movw	r24, r28
+     c28:	0e 94 54 03 	call	0x6a8	; 0x6a8 <prvCopyDataFromQueue>
+			--( pxQueue->uxMessagesWaiting );
+     c2c:	8a 8d       	ldd	r24, Y+26	; 0x1a
+     c2e:	81 50       	subi	r24, 0x01	; 1
+     c30:	8a 8f       	std	Y+26, r24	; 0x1a
+
+			/* If the queue is locked we will not modify the event list.  Instead
+			we update the lock count so the task that unlocks the queue will know
+			that an ISR has removed data while the queue was locked. */
+			if( pxQueue->xRxLock == queueUNLOCKED )
+     c32:	8d 8d       	ldd	r24, Y+29	; 0x1d
+     c34:	8f 3f       	cpi	r24, 0xFF	; 255
+     c36:	81 f4       	brne	.+32     	; 0xc58 <xQueueReceiveFromISR+0x44>
+			{
+				if( listLIST_IS_EMPTY( &( pxQueue->xTasksWaitingToSend ) ) == pdFALSE )
+     c38:	88 85       	ldd	r24, Y+8	; 0x08
+     c3a:	88 23       	and	r24, r24
+     c3c:	a1 f0       	breq	.+40     	; 0xc66 <xQueueReceiveFromISR+0x52>
+				{
+					if( xTaskRemoveFromEventList( &( pxQueue->xTasksWaitingToSend ) ) != pdFALSE )
+     c3e:	ce 01       	movw	r24, r28
+     c40:	08 96       	adiw	r24, 0x08	; 8
+     c42:	0e 94 47 0c 	call	0x188e	; 0x188e <xTaskRemoveFromEventList>
+     c46:	88 23       	and	r24, r24
+     c48:	81 f0       	breq	.+32     	; 0xc6a <xQueueReceiveFromISR+0x56>
+					{
+						/* The task waiting has a higher priority than us so
+						force a context switch. */
+						if( pxHigherPriorityTaskWoken != NULL )
+     c4a:	01 15       	cp	r16, r1
+     c4c:	11 05       	cpc	r17, r1
+     c4e:	79 f0       	breq	.+30     	; 0xc6e <xQueueReceiveFromISR+0x5a>
+						{
+							*pxHigherPriorityTaskWoken = pdTRUE;
+     c50:	81 e0       	ldi	r24, 0x01	; 1
+     c52:	f8 01       	movw	r30, r16
+     c54:	80 83       	st	Z, r24
+     c56:	0c c0       	rjmp	.+24     	; 0xc70 <xQueueReceiveFromISR+0x5c>
+			}
+			else
+			{
+				/* Increment the lock count so the task that unlocks the queue
+				knows that data was removed while it was locked. */
+				++( pxQueue->xRxLock );
+     c58:	8d 8d       	ldd	r24, Y+29	; 0x1d
+     c5a:	8f 5f       	subi	r24, 0xFF	; 255
+     c5c:	8d 8f       	std	Y+29, r24	; 0x1d
+			}
+
+			xReturn = pdPASS;
+     c5e:	81 e0       	ldi	r24, 0x01	; 1
+     c60:	07 c0       	rjmp	.+14     	; 0xc70 <xQueueReceiveFromISR+0x5c>
+		}
+		else
+		{
+			xReturn = pdFAIL;
+     c62:	80 e0       	ldi	r24, 0x00	; 0
+     c64:	05 c0       	rjmp	.+10     	; 0xc70 <xQueueReceiveFromISR+0x5c>
+				/* Increment the lock count so the task that unlocks the queue
+				knows that data was removed while it was locked. */
+				++( pxQueue->xRxLock );
+			}
+
+			xReturn = pdPASS;
+     c66:	81 e0       	ldi	r24, 0x01	; 1
+     c68:	03 c0       	rjmp	.+6      	; 0xc70 <xQueueReceiveFromISR+0x5c>
+     c6a:	81 e0       	ldi	r24, 0x01	; 1
+     c6c:	01 c0       	rjmp	.+2      	; 0xc70 <xQueueReceiveFromISR+0x5c>
+     c6e:	81 e0       	ldi	r24, 0x01	; 1
+		}
+	}
+	portCLEAR_INTERRUPT_MASK_FROM_ISR( uxSavedInterruptStatus );
+
+	return xReturn;
+}
+     c70:	df 91       	pop	r29
+     c72:	cf 91       	pop	r28
+     c74:	1f 91       	pop	r17
+     c76:	0f 91       	pop	r16
+     c78:	08 95       	ret
+
+00000c7a <uxQueueMessagesWaiting>:
+{
+unsigned portBASE_TYPE uxReturn;
+
+	configASSERT( pxQueue );
+
+	taskENTER_CRITICAL();
+     c7a:	0f b6       	in	r0, 0x3f	; 63
+     c7c:	f8 94       	cli
+     c7e:	0f 92       	push	r0
+		uxReturn = pxQueue->uxMessagesWaiting;
+     c80:	fc 01       	movw	r30, r24
+     c82:	82 8d       	ldd	r24, Z+26	; 0x1a
+	taskEXIT_CRITICAL();
+     c84:	0f 90       	pop	r0
+     c86:	0f be       	out	0x3f, r0	; 63
+
+	return uxReturn;
+}
+     c88:	08 95       	ret
+
+00000c8a <uxQueueMessagesWaitingFromISR>:
+{
+unsigned portBASE_TYPE uxReturn;
+
+	configASSERT( pxQueue );
+
+	uxReturn = pxQueue->uxMessagesWaiting;
+     c8a:	fc 01       	movw	r30, r24
+     c8c:	82 8d       	ldd	r24, Z+26	; 0x1a
+
+	return uxReturn;
+}
+     c8e:	08 95       	ret
+
+00000c90 <vQueueDelete>:
+/*-----------------------------------------------------------*/
+
+void vQueueDelete( xQueueHandle pxQueue )
+{
+     c90:	cf 93       	push	r28
+     c92:	df 93       	push	r29
+     c94:	ec 01       	movw	r28, r24
+	configASSERT( pxQueue );
+
+	traceQUEUE_DELETE( pxQueue );
+	vQueueUnregisterQueue( pxQueue );
+	vPortFree( pxQueue->pcHead );
+     c96:	88 81       	ld	r24, Y
+     c98:	99 81       	ldd	r25, Y+1	; 0x01
+     c9a:	0e 94 be 00 	call	0x17c	; 0x17c <vPortFree>
+	vPortFree( pxQueue );
+     c9e:	ce 01       	movw	r24, r28
+     ca0:	0e 94 be 00 	call	0x17c	; 0x17c <vPortFree>
+}
+     ca4:	df 91       	pop	r29
+     ca6:	cf 91       	pop	r28
+     ca8:	08 95       	ret
+
+00000caa <xQueueIsQueueEmptyFromISR>:
+signed portBASE_TYPE xQueueIsQueueEmptyFromISR( const xQueueHandle pxQueue )
+{
+signed portBASE_TYPE xReturn;
+
+	configASSERT( pxQueue );
+	xReturn = ( pxQueue->uxMessagesWaiting == ( unsigned portBASE_TYPE ) 0 );
+     caa:	fc 01       	movw	r30, r24
+     cac:	92 8d       	ldd	r25, Z+26	; 0x1a
+     cae:	81 e0       	ldi	r24, 0x01	; 1
+     cb0:	91 11       	cpse	r25, r1
+     cb2:	80 e0       	ldi	r24, 0x00	; 0
+
+	return xReturn;
+}
+     cb4:	08 95       	ret
+
+00000cb6 <xQueueIsQueueFullFromISR>:
+	return xReturn;
+}
+/*-----------------------------------------------------------*/
+
+signed portBASE_TYPE xQueueIsQueueFullFromISR( const xQueueHandle pxQueue )
+{
+     cb6:	fc 01       	movw	r30, r24
+signed portBASE_TYPE xReturn;
+
+	configASSERT( pxQueue );
+	xReturn = ( pxQueue->uxMessagesWaiting == pxQueue->uxLength );
+     cb8:	22 8d       	ldd	r18, Z+26	; 0x1a
+     cba:	81 e0       	ldi	r24, 0x01	; 1
+     cbc:	93 8d       	ldd	r25, Z+27	; 0x1b
+     cbe:	29 13       	cpse	r18, r25
+     cc0:	80 e0       	ldi	r24, 0x00	; 0
+
+	return xReturn;
+}
+     cc2:	08 95       	ret
+
+00000cc4 <prvAddCurrentTaskToDelayedList>:
+	#endif
+}
+/*-----------------------------------------------------------*/
+
+static void prvAddCurrentTaskToDelayedList( portTickType xTimeToWake )
+{
+     cc4:	cf 93       	push	r28
+     cc6:	df 93       	push	r29
+     cc8:	ec 01       	movw	r28, r24
+	/* The list item will be inserted in wake time order. */
+	listSET_LIST_ITEM_VALUE( &( pxCurrentTCB->xGenericListItem ), xTimeToWake );
+     cca:	e0 91 0e 2a 	lds	r30, 0x2A0E
+     cce:	f0 91 0f 2a 	lds	r31, 0x2A0F
+     cd2:	93 83       	std	Z+3, r25	; 0x03
+     cd4:	82 83       	std	Z+2, r24	; 0x02
+
+	if( xTimeToWake < xTickCount )
+     cd6:	80 91 16 2a 	lds	r24, 0x2A16
+     cda:	90 91 17 2a 	lds	r25, 0x2A17
+     cde:	c8 17       	cp	r28, r24
+     ce0:	d9 07       	cpc	r29, r25
+     ce2:	68 f4       	brcc	.+26     	; 0xcfe <prvAddCurrentTaskToDelayedList+0x3a>
+	{
+		/* Wake time has overflowed.  Place this item in the overflow list. */
+		vListInsert( ( xList * ) pxOverflowDelayedTaskList, ( xListItem * ) &( pxCurrentTCB->xGenericListItem ) );
+     ce4:	80 91 1a 2a 	lds	r24, 0x2A1A
+     ce8:	90 91 1b 2a 	lds	r25, 0x2A1B
+     cec:	60 91 0e 2a 	lds	r22, 0x2A0E
+     cf0:	70 91 0f 2a 	lds	r23, 0x2A0F
+     cf4:	6e 5f       	subi	r22, 0xFE	; 254
+     cf6:	7f 4f       	sbci	r23, 0xFF	; 255
+     cf8:	0e 94 08 01 	call	0x210	; 0x210 <vListInsert>
+     cfc:	17 c0       	rjmp	.+46     	; 0xd2c <prvAddCurrentTaskToDelayedList+0x68>
+	}
+	else
+	{
+		/* The wake time has not overflowed, so we can use the current block list. */
+		vListInsert( ( xList * ) pxDelayedTaskList, ( xListItem * ) &( pxCurrentTCB->xGenericListItem ) );
+     cfe:	80 91 1c 2a 	lds	r24, 0x2A1C
+     d02:	90 91 1d 2a 	lds	r25, 0x2A1D
+     d06:	60 91 0e 2a 	lds	r22, 0x2A0E
+     d0a:	70 91 0f 2a 	lds	r23, 0x2A0F
+     d0e:	6e 5f       	subi	r22, 0xFE	; 254
+     d10:	7f 4f       	sbci	r23, 0xFF	; 255
+     d12:	0e 94 08 01 	call	0x210	; 0x210 <vListInsert>
+
+		/* If the task entering the blocked state was placed at the head of the
+		list of blocked tasks then xNextTaskUnblockTime needs to be updated
+		too. */
+		if( xTimeToWake < xNextTaskUnblockTime )
+     d16:	80 91 09 02 	lds	r24, 0x0209
+     d1a:	90 91 0a 02 	lds	r25, 0x020A
+     d1e:	c8 17       	cp	r28, r24
+     d20:	d9 07       	cpc	r29, r25
+     d22:	20 f4       	brcc	.+8      	; 0xd2c <prvAddCurrentTaskToDelayedList+0x68>
+		{
+			xNextTaskUnblockTime = xTimeToWake;
+     d24:	d0 93 0a 02 	sts	0x020A, r29
+     d28:	c0 93 09 02 	sts	0x0209, r28
+		}
+	}
+}
+     d2c:	df 91       	pop	r29
+     d2e:	cf 91       	pop	r28
+     d30:	08 95       	ret
+
+00000d32 <xTaskGenericCreate>:
+/*-----------------------------------------------------------
+ * TASK CREATION API documented in task.h
+ *----------------------------------------------------------*/
+
+signed portBASE_TYPE xTaskGenericCreate( pdTASK_CODE pxTaskCode, const signed char * const pcName, unsigned short usStackDepth, void *pvParameters, unsigned portBASE_TYPE uxPriority, xTaskHandle *pxCreatedTask, portSTACK_TYPE *puxStackBuffer, const xMemoryRegion * const xRegions )
+{
+     d32:	4f 92       	push	r4
+     d34:	5f 92       	push	r5
+     d36:	6f 92       	push	r6
+     d38:	7f 92       	push	r7
+     d3a:	8f 92       	push	r8
+     d3c:	9f 92       	push	r9
+     d3e:	bf 92       	push	r11
+     d40:	cf 92       	push	r12
+     d42:	df 92       	push	r13
+     d44:	ef 92       	push	r14
+     d46:	ff 92       	push	r15
+     d48:	0f 93       	push	r16
+     d4a:	1f 93       	push	r17
+     d4c:	cf 93       	push	r28
+     d4e:	df 93       	push	r29
+     d50:	2c 01       	movw	r4, r24
+     d52:	4b 01       	movw	r8, r22
+     d54:	ea 01       	movw	r28, r20
+     d56:	39 01       	movw	r6, r18
+     d58:	b0 2e       	mov	r11, r16
+{
+tskTCB *pxNewTCB;
+
+	/* Allocate space for the TCB.  Where the memory comes from depends on
+	the implementation of the port malloc function. */
+	pxNewTCB = ( tskTCB * ) pvPortMalloc( sizeof( tskTCB ) );
+     d5a:	89 e2       	ldi	r24, 0x29	; 41
+     d5c:	90 e0       	ldi	r25, 0x00	; 0
+     d5e:	0e 94 95 00 	call	0x12a	; 0x12a <pvPortMalloc>
+     d62:	8c 01       	movw	r16, r24
+
+	if( pxNewTCB != NULL )
+     d64:	00 97       	sbiw	r24, 0x00	; 0
+     d66:	09 f4       	brne	.+2      	; 0xd6a <xTaskGenericCreate+0x38>
+     d68:	e7 c0       	rjmp	.+462    	; 0xf38 <xTaskGenericCreate+0x206>
+	{
+		/* Allocate space for the stack used by the task being created.
+		The base of the stack memory stored in the TCB so the task can
+		be deleted later if required. */
+		pxNewTCB->pxStack = ( portSTACK_TYPE * ) pvPortMallocAligned( ( ( ( size_t )usStackDepth ) * sizeof( portSTACK_TYPE ) ), puxStackBuffer );
+     d6a:	c1 14       	cp	r12, r1
+     d6c:	d1 04       	cpc	r13, r1
+     d6e:	09 f0       	breq	.+2      	; 0xd72 <xTaskGenericCreate+0x40>
+     d70:	f8 c0       	rjmp	.+496    	; 0xf62 <xTaskGenericCreate+0x230>
+     d72:	ce 01       	movw	r24, r28
+     d74:	0e 94 95 00 	call	0x12a	; 0x12a <pvPortMalloc>
+     d78:	6c 01       	movw	r12, r24
+     d7a:	f8 01       	movw	r30, r16
+     d7c:	90 8f       	std	Z+24, r25	; 0x18
+     d7e:	87 8b       	std	Z+23, r24	; 0x17
+
+		if( pxNewTCB->pxStack == NULL )
+     d80:	00 97       	sbiw	r24, 0x00	; 0
+     d82:	29 f4       	brne	.+10     	; 0xd8e <xTaskGenericCreate+0x5c>
+		{
+			/* Could not allocate the stack.  Delete the allocated TCB. */
+			vPortFree( pxNewTCB );
+     d84:	c8 01       	movw	r24, r16
+     d86:	0e 94 be 00 	call	0x17c	; 0x17c <vPortFree>
+		}
+		taskEXIT_CRITICAL();
+	}
+	else
+	{
+		xReturn = errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY;
+     d8a:	8f ef       	ldi	r24, 0xFF	; 255
+     d8c:	da c0       	rjmp	.+436    	; 0xf42 <xTaskGenericCreate+0x210>
+			pxNewTCB = NULL;
+		}
+		else
+		{
+			/* Just to help debugging. */
+			memset( pxNewTCB->pxStack, ( int ) tskSTACK_FILL_BYTE, ( size_t ) usStackDepth * sizeof( portSTACK_TYPE ) );
+     d8e:	c6 01       	movw	r24, r12
+     d90:	65 ea       	ldi	r22, 0xA5	; 165
+     d92:	70 e0       	ldi	r23, 0x00	; 0
+     d94:	ae 01       	movw	r20, r28
+     d96:	0e 94 e5 0c 	call	0x19ca	; 0x19ca <memset>
+		stack grows from high memory to low (as per the 80x86) or visa versa.
+		portSTACK_GROWTH is used to make the result positive or negative as
+		required by the port. */
+		#if( portSTACK_GROWTH < 0 )
+		{
+			pxTopOfStack = pxNewTCB->pxStack + ( usStackDepth - ( unsigned short ) 1 );
+     d9a:	9e 01       	movw	r18, r28
+     d9c:	21 50       	subi	r18, 0x01	; 1
+     d9e:	30 40       	sbci	r19, 0x00	; 0
+     da0:	f8 01       	movw	r30, r16
+     da2:	87 89       	ldd	r24, Z+23	; 0x17
+     da4:	90 8d       	ldd	r25, Z+24	; 0x18
+     da6:	6c 01       	movw	r12, r24
+     da8:	c2 0e       	add	r12, r18
+     daa:	d3 1e       	adc	r13, r19
+{
+	/* Store the function name in the TCB. */
+	#if configMAX_TASK_NAME_LEN > 1
+	{
+		/* Don't bring strncpy into the build unnecessarily. */
+		strncpy( ( char * ) pxTCB->pcTaskName, ( const char * ) pcName, ( unsigned short ) configMAX_TASK_NAME_LEN );
+     dac:	c8 01       	movw	r24, r16
+     dae:	49 96       	adiw	r24, 0x19	; 25
+     db0:	b4 01       	movw	r22, r8
+     db2:	40 e1       	ldi	r20, 0x10	; 16
+     db4:	50 e0       	ldi	r21, 0x00	; 0
+     db6:	0e 94 ec 0c 	call	0x19d8	; 0x19d8 <strncpy>
+	}
+	#endif
+	pxTCB->pcTaskName[ ( unsigned short ) configMAX_TASK_NAME_LEN - ( unsigned short ) 1 ] = ( signed char ) '\0';
+     dba:	f8 01       	movw	r30, r16
+     dbc:	10 a6       	lds	r17, 0xb0
+     dbe:	cb 2d       	mov	r28, r11
+     dc0:	f4 e0       	ldi	r31, 0x04	; 4
+     dc2:	fb 15       	cp	r31, r11
+     dc4:	08 f4       	brcc	.+2      	; 0xdc8 <xTaskGenericCreate+0x96>
+     dc6:	c4 e0       	ldi	r28, 0x04	; 4
+	if( uxPriority >= configMAX_PRIORITIES )
+	{
+		uxPriority = configMAX_PRIORITIES - ( unsigned portBASE_TYPE ) 1U;
+	}
+
+	pxTCB->uxPriority = uxPriority;
+     dc8:	f8 01       	movw	r30, r16
+     dca:	c6 8b       	std	Z+22, r28	; 0x16
+	{
+		pxTCB->uxBasePriority = uxPriority;
+	}
+	#endif
+
+	vListInitialiseItem( &( pxTCB->xGenericListItem ) );
+     dcc:	88 24       	eor	r8, r8
+     dce:	99 24       	eor	r9, r9
+     dd0:	68 94       	set
+     dd2:	81 f8       	bld	r8, 1
+     dd4:	80 0e       	add	r8, r16
+     dd6:	91 1e       	adc	r9, r17
+     dd8:	c4 01       	movw	r24, r8
+     dda:	0e 94 db 00 	call	0x1b6	; 0x1b6 <vListInitialiseItem>
+	vListInitialiseItem( &( pxTCB->xEventListItem ) );
+     dde:	c8 01       	movw	r24, r16
+     de0:	0c 96       	adiw	r24, 0x0c	; 12
+     de2:	0e 94 db 00 	call	0x1b6	; 0x1b6 <vListInitialiseItem>
+
+	/* Set the pxTCB as a link back from the xListItem.  This is so we can get
+	back to	the containing TCB from a generic item in a list. */
+	listSET_LIST_ITEM_OWNER( &( pxTCB->xGenericListItem ), pxTCB );
+     de6:	f8 01       	movw	r30, r16
+     de8:	11 87       	std	Z+9, r17	; 0x09
+     dea:	00 87       	std	Z+8, r16	; 0x08
+
+	/* Event lists are always in priority order. */
+	listSET_LIST_ITEM_VALUE( &( pxTCB->xEventListItem ), configMAX_PRIORITIES - ( portTickType ) uxPriority );
+     dec:	85 e0       	ldi	r24, 0x05	; 5
+     dee:	90 e0       	ldi	r25, 0x00	; 0
+     df0:	8c 1b       	sub	r24, r28
+     df2:	91 09       	sbc	r25, r1
+     df4:	95 87       	std	Z+13, r25	; 0x0d
+     df6:	84 87       	std	Z+12, r24	; 0x0c
+	listSET_LIST_ITEM_OWNER( &( pxTCB->xEventListItem ), pxTCB );
+     df8:	13 8b       	std	Z+19, r17	; 0x13
+     dfa:	02 8b       	std	Z+18, r16	; 0x12
+		{
+			pxNewTCB->pxTopOfStack = pxPortInitialiseStack( pxTopOfStack, pxTaskCode, pvParameters, xRunPrivileged );
+		}
+		#else
+		{
+			pxNewTCB->pxTopOfStack = pxPortInitialiseStack( pxTopOfStack, pxTaskCode, pvParameters );
+     dfc:	c6 01       	movw	r24, r12
+     dfe:	b2 01       	movw	r22, r4
+     e00:	a3 01       	movw	r20, r6
+     e02:	0e 94 b4 01 	call	0x368	; 0x368 <pxPortInitialiseStack>
+     e06:	f8 01       	movw	r30, r16
+     e08:	91 83       	std	Z+1, r25	; 0x01
+     e0a:	80 83       	st	Z, r24
+		#endif
+
+		/* Check the alignment of the initialised stack. */
+		portALIGNMENT_ASSERT_pxCurrentTCB( ( ( ( unsigned long ) pxNewTCB->pxTopOfStack & ( unsigned long ) portBYTE_ALIGNMENT_MASK ) == 0UL ) );
+
+		if( ( void * ) pxCreatedTask != NULL )
+     e0c:	e1 14       	cp	r14, r1
+     e0e:	f1 04       	cpc	r15, r1
+     e10:	19 f0       	breq	.+6      	; 0xe18 <xTaskGenericCreate+0xe6>
+		{
+			/* Pass the TCB out - in an anonymous way.  The calling function/
+			task can use this as a handle to delete the task later if
+			required.*/
+			*pxCreatedTask = ( xTaskHandle ) pxNewTCB;
+     e12:	f7 01       	movw	r30, r14
+     e14:	11 83       	std	Z+1, r17	; 0x01
+     e16:	00 83       	st	Z, r16
+		}
+		
+		/* We are going to manipulate the task queues to add this task to a
+		ready list, so must make sure no interrupts occur. */
+		taskENTER_CRITICAL();
+     e18:	0f b6       	in	r0, 0x3f	; 63
+     e1a:	f8 94       	cli
+     e1c:	0f 92       	push	r0
+		{
+			uxCurrentNumberOfTasks++;
+     e1e:	80 91 18 2a 	lds	r24, 0x2A18
+     e22:	8f 5f       	subi	r24, 0xFF	; 255
+     e24:	80 93 18 2a 	sts	0x2A18, r24
+			if( pxCurrentTCB == NULL )
+     e28:	80 91 0e 2a 	lds	r24, 0x2A0E
+     e2c:	90 91 0f 2a 	lds	r25, 0x2A0F
+     e30:	00 97       	sbiw	r24, 0x00	; 0
+     e32:	09 f0       	breq	.+2      	; 0xe36 <xTaskGenericCreate+0x104>
+     e34:	3f c0       	rjmp	.+126    	; 0xeb4 <xTaskGenericCreate+0x182>
+			{
+				/* There are no other tasks, or all the other tasks are in
+				the suspended state - make this the current task. */
+				pxCurrentTCB =  pxNewTCB;
+     e36:	10 93 0f 2a 	sts	0x2A0F, r17
+     e3a:	00 93 0e 2a 	sts	0x2A0E, r16
+
+				if( uxCurrentNumberOfTasks == ( unsigned portBASE_TYPE ) 1 )
+     e3e:	80 91 18 2a 	lds	r24, 0x2A18
+     e42:	81 30       	cpi	r24, 0x01	; 1
+     e44:	09 f0       	breq	.+2      	; 0xe48 <xTaskGenericCreate+0x116>
+     e46:	45 c0       	rjmp	.+138    	; 0xed2 <xTaskGenericCreate+0x1a0>
+     e48:	c0 e0       	ldi	r28, 0x00	; 0
+     e4a:	d0 e0       	ldi	r29, 0x00	; 0
+{
+unsigned portBASE_TYPE uxPriority;
+
+	for( uxPriority = ( unsigned portBASE_TYPE ) 0U; uxPriority < configMAX_PRIORITIES; uxPriority++ )
+	{
+		vListInitialise( ( xList * ) &( pxReadyTasksLists[ uxPriority ] ) );
+     e4c:	ce 01       	movw	r24, r28
+     e4e:	88 0f       	add	r24, r24
+     e50:	99 1f       	adc	r25, r25
+     e52:	88 0f       	add	r24, r24
+     e54:	99 1f       	adc	r25, r25
+     e56:	88 0f       	add	r24, r24
+     e58:	99 1f       	adc	r25, r25
+     e5a:	8c 0f       	add	r24, r28
+     e5c:	9d 1f       	adc	r25, r29
+     e5e:	80 5e       	subi	r24, 0xE0	; 224
+     e60:	95 4d       	sbci	r25, 0xD5	; 213
+     e62:	0e 94 cd 00 	call	0x19a	; 0x19a <vListInitialise>
+     e66:	21 96       	adiw	r28, 0x01	; 1
+
+static void prvInitialiseTaskLists( void )
+{
+unsigned portBASE_TYPE uxPriority;
+
+	for( uxPriority = ( unsigned portBASE_TYPE ) 0U; uxPriority < configMAX_PRIORITIES; uxPriority++ )
+     e68:	c5 30       	cpi	r28, 0x05	; 5
+     e6a:	d1 05       	cpc	r29, r1
+     e6c:	79 f7       	brne	.-34     	; 0xe4c <xTaskGenericCreate+0x11a>
+	{
+		vListInitialise( ( xList * ) &( pxReadyTasksLists[ uxPriority ] ) );
+	}
+
+	vListInitialise( ( xList * ) &xDelayedTaskList1 );
+     e6e:	cd e4       	ldi	r28, 0x4D	; 77
+     e70:	da e2       	ldi	r29, 0x2A	; 42
+     e72:	ce 01       	movw	r24, r28
+     e74:	0e 94 cd 00 	call	0x19a	; 0x19a <vListInitialise>
+	vListInitialise( ( xList * ) &xDelayedTaskList2 );
+     e78:	0f 2e       	mov	r0, r31
+     e7a:	f6 e5       	ldi	r31, 0x56	; 86
+     e7c:	ef 2e       	mov	r14, r31
+     e7e:	fa e2       	ldi	r31, 0x2A	; 42
+     e80:	ff 2e       	mov	r15, r31
+     e82:	f0 2d       	mov	r31, r0
+     e84:	c7 01       	movw	r24, r14
+     e86:	0e 94 cd 00 	call	0x19a	; 0x19a <vListInitialise>
+	vListInitialise( ( xList * ) &xPendingReadyList );
+     e8a:	8f e5       	ldi	r24, 0x5F	; 95
+     e8c:	9a e2       	ldi	r25, 0x2A	; 42
+     e8e:	0e 94 cd 00 	call	0x19a	; 0x19a <vListInitialise>
+
+	#if ( INCLUDE_vTaskDelete == 1 )
+	{
+		vListInitialise( ( xList * ) &xTasksWaitingTermination );
+     e92:	88 e6       	ldi	r24, 0x68	; 104
+     e94:	9a e2       	ldi	r25, 0x2A	; 42
+     e96:	0e 94 cd 00 	call	0x19a	; 0x19a <vListInitialise>
+	}
+	#endif
+
+	#if ( INCLUDE_vTaskSuspend == 1 )
+	{
+		vListInitialise( ( xList * ) &xSuspendedTaskList );
+     e9a:	81 e7       	ldi	r24, 0x71	; 113
+     e9c:	9a e2       	ldi	r25, 0x2A	; 42
+     e9e:	0e 94 cd 00 	call	0x19a	; 0x19a <vListInitialise>
+	}
+	#endif
+
+	/* Start with pxDelayedTaskList using list1 and the pxOverflowDelayedTaskList
+	using list2. */
+	pxDelayedTaskList = &xDelayedTaskList1;
+     ea2:	d0 93 1d 2a 	sts	0x2A1D, r29
+     ea6:	c0 93 1c 2a 	sts	0x2A1C, r28
+	pxOverflowDelayedTaskList = &xDelayedTaskList2;
+     eaa:	f0 92 1b 2a 	sts	0x2A1B, r15
+     eae:	e0 92 1a 2a 	sts	0x2A1A, r14
+     eb2:	0f c0       	rjmp	.+30     	; 0xed2 <xTaskGenericCreate+0x1a0>
+			else
+			{
+				/* If the scheduler is not already running, make this task the
+				current task if it is the highest priority task to be created
+				so far. */
+				if( xSchedulerRunning == pdFALSE )
+     eb4:	80 91 14 2a 	lds	r24, 0x2A14
+     eb8:	88 23       	and	r24, r24
+     eba:	59 f4       	brne	.+22     	; 0xed2 <xTaskGenericCreate+0x1a0>
+				{
+					if( pxCurrentTCB->uxPriority <= uxPriority )
+     ebc:	e0 91 0e 2a 	lds	r30, 0x2A0E
+     ec0:	f0 91 0f 2a 	lds	r31, 0x2A0F
+     ec4:	86 89       	ldd	r24, Z+22	; 0x16
+     ec6:	b8 16       	cp	r11, r24
+     ec8:	20 f0       	brcs	.+8      	; 0xed2 <xTaskGenericCreate+0x1a0>
+					{
+						pxCurrentTCB = pxNewTCB;
+     eca:	10 93 0f 2a 	sts	0x2A0F, r17
+     ece:	00 93 0e 2a 	sts	0x2A0E, r16
+				}
+			}
+
+			/* Remember the top priority to make context switching faster.  Use
+			the priority in pxNewTCB as this has been capped to a valid value. */
+			if( pxNewTCB->uxPriority > uxTopUsedPriority )
+     ed2:	f8 01       	movw	r30, r16
+     ed4:	86 89       	ldd	r24, Z+22	; 0x16
+     ed6:	90 91 1e 2a 	lds	r25, 0x2A1E
+     eda:	98 17       	cp	r25, r24
+     edc:	10 f4       	brcc	.+4      	; 0xee2 <xTaskGenericCreate+0x1b0>
+			{
+				uxTopUsedPriority = pxNewTCB->uxPriority;
+     ede:	80 93 1e 2a 	sts	0x2A1E, r24
+			{
+				/* Add a counter into the TCB for tracing only. */
+				pxNewTCB->uxTCBNumber = uxTaskNumber;
+			}
+			#endif
+			uxTaskNumber++;
+     ee2:	90 91 1f 2a 	lds	r25, 0x2A1F
+     ee6:	9f 5f       	subi	r25, 0xFF	; 255
+     ee8:	90 93 1f 2a 	sts	0x2A1F, r25
+
+			prvAddTaskToReadyQueue( pxNewTCB );
+     eec:	90 91 15 2a 	lds	r25, 0x2A15
+     ef0:	98 17       	cp	r25, r24
+     ef2:	10 f4       	brcc	.+4      	; 0xef8 <xTaskGenericCreate+0x1c6>
+     ef4:	80 93 15 2a 	sts	0x2A15, r24
+     ef8:	90 e0       	ldi	r25, 0x00	; 0
+     efa:	9c 01       	movw	r18, r24
+     efc:	22 0f       	add	r18, r18
+     efe:	33 1f       	adc	r19, r19
+     f00:	22 0f       	add	r18, r18
+     f02:	33 1f       	adc	r19, r19
+     f04:	22 0f       	add	r18, r18
+     f06:	33 1f       	adc	r19, r19
+     f08:	82 0f       	add	r24, r18
+     f0a:	93 1f       	adc	r25, r19
+     f0c:	80 5e       	subi	r24, 0xE0	; 224
+     f0e:	95 4d       	sbci	r25, 0xD5	; 213
+     f10:	b4 01       	movw	r22, r8
+     f12:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+
+			xReturn = pdPASS;
+			portSETUP_TCB( pxNewTCB );
+			traceTASK_CREATE( pxNewTCB );
+		}
+		taskEXIT_CRITICAL();
+     f16:	0f 90       	pop	r0
+     f18:	0f be       	out	0x3f, r0	; 63
+		traceTASK_CREATE_FAILED();
+	}
+
+	if( xReturn == pdPASS )
+	{
+		if( xSchedulerRunning != pdFALSE )
+     f1a:	80 91 14 2a 	lds	r24, 0x2A14
+     f1e:	88 23       	and	r24, r24
+     f20:	69 f0       	breq	.+26     	; 0xf3c <xTaskGenericCreate+0x20a>
+		{
+			/* If the created task is of a higher priority than the current task
+			then it should run now. */
+			if( pxCurrentTCB->uxPriority < uxPriority )
+     f22:	e0 91 0e 2a 	lds	r30, 0x2A0E
+     f26:	f0 91 0f 2a 	lds	r31, 0x2A0F
+     f2a:	86 89       	ldd	r24, Z+22	; 0x16
+     f2c:	8b 15       	cp	r24, r11
+     f2e:	40 f4       	brcc	.+16     	; 0xf40 <xTaskGenericCreate+0x20e>
+			{
+				portYIELD_WITHIN_API();
+     f30:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+			#endif
+			uxTaskNumber++;
+
+			prvAddTaskToReadyQueue( pxNewTCB );
+
+			xReturn = pdPASS;
+     f34:	81 e0       	ldi	r24, 0x01	; 1
+     f36:	05 c0       	rjmp	.+10     	; 0xf42 <xTaskGenericCreate+0x210>
+		}
+		taskEXIT_CRITICAL();
+	}
+	else
+	{
+		xReturn = errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY;
+     f38:	8f ef       	ldi	r24, 0xFF	; 255
+     f3a:	03 c0       	rjmp	.+6      	; 0xf42 <xTaskGenericCreate+0x210>
+			#endif
+			uxTaskNumber++;
+
+			prvAddTaskToReadyQueue( pxNewTCB );
+
+			xReturn = pdPASS;
+     f3c:	81 e0       	ldi	r24, 0x01	; 1
+     f3e:	01 c0       	rjmp	.+2      	; 0xf42 <xTaskGenericCreate+0x210>
+     f40:	81 e0       	ldi	r24, 0x01	; 1
+			}
+		}
+	}
+
+	return xReturn;
+}
+     f42:	df 91       	pop	r29
+     f44:	cf 91       	pop	r28
+     f46:	1f 91       	pop	r17
+     f48:	0f 91       	pop	r16
+     f4a:	ff 90       	pop	r15
+     f4c:	ef 90       	pop	r14
+     f4e:	df 90       	pop	r13
+     f50:	cf 90       	pop	r12
+     f52:	bf 90       	pop	r11
+     f54:	9f 90       	pop	r9
+     f56:	8f 90       	pop	r8
+     f58:	7f 90       	pop	r7
+     f5a:	6f 90       	pop	r6
+     f5c:	5f 90       	pop	r5
+     f5e:	4f 90       	pop	r4
+     f60:	08 95       	ret
+	if( pxNewTCB != NULL )
+	{
+		/* Allocate space for the stack used by the task being created.
+		The base of the stack memory stored in the TCB so the task can
+		be deleted later if required. */
+		pxNewTCB->pxStack = ( portSTACK_TYPE * ) pvPortMallocAligned( ( ( ( size_t )usStackDepth ) * sizeof( portSTACK_TYPE ) ), puxStackBuffer );
+     f62:	fc 01       	movw	r30, r24
+     f64:	d0 8e       	std	Z+24, r13	; 0x18
+     f66:	c7 8a       	std	Z+23, r12	; 0x17
+     f68:	12 cf       	rjmp	.-476    	; 0xd8e <xTaskGenericCreate+0x5c>
+
+00000f6a <vTaskDelete>:
+/*-----------------------------------------------------------*/
+
+#if ( INCLUDE_vTaskDelete == 1 )
+
+	void vTaskDelete( xTaskHandle pxTaskToDelete )
+	{
+     f6a:	ef 92       	push	r14
+     f6c:	ff 92       	push	r15
+     f6e:	0f 93       	push	r16
+     f70:	1f 93       	push	r17
+     f72:	cf 93       	push	r28
+     f74:	df 93       	push	r29
+     f76:	7c 01       	movw	r14, r24
+	tskTCB *pxTCB;
+
+		taskENTER_CRITICAL();
+     f78:	0f b6       	in	r0, 0x3f	; 63
+     f7a:	f8 94       	cli
+     f7c:	0f 92       	push	r0
+		{
+			/* Ensure a yield is performed if the current task is being
+			deleted. */
+			if( pxTaskToDelete == pxCurrentTCB )
+     f7e:	80 91 0e 2a 	lds	r24, 0x2A0E
+     f82:	90 91 0f 2a 	lds	r25, 0x2A0F
+     f86:	e8 16       	cp	r14, r24
+     f88:	f9 06       	cpc	r15, r25
+     f8a:	21 f0       	breq	.+8      	; 0xf94 <vTaskDelete+0x2a>
+			{
+				pxTaskToDelete = NULL;
+			}
+
+			/* If null is passed in here then we are deleting ourselves. */
+			pxTCB = prvGetTCBFromHandle( pxTaskToDelete );
+     f8c:	e1 14       	cp	r14, r1
+     f8e:	f1 04       	cpc	r15, r1
+     f90:	41 f4       	brne	.+16     	; 0xfa2 <vTaskDelete+0x38>
+     f92:	02 c0       	rjmp	.+4      	; 0xf98 <vTaskDelete+0x2e>
+		{
+			/* Ensure a yield is performed if the current task is being
+			deleted. */
+			if( pxTaskToDelete == pxCurrentTCB )
+			{
+				pxTaskToDelete = NULL;
+     f94:	ee 24       	eor	r14, r14
+     f96:	ff 24       	eor	r15, r15
+			}
+
+			/* If null is passed in here then we are deleting ourselves. */
+			pxTCB = prvGetTCBFromHandle( pxTaskToDelete );
+     f98:	c0 91 0e 2a 	lds	r28, 0x2A0E
+     f9c:	d0 91 0f 2a 	lds	r29, 0x2A0F
+     fa0:	01 c0       	rjmp	.+2      	; 0xfa4 <vTaskDelete+0x3a>
+     fa2:	e7 01       	movw	r28, r14
+
+			/* Remove task from the ready list and place in the	termination list.
+			This will stop the task from be scheduled.  The idle task will check
+			the termination list and free up any memory allocated by the
+			scheduler for the TCB and stack. */
+			vListRemove( &( pxTCB->xGenericListItem ) );
+     fa4:	8e 01       	movw	r16, r28
+     fa6:	0e 5f       	subi	r16, 0xFE	; 254
+     fa8:	1f 4f       	sbci	r17, 0xFF	; 255
+     faa:	c8 01       	movw	r24, r16
+     fac:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+
+			/* Is the task waiting on an event also? */
+			if( pxTCB->xEventListItem.pvContainer != NULL )
+     fb0:	8c 89       	ldd	r24, Y+20	; 0x14
+     fb2:	9d 89       	ldd	r25, Y+21	; 0x15
+     fb4:	00 97       	sbiw	r24, 0x00	; 0
+     fb6:	21 f0       	breq	.+8      	; 0xfc0 <vTaskDelete+0x56>
+			{
+				vListRemove( &( pxTCB->xEventListItem ) );
+     fb8:	ce 01       	movw	r24, r28
+     fba:	0c 96       	adiw	r24, 0x0c	; 12
+     fbc:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+			}
+
+			vListInsertEnd( ( xList * ) &xTasksWaitingTermination, &( pxTCB->xGenericListItem ) );
+     fc0:	88 e6       	ldi	r24, 0x68	; 104
+     fc2:	9a e2       	ldi	r25, 0x2A	; 42
+     fc4:	b8 01       	movw	r22, r16
+     fc6:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+
+			/* Increment the ucTasksDeleted variable so the idle task knows
+			there is a task that has been deleted and that it should therefore
+			check the xTasksWaitingTermination list. */
+			++uxTasksDeleted;
+     fca:	80 91 19 2a 	lds	r24, 0x2A19
+     fce:	8f 5f       	subi	r24, 0xFF	; 255
+     fd0:	80 93 19 2a 	sts	0x2A19, r24
+
+			/* Increment the uxTaskNumberVariable also so kernel aware debuggers
+			can detect that the task lists need re-generating. */
+			uxTaskNumber++;
+     fd4:	80 91 1f 2a 	lds	r24, 0x2A1F
+     fd8:	8f 5f       	subi	r24, 0xFF	; 255
+     fda:	80 93 1f 2a 	sts	0x2A1F, r24
+
+			traceTASK_DELETE( pxTCB );
+		}
+		taskEXIT_CRITICAL();
+     fde:	0f 90       	pop	r0
+     fe0:	0f be       	out	0x3f, r0	; 63
+
+		/* Force a reschedule if we have just deleted the current task. */
+		if( xSchedulerRunning != pdFALSE )
+     fe2:	80 91 14 2a 	lds	r24, 0x2A14
+     fe6:	88 23       	and	r24, r24
+     fe8:	29 f0       	breq	.+10     	; 0xff4 <vTaskDelete+0x8a>
+		{
+			if( ( void * ) pxTaskToDelete == NULL )
+     fea:	e1 14       	cp	r14, r1
+     fec:	f1 04       	cpc	r15, r1
+     fee:	11 f4       	brne	.+4      	; 0xff4 <vTaskDelete+0x8a>
+			{
+				portYIELD_WITHIN_API();
+     ff0:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+			}
+		}
+	}
+     ff4:	df 91       	pop	r29
+     ff6:	cf 91       	pop	r28
+     ff8:	1f 91       	pop	r17
+     ffa:	0f 91       	pop	r16
+     ffc:	ff 90       	pop	r15
+     ffe:	ef 90       	pop	r14
+    1000:	08 95       	ret
+
+00001002 <uxTaskPriorityGet>:
+	unsigned portBASE_TYPE uxTaskPriorityGet( xTaskHandle pxTask )
+	{
+	tskTCB *pxTCB;
+	unsigned portBASE_TYPE uxReturn;
+
+		taskENTER_CRITICAL();
+    1002:	0f b6       	in	r0, 0x3f	; 63
+    1004:	f8 94       	cli
+    1006:	0f 92       	push	r0
+		{
+			/* If null is passed in here then we are changing the
+			priority of the calling function. */
+			pxTCB = prvGetTCBFromHandle( pxTask );
+    1008:	00 97       	sbiw	r24, 0x00	; 0
+    100a:	29 f4       	brne	.+10     	; 0x1016 <uxTaskPriorityGet+0x14>
+    100c:	e0 91 0e 2a 	lds	r30, 0x2A0E
+    1010:	f0 91 0f 2a 	lds	r31, 0x2A0F
+    1014:	01 c0       	rjmp	.+2      	; 0x1018 <uxTaskPriorityGet+0x16>
+    1016:	fc 01       	movw	r30, r24
+			uxReturn = pxTCB->uxPriority;
+		}
+		taskEXIT_CRITICAL();
+    1018:	0f 90       	pop	r0
+    101a:	0f be       	out	0x3f, r0	; 63
+
+		return uxReturn;
+	}
+    101c:	86 89       	ldd	r24, Z+22	; 0x16
+    101e:	08 95       	ret
+
+00001020 <vTaskPrioritySet>:
+/*-----------------------------------------------------------*/
+
+#if ( INCLUDE_vTaskPrioritySet == 1 )
+
+	void vTaskPrioritySet( xTaskHandle pxTask, unsigned portBASE_TYPE uxNewPriority )
+	{
+    1020:	ef 92       	push	r14
+    1022:	ff 92       	push	r15
+    1024:	1f 93       	push	r17
+    1026:	cf 93       	push	r28
+    1028:	df 93       	push	r29
+				pxTask = NULL;
+			}
+
+			/* If null is passed in here then we are changing the
+			priority of the calling function. */
+			pxTCB = prvGetTCBFromHandle( pxTask );
+    102a:	65 30       	cpi	r22, 0x05	; 5
+    102c:	08 f0       	brcs	.+2      	; 0x1030 <vTaskPrioritySet+0x10>
+    102e:	64 e0       	ldi	r22, 0x04	; 4
+		if( uxNewPriority >= configMAX_PRIORITIES )
+		{
+			uxNewPriority = configMAX_PRIORITIES - ( unsigned portBASE_TYPE ) 1U;
+		}
+
+		taskENTER_CRITICAL();
+    1030:	0f b6       	in	r0, 0x3f	; 63
+    1032:	f8 94       	cli
+    1034:	0f 92       	push	r0
+		{
+			if( pxTask == pxCurrentTCB )
+    1036:	20 91 0e 2a 	lds	r18, 0x2A0E
+    103a:	30 91 0f 2a 	lds	r19, 0x2A0F
+    103e:	82 17       	cp	r24, r18
+    1040:	93 07       	cpc	r25, r19
+    1042:	19 f0       	breq	.+6      	; 0x104a <vTaskPrioritySet+0x2a>
+				pxTask = NULL;
+			}
+
+			/* If null is passed in here then we are changing the
+			priority of the calling function. */
+			pxTCB = prvGetTCBFromHandle( pxTask );
+    1044:	00 97       	sbiw	r24, 0x00	; 0
+    1046:	41 f4       	brne	.+16     	; 0x1058 <vTaskPrioritySet+0x38>
+    1048:	02 c0       	rjmp	.+4      	; 0x104e <vTaskPrioritySet+0x2e>
+
+		taskENTER_CRITICAL();
+		{
+			if( pxTask == pxCurrentTCB )
+			{
+				pxTask = NULL;
+    104a:	80 e0       	ldi	r24, 0x00	; 0
+    104c:	90 e0       	ldi	r25, 0x00	; 0
+			}
+
+			/* If null is passed in here then we are changing the
+			priority of the calling function. */
+			pxTCB = prvGetTCBFromHandle( pxTask );
+    104e:	c0 91 0e 2a 	lds	r28, 0x2A0E
+    1052:	d0 91 0f 2a 	lds	r29, 0x2A0F
+    1056:	01 c0       	rjmp	.+2      	; 0x105a <vTaskPrioritySet+0x3a>
+    1058:	ec 01       	movw	r28, r24
+			{
+				uxCurrentPriority = pxTCB->uxBasePriority;
+			}
+			#else
+			{
+				uxCurrentPriority = pxTCB->uxPriority;
+    105a:	4e 89       	ldd	r20, Y+22	; 0x16
+			}
+			#endif
+
+			if( uxCurrentPriority != uxNewPriority )
+    105c:	46 17       	cp	r20, r22
+    105e:	09 f4       	brne	.+2      	; 0x1062 <vTaskPrioritySet+0x42>
+    1060:	47 c0       	rjmp	.+142    	; 0x10f0 <vTaskPrioritySet+0xd0>
+			{
+				/* The priority change may have readied a task of higher
+				priority than the calling task. */
+				if( uxNewPriority > uxCurrentPriority )
+    1062:	46 17       	cp	r20, r22
+    1064:	28 f4       	brcc	.+10     	; 0x1070 <vTaskPrioritySet+0x50>
+					{
+						/* The priority of another task is being raised.  If we
+						were raising the priority of the currently running task
+						there would be no need to switch as it must have already
+						been the highest priority task. */
+						xYieldRequired = pdTRUE;
+    1066:	11 e0       	ldi	r17, 0x01	; 1
+    1068:	00 97       	sbiw	r24, 0x00	; 0
+    106a:	31 f4       	brne	.+12     	; 0x1078 <vTaskPrioritySet+0x58>
+    106c:	10 e0       	ldi	r17, 0x00	; 0
+    106e:	04 c0       	rjmp	.+8      	; 0x1078 <vTaskPrioritySet+0x58>
+    1070:	11 e0       	ldi	r17, 0x01	; 1
+    1072:	00 97       	sbiw	r24, 0x00	; 0
+    1074:	09 f0       	breq	.+2      	; 0x1078 <vTaskPrioritySet+0x58>
+    1076:	10 e0       	ldi	r17, 0x00	; 0
+					/* The base priority gets set whatever. */
+					pxTCB->uxBasePriority = uxNewPriority;
+				}
+				#else
+				{
+					pxTCB->uxPriority = uxNewPriority;
+    1078:	6e 8b       	std	Y+22, r22	; 0x16
+				}
+				#endif
+
+				listSET_LIST_ITEM_VALUE( &( pxTCB->xEventListItem ), ( configMAX_PRIORITIES - ( portTickType ) uxNewPriority ) );
+    107a:	25 e0       	ldi	r18, 0x05	; 5
+    107c:	30 e0       	ldi	r19, 0x00	; 0
+    107e:	26 1b       	sub	r18, r22
+    1080:	31 09       	sbc	r19, r1
+    1082:	3d 87       	std	Y+13, r19	; 0x0d
+    1084:	2c 87       	std	Y+12, r18	; 0x0c
+
+				/* If the task is in the blocked or suspended list we need do
+				nothing more than change it's priority variable. However, if
+				the task is in a ready list it needs to be removed and placed
+				in the queue appropriate to its new priority. */
+				if( listIS_CONTAINED_WITHIN( &( pxReadyTasksLists[ uxCurrentPriority ] ), &( pxTCB->xGenericListItem ) ) )
+    1086:	84 2f       	mov	r24, r20
+    1088:	90 e0       	ldi	r25, 0x00	; 0
+    108a:	9c 01       	movw	r18, r24
+    108c:	22 0f       	add	r18, r18
+    108e:	33 1f       	adc	r19, r19
+    1090:	22 0f       	add	r18, r18
+    1092:	33 1f       	adc	r19, r19
+    1094:	22 0f       	add	r18, r18
+    1096:	33 1f       	adc	r19, r19
+    1098:	82 0f       	add	r24, r18
+    109a:	93 1f       	adc	r25, r19
+    109c:	80 5e       	subi	r24, 0xE0	; 224
+    109e:	95 4d       	sbci	r25, 0xD5	; 213
+    10a0:	2a 85       	ldd	r18, Y+10	; 0x0a
+    10a2:	3b 85       	ldd	r19, Y+11	; 0x0b
+    10a4:	28 17       	cp	r18, r24
+    10a6:	39 07       	cpc	r19, r25
+    10a8:	f9 f4       	brne	.+62     	; 0x10e8 <vTaskPrioritySet+0xc8>
+				{
+					/* The task is currently in its ready list - remove before adding
+					it to it's new ready list.  As we are in a critical section we
+					can do this even if the scheduler is suspended. */
+					vListRemove( &( pxTCB->xGenericListItem ) );
+    10aa:	ee 24       	eor	r14, r14
+    10ac:	ff 24       	eor	r15, r15
+    10ae:	68 94       	set
+    10b0:	e1 f8       	bld	r14, 1
+    10b2:	ec 0e       	add	r14, r28
+    10b4:	fd 1e       	adc	r15, r29
+    10b6:	c7 01       	movw	r24, r14
+    10b8:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+					prvAddTaskToReadyQueue( pxTCB );
+    10bc:	8e 89       	ldd	r24, Y+22	; 0x16
+    10be:	90 91 15 2a 	lds	r25, 0x2A15
+    10c2:	98 17       	cp	r25, r24
+    10c4:	10 f4       	brcc	.+4      	; 0x10ca <vTaskPrioritySet+0xaa>
+    10c6:	80 93 15 2a 	sts	0x2A15, r24
+    10ca:	90 e0       	ldi	r25, 0x00	; 0
+    10cc:	9c 01       	movw	r18, r24
+    10ce:	22 0f       	add	r18, r18
+    10d0:	33 1f       	adc	r19, r19
+    10d2:	22 0f       	add	r18, r18
+    10d4:	33 1f       	adc	r19, r19
+    10d6:	22 0f       	add	r18, r18
+    10d8:	33 1f       	adc	r19, r19
+    10da:	82 0f       	add	r24, r18
+    10dc:	93 1f       	adc	r25, r19
+    10de:	80 5e       	subi	r24, 0xE0	; 224
+    10e0:	95 4d       	sbci	r25, 0xD5	; 213
+    10e2:	b7 01       	movw	r22, r14
+    10e4:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+				}
+
+				if( xYieldRequired == pdTRUE )
+    10e8:	11 30       	cpi	r17, 0x01	; 1
+    10ea:	11 f4       	brne	.+4      	; 0x10f0 <vTaskPrioritySet+0xd0>
+				{
+					portYIELD_WITHIN_API();
+    10ec:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+				}
+			}
+		}
+		taskEXIT_CRITICAL();
+    10f0:	0f 90       	pop	r0
+    10f2:	0f be       	out	0x3f, r0	; 63
+	}
+    10f4:	df 91       	pop	r29
+    10f6:	cf 91       	pop	r28
+    10f8:	1f 91       	pop	r17
+    10fa:	ff 90       	pop	r15
+    10fc:	ef 90       	pop	r14
+    10fe:	08 95       	ret
+
+00001100 <xTaskIsTaskSuspended>:
+/*-----------------------------------------------------------*/
+
+#if ( INCLUDE_vTaskSuspend == 1 )
+
+	signed portBASE_TYPE xTaskIsTaskSuspended( xTaskHandle xTask )
+	{
+    1100:	fc 01       	movw	r30, r24
+		/* It does not make sense to check if the calling task is suspended. */
+		configASSERT( xTask );
+
+		/* Is the task we are attempting to resume actually in the
+		suspended list? */
+		if( listIS_CONTAINED_WITHIN( &xSuspendedTaskList, &( pxTCB->xGenericListItem ) ) != pdFALSE )
+    1102:	82 85       	ldd	r24, Z+10	; 0x0a
+    1104:	93 85       	ldd	r25, Z+11	; 0x0b
+    1106:	2a e2       	ldi	r18, 0x2A	; 42
+    1108:	81 37       	cpi	r24, 0x71	; 113
+    110a:	92 07       	cpc	r25, r18
+    110c:	61 f4       	brne	.+24     	; 0x1126 <xTaskIsTaskSuspended+0x26>
+		{
+			/* Has the task already been resumed from within an ISR? */
+			if( listIS_CONTAINED_WITHIN( &xPendingReadyList, &( pxTCB->xEventListItem ) ) != pdTRUE )
+    110e:	24 89       	ldd	r18, Z+20	; 0x14
+    1110:	35 89       	ldd	r19, Z+21	; 0x15
+    1112:	8a e2       	ldi	r24, 0x2A	; 42
+    1114:	2f 35       	cpi	r18, 0x5F	; 95
+    1116:	38 07       	cpc	r19, r24
+    1118:	41 f0       	breq	.+16     	; 0x112a <xTaskIsTaskSuspended+0x2a>
+
+#if ( INCLUDE_vTaskSuspend == 1 )
+
+	signed portBASE_TYPE xTaskIsTaskSuspended( xTaskHandle xTask )
+	{
+	portBASE_TYPE xReturn = pdFALSE;
+    111a:	81 e0       	ldi	r24, 0x01	; 1
+    111c:	21 15       	cp	r18, r1
+    111e:	31 05       	cpc	r19, r1
+    1120:	29 f0       	breq	.+10     	; 0x112c <xTaskIsTaskSuspended+0x2c>
+    1122:	80 e0       	ldi	r24, 0x00	; 0
+    1124:	08 95       	ret
+    1126:	80 e0       	ldi	r24, 0x00	; 0
+    1128:	08 95       	ret
+    112a:	80 e0       	ldi	r24, 0x00	; 0
+				}
+			}
+		}
+
+		return xReturn;
+	}
+    112c:	08 95       	ret
+
+0000112e <vTaskResume>:
+/*-----------------------------------------------------------*/
+
+#if ( INCLUDE_vTaskSuspend == 1 )
+
+	void vTaskResume( xTaskHandle pxTaskToResume )
+	{
+    112e:	0f 93       	push	r16
+    1130:	1f 93       	push	r17
+    1132:	cf 93       	push	r28
+    1134:	df 93       	push	r29
+    1136:	ec 01       	movw	r28, r24
+		it in the ready list. */
+		pxTCB = ( tskTCB * ) pxTaskToResume;
+
+		/* The parameter cannot be NULL as it is impossible to resume the
+		currently executing task. */
+		if( ( pxTCB != NULL ) && ( pxTCB != pxCurrentTCB ) )
+    1138:	00 97       	sbiw	r24, 0x00	; 0
+    113a:	b9 f1       	breq	.+110    	; 0x11aa <vTaskResume+0x7c>
+    113c:	80 91 0e 2a 	lds	r24, 0x2A0E
+    1140:	90 91 0f 2a 	lds	r25, 0x2A0F
+    1144:	c8 17       	cp	r28, r24
+    1146:	d9 07       	cpc	r29, r25
+    1148:	81 f1       	breq	.+96     	; 0x11aa <vTaskResume+0x7c>
+		{
+			taskENTER_CRITICAL();
+    114a:	0f b6       	in	r0, 0x3f	; 63
+    114c:	f8 94       	cli
+    114e:	0f 92       	push	r0
+			{
+				if( xTaskIsTaskSuspended( pxTCB ) == pdTRUE )
+    1150:	ce 01       	movw	r24, r28
+    1152:	0e 94 80 08 	call	0x1100	; 0x1100 <xTaskIsTaskSuspended>
+    1156:	81 30       	cpi	r24, 0x01	; 1
+    1158:	31 f5       	brne	.+76     	; 0x11a6 <vTaskResume+0x78>
+				{
+					traceTASK_RESUME( pxTCB );
+
+					/* As we are in a critical section we can access the ready
+					lists even if the scheduler is suspended. */
+					vListRemove(  &( pxTCB->xGenericListItem ) );
+    115a:	8e 01       	movw	r16, r28
+    115c:	0e 5f       	subi	r16, 0xFE	; 254
+    115e:	1f 4f       	sbci	r17, 0xFF	; 255
+    1160:	c8 01       	movw	r24, r16
+    1162:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+					prvAddTaskToReadyQueue( pxTCB );
+    1166:	8e 89       	ldd	r24, Y+22	; 0x16
+    1168:	90 91 15 2a 	lds	r25, 0x2A15
+    116c:	98 17       	cp	r25, r24
+    116e:	10 f4       	brcc	.+4      	; 0x1174 <vTaskResume+0x46>
+    1170:	80 93 15 2a 	sts	0x2A15, r24
+    1174:	90 e0       	ldi	r25, 0x00	; 0
+    1176:	9c 01       	movw	r18, r24
+    1178:	22 0f       	add	r18, r18
+    117a:	33 1f       	adc	r19, r19
+    117c:	22 0f       	add	r18, r18
+    117e:	33 1f       	adc	r19, r19
+    1180:	22 0f       	add	r18, r18
+    1182:	33 1f       	adc	r19, r19
+    1184:	82 0f       	add	r24, r18
+    1186:	93 1f       	adc	r25, r19
+    1188:	80 5e       	subi	r24, 0xE0	; 224
+    118a:	95 4d       	sbci	r25, 0xD5	; 213
+    118c:	b8 01       	movw	r22, r16
+    118e:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+
+					/* We may have just resumed a higher priority task. */
+					if( pxTCB->uxPriority >= pxCurrentTCB->uxPriority )
+    1192:	e0 91 0e 2a 	lds	r30, 0x2A0E
+    1196:	f0 91 0f 2a 	lds	r31, 0x2A0F
+    119a:	9e 89       	ldd	r25, Y+22	; 0x16
+    119c:	86 89       	ldd	r24, Z+22	; 0x16
+    119e:	98 17       	cp	r25, r24
+    11a0:	10 f0       	brcs	.+4      	; 0x11a6 <vTaskResume+0x78>
+					{
+						/* This yield may not cause the task just resumed to run, but
+						will leave the lists in the correct state for the next yield. */
+						portYIELD_WITHIN_API();
+    11a2:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+					}
+				}
+			}
+			taskEXIT_CRITICAL();
+    11a6:	0f 90       	pop	r0
+    11a8:	0f be       	out	0x3f, r0	; 63
+		}
+	}
+    11aa:	df 91       	pop	r29
+    11ac:	cf 91       	pop	r28
+    11ae:	1f 91       	pop	r17
+    11b0:	0f 91       	pop	r16
+    11b2:	08 95       	ret
+
+000011b4 <xTaskResumeFromISR>:
+/*-----------------------------------------------------------*/
+
+#if ( ( INCLUDE_xTaskResumeFromISR == 1 ) && ( INCLUDE_vTaskSuspend == 1 ) )
+
+	portBASE_TYPE xTaskResumeFromISR( xTaskHandle pxTaskToResume )
+	{
+    11b4:	ef 92       	push	r14
+    11b6:	ff 92       	push	r15
+    11b8:	1f 93       	push	r17
+    11ba:	cf 93       	push	r28
+    11bc:	df 93       	push	r29
+    11be:	ec 01       	movw	r28, r24
+
+		pxTCB = ( tskTCB * ) pxTaskToResume;
+
+		uxSavedInterruptStatus = portSET_INTERRUPT_MASK_FROM_ISR();
+		{
+			if( xTaskIsTaskSuspended( pxTCB ) == pdTRUE )
+    11c0:	0e 94 80 08 	call	0x1100	; 0x1100 <xTaskIsTaskSuspended>
+    11c4:	81 30       	cpi	r24, 0x01	; 1
+    11c6:	b9 f5       	brne	.+110    	; 0x1236 <xTaskResumeFromISR+0x82>
+			{
+				traceTASK_RESUME_FROM_ISR( pxTCB );
+
+				if( uxSchedulerSuspended == ( unsigned portBASE_TYPE ) pdFALSE )
+    11c8:	80 91 13 2a 	lds	r24, 0x2A13
+    11cc:	88 23       	and	r24, r24
+    11ce:	51 f5       	brne	.+84     	; 0x1224 <xTaskResumeFromISR+0x70>
+				{
+					xYieldRequired = ( pxTCB->uxPriority >= pxCurrentTCB->uxPriority );
+    11d0:	e0 91 0e 2a 	lds	r30, 0x2A0E
+    11d4:	f0 91 0f 2a 	lds	r31, 0x2A0F
+    11d8:	11 e0       	ldi	r17, 0x01	; 1
+    11da:	9e 89       	ldd	r25, Y+22	; 0x16
+    11dc:	86 89       	ldd	r24, Z+22	; 0x16
+    11de:	98 17       	cp	r25, r24
+    11e0:	08 f4       	brcc	.+2      	; 0x11e4 <xTaskResumeFromISR+0x30>
+    11e2:	10 e0       	ldi	r17, 0x00	; 0
+					vListRemove(  &( pxTCB->xGenericListItem ) );
+    11e4:	ee 24       	eor	r14, r14
+    11e6:	ff 24       	eor	r15, r15
+    11e8:	68 94       	set
+    11ea:	e1 f8       	bld	r14, 1
+    11ec:	ec 0e       	add	r14, r28
+    11ee:	fd 1e       	adc	r15, r29
+    11f0:	c7 01       	movw	r24, r14
+    11f2:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+					prvAddTaskToReadyQueue( pxTCB );
+    11f6:	8e 89       	ldd	r24, Y+22	; 0x16
+    11f8:	90 91 15 2a 	lds	r25, 0x2A15
+    11fc:	98 17       	cp	r25, r24
+    11fe:	10 f4       	brcc	.+4      	; 0x1204 <xTaskResumeFromISR+0x50>
+    1200:	80 93 15 2a 	sts	0x2A15, r24
+    1204:	90 e0       	ldi	r25, 0x00	; 0
+    1206:	9c 01       	movw	r18, r24
+    1208:	22 0f       	add	r18, r18
+    120a:	33 1f       	adc	r19, r19
+    120c:	22 0f       	add	r18, r18
+    120e:	33 1f       	adc	r19, r19
+    1210:	22 0f       	add	r18, r18
+    1212:	33 1f       	adc	r19, r19
+    1214:	82 0f       	add	r24, r18
+    1216:	93 1f       	adc	r25, r19
+    1218:	80 5e       	subi	r24, 0xE0	; 224
+    121a:	95 4d       	sbci	r25, 0xD5	; 213
+    121c:	b7 01       	movw	r22, r14
+    121e:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+    1222:	0a c0       	rjmp	.+20     	; 0x1238 <xTaskResumeFromISR+0x84>
+				else
+				{
+					/* We cannot access the delayed or ready lists, so will hold this
+					task pending until the scheduler is resumed, at which point a
+					yield will be performed if necessary. */
+					vListInsertEnd( ( xList * ) &( xPendingReadyList ), &( pxTCB->xEventListItem ) );
+    1224:	be 01       	movw	r22, r28
+    1226:	64 5f       	subi	r22, 0xF4	; 244
+    1228:	7f 4f       	sbci	r23, 0xFF	; 255
+    122a:	8f e5       	ldi	r24, 0x5F	; 95
+    122c:	9a e2       	ldi	r25, 0x2A	; 42
+    122e:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+
+#if ( ( INCLUDE_xTaskResumeFromISR == 1 ) && ( INCLUDE_vTaskSuspend == 1 ) )
+
+	portBASE_TYPE xTaskResumeFromISR( xTaskHandle pxTaskToResume )
+	{
+	portBASE_TYPE xYieldRequired = pdFALSE;
+    1232:	10 e0       	ldi	r17, 0x00	; 0
+    1234:	01 c0       	rjmp	.+2      	; 0x1238 <xTaskResumeFromISR+0x84>
+    1236:	10 e0       	ldi	r17, 0x00	; 0
+			}
+		}
+		portCLEAR_INTERRUPT_MASK_FROM_ISR( uxSavedInterruptStatus );
+
+		return xYieldRequired;
+	}
+    1238:	81 2f       	mov	r24, r17
+    123a:	df 91       	pop	r29
+    123c:	cf 91       	pop	r28
+    123e:	1f 91       	pop	r17
+    1240:	ff 90       	pop	r15
+    1242:	ef 90       	pop	r14
+    1244:	08 95       	ret
+
+00001246 <vTaskStartScheduler>:
+ * PUBLIC SCHEDULER CONTROL documented in task.h
+ *----------------------------------------------------------*/
+
+
+void vTaskStartScheduler( void )
+{
+    1246:	af 92       	push	r10
+    1248:	bf 92       	push	r11
+    124a:	cf 92       	push	r12
+    124c:	df 92       	push	r13
+    124e:	ef 92       	push	r14
+    1250:	ff 92       	push	r15
+    1252:	0f 93       	push	r16
+		xReturn = xTaskCreate( prvIdleTask, ( signed char * ) "IDLE", tskIDLE_STACK_SIZE, ( void * ) NULL, ( tskIDLE_PRIORITY | portPRIVILEGE_BIT ), &xIdleTaskHandle );
+	}
+	#else
+	{
+		/* Create the idle task without storing its handle. */
+		xReturn = xTaskCreate( prvIdleTask, ( signed char * ) "IDLE", tskIDLE_STACK_SIZE, ( void * ) NULL, ( tskIDLE_PRIORITY | portPRIVILEGE_BIT ), NULL );
+    1254:	82 ec       	ldi	r24, 0xC2	; 194
+    1256:	9a e0       	ldi	r25, 0x0A	; 10
+    1258:	64 e0       	ldi	r22, 0x04	; 4
+    125a:	72 e0       	ldi	r23, 0x02	; 2
+    125c:	40 e8       	ldi	r20, 0x80	; 128
+    125e:	50 e0       	ldi	r21, 0x00	; 0
+    1260:	20 e0       	ldi	r18, 0x00	; 0
+    1262:	30 e0       	ldi	r19, 0x00	; 0
+    1264:	00 e0       	ldi	r16, 0x00	; 0
+    1266:	ee 24       	eor	r14, r14
+    1268:	ff 24       	eor	r15, r15
+    126a:	cc 24       	eor	r12, r12
+    126c:	dd 24       	eor	r13, r13
+    126e:	aa 24       	eor	r10, r10
+    1270:	bb 24       	eor	r11, r11
+    1272:	0e 94 99 06 	call	0xd32	; 0xd32 <xTaskGenericCreate>
+			xReturn = xTimerCreateTimerTask();
+		}
+	}
+	#endif
+
+	if( xReturn == pdPASS )
+    1276:	81 30       	cpi	r24, 0x01	; 1
+    1278:	49 f4       	brne	.+18     	; 0x128c <vTaskStartScheduler+0x46>
+		so interrupts will automatically get re-enabled when the first task
+		starts to run.
+
+		STEPPING THROUGH HERE USING A DEBUGGER CAN CAUSE BIG PROBLEMS IF THE
+		DEBUGGER ALLOWS INTERRUPTS TO BE PROCESSED. */
+		portDISABLE_INTERRUPTS();
+    127a:	f8 94       	cli
+
+		xSchedulerRunning = pdTRUE;
+    127c:	80 93 14 2a 	sts	0x2A14, r24
+		xTickCount = ( portTickType ) 0U;
+    1280:	10 92 17 2a 	sts	0x2A17, r1
+    1284:	10 92 16 2a 	sts	0x2A16, r1
+		the run time counter time base. */
+		portCONFIGURE_TIMER_FOR_RUN_TIME_STATS();
+		
+		/* Setting up the timer tick is hardware specific and thus in the
+		portable interface. */
+		if( xPortStartScheduler() != pdFALSE )
+    1288:	0e 94 4a 02 	call	0x494	; 0x494 <xPortStartScheduler>
+		}
+	}
+
+	/* This line will only be reached if the kernel could not be started. */
+	configASSERT( xReturn );
+}
+    128c:	0f 91       	pop	r16
+    128e:	ff 90       	pop	r15
+    1290:	ef 90       	pop	r14
+    1292:	df 90       	pop	r13
+    1294:	cf 90       	pop	r12
+    1296:	bf 90       	pop	r11
+    1298:	af 90       	pop	r10
+    129a:	08 95       	ret
+
+0000129c <vTaskEndScheduler>:
+void vTaskEndScheduler( void )
+{
+	/* Stop the scheduler interrupts and call the portable scheduler end
+	routine so the original ISRs can be restored if necessary.  The port
+	layer must ensure interrupts enable	bit is left in the correct state. */
+	portDISABLE_INTERRUPTS();
+    129c:	f8 94       	cli
+	xSchedulerRunning = pdFALSE;
+    129e:	10 92 14 2a 	sts	0x2A14, r1
+	vPortEndScheduler();
+    12a2:	0e 94 8c 02 	call	0x518	; 0x518 <vPortEndScheduler>
+}
+    12a6:	08 95       	ret
+
+000012a8 <vTaskSuspendAll>:
+
+void vTaskSuspendAll( void )
+{
+	/* A critical section is not required as the variable is of type
+	portBASE_TYPE. */
+	++uxSchedulerSuspended;
+    12a8:	80 91 13 2a 	lds	r24, 0x2A13
+    12ac:	8f 5f       	subi	r24, 0xFF	; 255
+    12ae:	80 93 13 2a 	sts	0x2A13, r24
+}
+    12b2:	08 95       	ret
+
+000012b4 <xTaskGetTickCount>:
+portTickType xTaskGetTickCount( void )
+{
+portTickType xTicks;
+
+	/* Critical section required if running on a 16 bit processor. */
+	taskENTER_CRITICAL();
+    12b4:	0f b6       	in	r0, 0x3f	; 63
+    12b6:	f8 94       	cli
+    12b8:	0f 92       	push	r0
+	{
+		xTicks = xTickCount;
+    12ba:	80 91 16 2a 	lds	r24, 0x2A16
+    12be:	90 91 17 2a 	lds	r25, 0x2A17
+	}
+	taskEXIT_CRITICAL();
+    12c2:	0f 90       	pop	r0
+    12c4:	0f be       	out	0x3f, r0	; 63
+
+	return xTicks;
+}
+    12c6:	08 95       	ret
+
+000012c8 <xTaskGetTickCountFromISR>:
+{
+portTickType xReturn;
+unsigned portBASE_TYPE uxSavedInterruptStatus;
+
+	uxSavedInterruptStatus = portSET_INTERRUPT_MASK_FROM_ISR();
+	xReturn = xTickCount;
+    12c8:	80 91 16 2a 	lds	r24, 0x2A16
+    12cc:	90 91 17 2a 	lds	r25, 0x2A17
+	portCLEAR_INTERRUPT_MASK_FROM_ISR( uxSavedInterruptStatus );
+
+	return xReturn;
+}
+    12d0:	08 95       	ret
+
+000012d2 <uxTaskGetNumberOfTasks>:
+
+unsigned portBASE_TYPE uxTaskGetNumberOfTasks( void )
+{
+	/* A critical section is not required because the variables are of type
+	portBASE_TYPE. */
+	return uxCurrentNumberOfTasks;
+    12d2:	80 91 18 2a 	lds	r24, 0x2A18
+}
+    12d6:	08 95       	ret
+
+000012d8 <vTaskIncrementTick>:
+ * SCHEDULER INTERNALS AVAILABLE FOR PORTING PURPOSES
+ * documented in task.h
+ *----------------------------------------------------------*/
+
+void vTaskIncrementTick( void )
+{
+    12d8:	0f 93       	push	r16
+    12da:	1f 93       	push	r17
+    12dc:	cf 93       	push	r28
+    12de:	df 93       	push	r29
+tskTCB * pxTCB;
+
+	/* Called by the portable layer each time a tick interrupt occurs.
+	Increments the tick then checks to see if the new tick value will cause any
+	tasks to be unblocked. */
+	if( uxSchedulerSuspended == ( unsigned portBASE_TYPE ) pdFALSE )
+    12e0:	80 91 13 2a 	lds	r24, 0x2A13
+    12e4:	88 23       	and	r24, r24
+    12e6:	09 f0       	breq	.+2      	; 0x12ea <vTaskIncrementTick+0x12>
+    12e8:	b3 c0       	rjmp	.+358    	; 0x1450 <vTaskIncrementTick+0x178>
+	{
+		++xTickCount;
+    12ea:	80 91 16 2a 	lds	r24, 0x2A16
+    12ee:	90 91 17 2a 	lds	r25, 0x2A17
+    12f2:	01 96       	adiw	r24, 0x01	; 1
+    12f4:	90 93 17 2a 	sts	0x2A17, r25
+    12f8:	80 93 16 2a 	sts	0x2A16, r24
+		if( xTickCount == ( portTickType ) 0U )
+    12fc:	80 91 16 2a 	lds	r24, 0x2A16
+    1300:	90 91 17 2a 	lds	r25, 0x2A17
+    1304:	00 97       	sbiw	r24, 0x00	; 0
+    1306:	99 f5       	brne	.+102    	; 0x136e <vTaskIncrementTick+0x96>
+			/* Tick count has overflowed so we need to swap the delay lists.
+			If there are any items in pxDelayedTaskList here then there is
+			an error! */
+			configASSERT( ( listLIST_IS_EMPTY( pxDelayedTaskList ) ) );
+			
+			pxTemp = pxDelayedTaskList;
+    1308:	80 91 1c 2a 	lds	r24, 0x2A1C
+    130c:	90 91 1d 2a 	lds	r25, 0x2A1D
+			pxDelayedTaskList = pxOverflowDelayedTaskList;
+    1310:	20 91 1a 2a 	lds	r18, 0x2A1A
+    1314:	30 91 1b 2a 	lds	r19, 0x2A1B
+    1318:	30 93 1d 2a 	sts	0x2A1D, r19
+    131c:	20 93 1c 2a 	sts	0x2A1C, r18
+			pxOverflowDelayedTaskList = pxTemp;
+    1320:	90 93 1b 2a 	sts	0x2A1B, r25
+    1324:	80 93 1a 2a 	sts	0x2A1A, r24
+			xNumOfOverflows++;
+    1328:	80 91 10 2a 	lds	r24, 0x2A10
+    132c:	8f 5f       	subi	r24, 0xFF	; 255
+    132e:	80 93 10 2a 	sts	0x2A10, r24
+	
+			if( listLIST_IS_EMPTY( pxDelayedTaskList ) != pdFALSE )
+    1332:	e0 91 1c 2a 	lds	r30, 0x2A1C
+    1336:	f0 91 1d 2a 	lds	r31, 0x2A1D
+    133a:	80 81       	ld	r24, Z
+    133c:	88 23       	and	r24, r24
+    133e:	39 f4       	brne	.+14     	; 0x134e <vTaskIncrementTick+0x76>
+				/* The new current delayed list is empty.  Set
+				xNextTaskUnblockTime to the maximum possible value so it is
+				extremely unlikely that the	
+				if( xTickCount >= xNextTaskUnblockTime ) test will pass until
+				there is an item in the delayed list. */
+				xNextTaskUnblockTime = portMAX_DELAY;
+    1340:	8f ef       	ldi	r24, 0xFF	; 255
+    1342:	9f ef       	ldi	r25, 0xFF	; 255
+    1344:	90 93 0a 02 	sts	0x020A, r25
+    1348:	80 93 09 02 	sts	0x0209, r24
+    134c:	10 c0       	rjmp	.+32     	; 0x136e <vTaskIncrementTick+0x96>
+			{
+				/* The new current delayed list is not empty, get the value of
+				the item at the head of the delayed list.  This is the time at
+				which the task at the head of the delayed list should be removed
+				from the Blocked state. */
+				pxTCB = ( tskTCB * ) listGET_OWNER_OF_HEAD_ENTRY( pxDelayedTaskList );
+    134e:	e0 91 1c 2a 	lds	r30, 0x2A1C
+    1352:	f0 91 1d 2a 	lds	r31, 0x2A1D
+    1356:	05 80       	ldd	r0, Z+5	; 0x05
+    1358:	f6 81       	ldd	r31, Z+6	; 0x06
+    135a:	e0 2d       	mov	r30, r0
+    135c:	06 80       	ldd	r0, Z+6	; 0x06
+    135e:	f7 81       	ldd	r31, Z+7	; 0x07
+    1360:	e0 2d       	mov	r30, r0
+				xNextTaskUnblockTime = listGET_LIST_ITEM_VALUE( &( pxTCB->xGenericListItem ) );
+    1362:	82 81       	ldd	r24, Z+2	; 0x02
+    1364:	93 81       	ldd	r25, Z+3	; 0x03
+    1366:	90 93 0a 02 	sts	0x020A, r25
+    136a:	80 93 09 02 	sts	0x0209, r24
+			}
+		}
+
+		/* See if this tick has made a timeout expire. */
+		prvCheckDelayedTasks();
+    136e:	20 91 16 2a 	lds	r18, 0x2A16
+    1372:	30 91 17 2a 	lds	r19, 0x2A17
+    1376:	80 91 09 02 	lds	r24, 0x0209
+    137a:	90 91 0a 02 	lds	r25, 0x020A
+    137e:	28 17       	cp	r18, r24
+    1380:	39 07       	cpc	r19, r25
+    1382:	08 f4       	brcc	.+2      	; 0x1386 <vTaskIncrementTick+0xae>
+    1384:	6a c0       	rjmp	.+212    	; 0x145a <vTaskIncrementTick+0x182>
+    1386:	e0 91 1c 2a 	lds	r30, 0x2A1C
+    138a:	f0 91 1d 2a 	lds	r31, 0x2A1D
+    138e:	80 81       	ld	r24, Z
+    1390:	88 23       	and	r24, r24
+    1392:	99 f0       	breq	.+38     	; 0x13ba <vTaskIncrementTick+0xe2>
+    1394:	e0 91 1c 2a 	lds	r30, 0x2A1C
+    1398:	f0 91 1d 2a 	lds	r31, 0x2A1D
+    139c:	05 80       	ldd	r0, Z+5	; 0x05
+    139e:	f6 81       	ldd	r31, Z+6	; 0x06
+    13a0:	e0 2d       	mov	r30, r0
+    13a2:	c6 81       	ldd	r28, Z+6	; 0x06
+    13a4:	d7 81       	ldd	r29, Z+7	; 0x07
+    13a6:	8a 81       	ldd	r24, Y+2	; 0x02
+    13a8:	9b 81       	ldd	r25, Y+3	; 0x03
+    13aa:	20 91 16 2a 	lds	r18, 0x2A16
+    13ae:	30 91 17 2a 	lds	r19, 0x2A17
+    13b2:	28 17       	cp	r18, r24
+    13b4:	39 07       	cpc	r19, r25
+    13b6:	f8 f4       	brcc	.+62     	; 0x13f6 <vTaskIncrementTick+0x11e>
+    13b8:	19 c0       	rjmp	.+50     	; 0x13ec <vTaskIncrementTick+0x114>
+    13ba:	8f ef       	ldi	r24, 0xFF	; 255
+    13bc:	9f ef       	ldi	r25, 0xFF	; 255
+    13be:	90 93 0a 02 	sts	0x020A, r25
+    13c2:	80 93 09 02 	sts	0x0209, r24
+    13c6:	49 c0       	rjmp	.+146    	; 0x145a <vTaskIncrementTick+0x182>
+    13c8:	e0 91 1c 2a 	lds	r30, 0x2A1C
+    13cc:	f0 91 1d 2a 	lds	r31, 0x2A1D
+    13d0:	05 80       	ldd	r0, Z+5	; 0x05
+    13d2:	f6 81       	ldd	r31, Z+6	; 0x06
+    13d4:	e0 2d       	mov	r30, r0
+    13d6:	c6 81       	ldd	r28, Z+6	; 0x06
+    13d8:	d7 81       	ldd	r29, Z+7	; 0x07
+    13da:	8a 81       	ldd	r24, Y+2	; 0x02
+    13dc:	9b 81       	ldd	r25, Y+3	; 0x03
+    13de:	20 91 16 2a 	lds	r18, 0x2A16
+    13e2:	30 91 17 2a 	lds	r19, 0x2A17
+    13e6:	28 17       	cp	r18, r24
+    13e8:	39 07       	cpc	r19, r25
+    13ea:	28 f4       	brcc	.+10     	; 0x13f6 <vTaskIncrementTick+0x11e>
+    13ec:	90 93 0a 02 	sts	0x020A, r25
+    13f0:	80 93 09 02 	sts	0x0209, r24
+    13f4:	32 c0       	rjmp	.+100    	; 0x145a <vTaskIncrementTick+0x182>
+    13f6:	8e 01       	movw	r16, r28
+    13f8:	0e 5f       	subi	r16, 0xFE	; 254
+    13fa:	1f 4f       	sbci	r17, 0xFF	; 255
+    13fc:	c8 01       	movw	r24, r16
+    13fe:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+    1402:	8c 89       	ldd	r24, Y+20	; 0x14
+    1404:	9d 89       	ldd	r25, Y+21	; 0x15
+    1406:	00 97       	sbiw	r24, 0x00	; 0
+    1408:	21 f0       	breq	.+8      	; 0x1412 <vTaskIncrementTick+0x13a>
+    140a:	ce 01       	movw	r24, r28
+    140c:	0c 96       	adiw	r24, 0x0c	; 12
+    140e:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+    1412:	8e 89       	ldd	r24, Y+22	; 0x16
+    1414:	90 91 15 2a 	lds	r25, 0x2A15
+    1418:	98 17       	cp	r25, r24
+    141a:	10 f4       	brcc	.+4      	; 0x1420 <vTaskIncrementTick+0x148>
+    141c:	80 93 15 2a 	sts	0x2A15, r24
+    1420:	90 e0       	ldi	r25, 0x00	; 0
+    1422:	9c 01       	movw	r18, r24
+    1424:	22 0f       	add	r18, r18
+    1426:	33 1f       	adc	r19, r19
+    1428:	22 0f       	add	r18, r18
+    142a:	33 1f       	adc	r19, r19
+    142c:	22 0f       	add	r18, r18
+    142e:	33 1f       	adc	r19, r19
+    1430:	82 0f       	add	r24, r18
+    1432:	93 1f       	adc	r25, r19
+    1434:	80 5e       	subi	r24, 0xE0	; 224
+    1436:	95 4d       	sbci	r25, 0xD5	; 213
+    1438:	b8 01       	movw	r22, r16
+    143a:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+    143e:	e0 91 1c 2a 	lds	r30, 0x2A1C
+    1442:	f0 91 1d 2a 	lds	r31, 0x2A1D
+    1446:	80 81       	ld	r24, Z
+    1448:	88 23       	and	r24, r24
+    144a:	09 f0       	breq	.+2      	; 0x144e <vTaskIncrementTick+0x176>
+    144c:	bd cf       	rjmp	.-134    	; 0x13c8 <vTaskIncrementTick+0xf0>
+    144e:	b5 cf       	rjmp	.-150    	; 0x13ba <vTaskIncrementTick+0xe2>
+	}
+	else
+	{
+		++uxMissedTicks;
+    1450:	80 91 12 2a 	lds	r24, 0x2A12
+    1454:	8f 5f       	subi	r24, 0xFF	; 255
+    1456:	80 93 12 2a 	sts	0x2A12, r24
+		}
+	}
+	#endif
+
+	traceTASK_INCREMENT_TICK( xTickCount );
+}
+    145a:	df 91       	pop	r29
+    145c:	cf 91       	pop	r28
+    145e:	1f 91       	pop	r17
+    1460:	0f 91       	pop	r16
+    1462:	08 95       	ret
+
+00001464 <xTaskResumeAll>:
+	++uxSchedulerSuspended;
+}
+/*----------------------------------------------------------*/
+
+signed portBASE_TYPE xTaskResumeAll( void )
+{
+    1464:	af 92       	push	r10
+    1466:	bf 92       	push	r11
+    1468:	cf 92       	push	r12
+    146a:	df 92       	push	r13
+    146c:	ef 92       	push	r14
+    146e:	ff 92       	push	r15
+    1470:	0f 93       	push	r16
+    1472:	1f 93       	push	r17
+    1474:	cf 93       	push	r28
+    1476:	df 93       	push	r29
+	/* It is possible that an ISR caused a task to be removed from an event
+	list while the scheduler was suspended.  If this was the case then the
+	removed task will have been added to the xPendingReadyList.  Once the
+	scheduler has been resumed it is safe to move all the pending ready
+	tasks from this list into their appropriate ready list. */
+	taskENTER_CRITICAL();
+    1478:	0f b6       	in	r0, 0x3f	; 63
+    147a:	f8 94       	cli
+    147c:	0f 92       	push	r0
+	{
+		--uxSchedulerSuspended;
+    147e:	80 91 13 2a 	lds	r24, 0x2A13
+    1482:	81 50       	subi	r24, 0x01	; 1
+    1484:	80 93 13 2a 	sts	0x2A13, r24
+
+		if( uxSchedulerSuspended == ( unsigned portBASE_TYPE ) pdFALSE )
+    1488:	80 91 13 2a 	lds	r24, 0x2A13
+    148c:	88 23       	and	r24, r24
+    148e:	09 f0       	breq	.+2      	; 0x1492 <xTaskResumeAll+0x2e>
+    1490:	69 c0       	rjmp	.+210    	; 0x1564 <xTaskResumeAll+0x100>
+		{
+			if( uxCurrentNumberOfTasks > ( unsigned portBASE_TYPE ) 0U )
+    1492:	80 91 18 2a 	lds	r24, 0x2A18
+    1496:	88 23       	and	r24, r24
+    1498:	81 f5       	brne	.+96     	; 0x14fa <xTaskResumeAll+0x96>
+    149a:	67 c0       	rjmp	.+206    	; 0x156a <xTaskResumeAll+0x106>
+
+				/* Move any readied tasks from the pending list into the
+				appropriate ready list. */
+				while( listLIST_IS_EMPTY( ( xList * ) &xPendingReadyList ) == pdFALSE )
+				{
+					pxTCB = ( tskTCB * ) listGET_OWNER_OF_HEAD_ENTRY(  ( ( xList * ) &xPendingReadyList ) );
+    149c:	d6 01       	movw	r26, r12
+    149e:	ed 91       	ld	r30, X+
+    14a0:	fc 91       	ld	r31, X
+    14a2:	c6 81       	ldd	r28, Z+6	; 0x06
+    14a4:	d7 81       	ldd	r29, Z+7	; 0x07
+					vListRemove( &( pxTCB->xEventListItem ) );
+    14a6:	ce 01       	movw	r24, r28
+    14a8:	0c 96       	adiw	r24, 0x0c	; 12
+    14aa:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+					vListRemove( &( pxTCB->xGenericListItem ) );
+    14ae:	8e 01       	movw	r16, r28
+    14b0:	0e 5f       	subi	r16, 0xFE	; 254
+    14b2:	1f 4f       	sbci	r17, 0xFF	; 255
+    14b4:	c8 01       	movw	r24, r16
+    14b6:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+					prvAddTaskToReadyQueue( pxTCB );
+    14ba:	8e 89       	ldd	r24, Y+22	; 0x16
+    14bc:	90 91 15 2a 	lds	r25, 0x2A15
+    14c0:	98 17       	cp	r25, r24
+    14c2:	10 f4       	brcc	.+4      	; 0x14c8 <xTaskResumeAll+0x64>
+    14c4:	80 93 15 2a 	sts	0x2A15, r24
+    14c8:	90 e0       	ldi	r25, 0x00	; 0
+    14ca:	9c 01       	movw	r18, r24
+    14cc:	22 0f       	add	r18, r18
+    14ce:	33 1f       	adc	r19, r19
+    14d0:	22 0f       	add	r18, r18
+    14d2:	33 1f       	adc	r19, r19
+    14d4:	22 0f       	add	r18, r18
+    14d6:	33 1f       	adc	r19, r19
+    14d8:	82 0f       	add	r24, r18
+    14da:	93 1f       	adc	r25, r19
+    14dc:	80 5e       	subi	r24, 0xE0	; 224
+    14de:	95 4d       	sbci	r25, 0xD5	; 213
+    14e0:	b8 01       	movw	r22, r16
+    14e2:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+
+					/* If we have moved a task that has a priority higher than
+					the current task then we should yield. */
+					if( pxTCB->uxPriority >= pxCurrentTCB->uxPriority )
+    14e6:	e0 91 0e 2a 	lds	r30, 0x2A0E
+    14ea:	f0 91 0f 2a 	lds	r31, 0x2A0F
+    14ee:	9e 89       	ldd	r25, Y+22	; 0x16
+    14f0:	86 89       	ldd	r24, Z+22	; 0x16
+    14f2:	98 17       	cp	r25, r24
+    14f4:	88 f0       	brcs	.+34     	; 0x1518 <xTaskResumeAll+0xb4>
+					{
+						xYieldRequired = pdTRUE;
+    14f6:	ba 2c       	mov	r11, r10
+    14f8:	0f c0       	rjmp	.+30     	; 0x1518 <xTaskResumeAll+0xb4>
+	{
+		--uxSchedulerSuspended;
+
+		if( uxSchedulerSuspended == ( unsigned portBASE_TYPE ) pdFALSE )
+		{
+			if( uxCurrentNumberOfTasks > ( unsigned portBASE_TYPE ) 0U )
+    14fa:	bb 24       	eor	r11, r11
+			{
+				portBASE_TYPE xYieldRequired = pdFALSE;
+
+				/* Move any readied tasks from the pending list into the
+				appropriate ready list. */
+				while( listLIST_IS_EMPTY( ( xList * ) &xPendingReadyList ) == pdFALSE )
+    14fc:	0f 2e       	mov	r0, r31
+    14fe:	ff e5       	ldi	r31, 0x5F	; 95
+    1500:	ef 2e       	mov	r14, r31
+    1502:	fa e2       	ldi	r31, 0x2A	; 42
+    1504:	ff 2e       	mov	r15, r31
+    1506:	f0 2d       	mov	r31, r0
+				{
+					pxTCB = ( tskTCB * ) listGET_OWNER_OF_HEAD_ENTRY(  ( ( xList * ) &xPendingReadyList ) );
+    1508:	0f 2e       	mov	r0, r31
+    150a:	f4 e6       	ldi	r31, 0x64	; 100
+    150c:	cf 2e       	mov	r12, r31
+    150e:	fa e2       	ldi	r31, 0x2A	; 42
+    1510:	df 2e       	mov	r13, r31
+    1512:	f0 2d       	mov	r31, r0
+
+					/* If we have moved a task that has a priority higher than
+					the current task then we should yield. */
+					if( pxTCB->uxPriority >= pxCurrentTCB->uxPriority )
+					{
+						xYieldRequired = pdTRUE;
+    1514:	aa 24       	eor	r10, r10
+    1516:	a3 94       	inc	r10
+			{
+				portBASE_TYPE xYieldRequired = pdFALSE;
+
+				/* Move any readied tasks from the pending list into the
+				appropriate ready list. */
+				while( listLIST_IS_EMPTY( ( xList * ) &xPendingReadyList ) == pdFALSE )
+    1518:	f7 01       	movw	r30, r14
+    151a:	80 81       	ld	r24, Z
+    151c:	88 23       	and	r24, r24
+    151e:	09 f0       	breq	.+2      	; 0x1522 <xTaskResumeAll+0xbe>
+    1520:	bd cf       	rjmp	.-134    	; 0x149c <xTaskResumeAll+0x38>
+				}
+
+				/* If any ticks occurred while the scheduler was suspended then
+				they should be processed now.  This ensures the tick count does not
+				slip, and that any delayed tasks are resumed at the correct time. */
+				if( uxMissedTicks > ( unsigned portBASE_TYPE ) 0U )
+    1522:	80 91 12 2a 	lds	r24, 0x2A12
+    1526:	88 23       	and	r24, r24
+    1528:	81 f0       	breq	.+32     	; 0x154a <xTaskResumeAll+0xe6>
+				{
+					while( uxMissedTicks > ( unsigned portBASE_TYPE ) 0U )
+    152a:	80 91 12 2a 	lds	r24, 0x2A12
+    152e:	88 23       	and	r24, r24
+    1530:	99 f0       	breq	.+38     	; 0x1558 <xTaskResumeAll+0xf4>
+					{
+						vTaskIncrementTick();
+    1532:	0e 94 6c 09 	call	0x12d8	; 0x12d8 <vTaskIncrementTick>
+						--uxMissedTicks;
+    1536:	80 91 12 2a 	lds	r24, 0x2A12
+    153a:	81 50       	subi	r24, 0x01	; 1
+    153c:	80 93 12 2a 	sts	0x2A12, r24
+				/* If any ticks occurred while the scheduler was suspended then
+				they should be processed now.  This ensures the tick count does not
+				slip, and that any delayed tasks are resumed at the correct time. */
+				if( uxMissedTicks > ( unsigned portBASE_TYPE ) 0U )
+				{
+					while( uxMissedTicks > ( unsigned portBASE_TYPE ) 0U )
+    1540:	80 91 12 2a 	lds	r24, 0x2A12
+    1544:	88 23       	and	r24, r24
+    1546:	a9 f7       	brne	.-22     	; 0x1532 <xTaskResumeAll+0xce>
+    1548:	07 c0       	rjmp	.+14     	; 0x1558 <xTaskResumeAll+0xf4>
+						xYieldRequired = pdTRUE;
+					}
+					#endif
+				}
+
+				if( ( xYieldRequired == pdTRUE ) || ( xMissedYield == pdTRUE ) )
+    154a:	f1 e0       	ldi	r31, 0x01	; 1
+    154c:	bf 16       	cp	r11, r31
+    154e:	21 f0       	breq	.+8      	; 0x1558 <xTaskResumeAll+0xf4>
+    1550:	80 91 11 2a 	lds	r24, 0x2A11
+    1554:	81 30       	cpi	r24, 0x01	; 1
+    1556:	41 f4       	brne	.+16     	; 0x1568 <xTaskResumeAll+0x104>
+				{
+					xAlreadyYielded = pdTRUE;
+					xMissedYield = pdFALSE;
+    1558:	10 92 11 2a 	sts	0x2A11, r1
+					portYIELD_WITHIN_API();
+    155c:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+					#endif
+				}
+
+				if( ( xYieldRequired == pdTRUE ) || ( xMissedYield == pdTRUE ) )
+				{
+					xAlreadyYielded = pdTRUE;
+    1560:	81 e0       	ldi	r24, 0x01	; 1
+    1562:	03 c0       	rjmp	.+6      	; 0x156a <xTaskResumeAll+0x106>
+/*----------------------------------------------------------*/
+
+signed portBASE_TYPE xTaskResumeAll( void )
+{
+register tskTCB *pxTCB;
+signed portBASE_TYPE xAlreadyYielded = pdFALSE;
+    1564:	80 e0       	ldi	r24, 0x00	; 0
+    1566:	01 c0       	rjmp	.+2      	; 0x156a <xTaskResumeAll+0x106>
+    1568:	80 e0       	ldi	r24, 0x00	; 0
+					portYIELD_WITHIN_API();
+				}
+			}
+		}
+	}
+	taskEXIT_CRITICAL();
+    156a:	0f 90       	pop	r0
+    156c:	0f be       	out	0x3f, r0	; 63
+
+	return xAlreadyYielded;
+}
+    156e:	df 91       	pop	r29
+    1570:	cf 91       	pop	r28
+    1572:	1f 91       	pop	r17
+    1574:	0f 91       	pop	r16
+    1576:	ff 90       	pop	r15
+    1578:	ef 90       	pop	r14
+    157a:	df 90       	pop	r13
+    157c:	cf 90       	pop	r12
+    157e:	bf 90       	pop	r11
+    1580:	af 90       	pop	r10
+    1582:	08 95       	ret
+
+00001584 <prvIdleTask>:
+		/* ucTasksDeleted is used to prevent vTaskSuspendAll() being called
+		too often in the idle task. */
+		if( uxTasksDeleted > ( unsigned portBASE_TYPE ) 0U )
+		{
+			vTaskSuspendAll();
+				xListIsEmpty = listLIST_IS_EMPTY( &xTasksWaitingTermination );
+    1584:	0f 2e       	mov	r0, r31
+    1586:	f8 e6       	ldi	r31, 0x68	; 104
+    1588:	ef 2e       	mov	r14, r31
+    158a:	fa e2       	ldi	r31, 0x2A	; 42
+    158c:	ff 2e       	mov	r15, r31
+    158e:	f0 2d       	mov	r31, r0
+			{
+				tskTCB *pxTCB;
+
+				taskENTER_CRITICAL();
+				{
+					pxTCB = ( tskTCB * ) listGET_OWNER_OF_HEAD_ENTRY( ( ( xList * ) &xTasksWaitingTermination ) );
+    1590:	0f 2e       	mov	r0, r31
+    1592:	fd e6       	ldi	r31, 0x6D	; 109
+    1594:	cf 2e       	mov	r12, r31
+    1596:	fa e2       	ldi	r31, 0x2A	; 42
+    1598:	df 2e       	mov	r13, r31
+    159a:	f0 2d       	mov	r31, r0
+
+			A critical region is not required here as we are just reading from
+			the list, and an occasional incorrect value will not matter.  If
+			the ready list at the idle priority contains more than one task
+			then a task other than the idle task is ready to execute. */
+			if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ tskIDLE_PRIORITY ] ) ) > ( unsigned portBASE_TYPE ) 1 )
+    159c:	00 e2       	ldi	r16, 0x20	; 32
+    159e:	1a e2       	ldi	r17, 0x2A	; 42
+	{
+		portBASE_TYPE xListIsEmpty;
+
+		/* ucTasksDeleted is used to prevent vTaskSuspendAll() being called
+		too often in the idle task. */
+		if( uxTasksDeleted > ( unsigned portBASE_TYPE ) 0U )
+    15a0:	80 91 19 2a 	lds	r24, 0x2A19
+    15a4:	88 23       	and	r24, r24
+    15a6:	39 f1       	breq	.+78     	; 0x15f6 <prvIdleTask+0x72>
+		{
+			vTaskSuspendAll();
+    15a8:	0e 94 54 09 	call	0x12a8	; 0x12a8 <vTaskSuspendAll>
+				xListIsEmpty = listLIST_IS_EMPTY( &xTasksWaitingTermination );
+    15ac:	d7 01       	movw	r26, r14
+    15ae:	cc 91       	ld	r28, X
+			xTaskResumeAll();
+    15b0:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+
+			if( xListIsEmpty == pdFALSE )
+    15b4:	cc 23       	and	r28, r28
+    15b6:	f9 f0       	breq	.+62     	; 0x15f6 <prvIdleTask+0x72>
+			{
+				tskTCB *pxTCB;
+
+				taskENTER_CRITICAL();
+    15b8:	0f b6       	in	r0, 0x3f	; 63
+    15ba:	f8 94       	cli
+    15bc:	0f 92       	push	r0
+				{
+					pxTCB = ( tskTCB * ) listGET_OWNER_OF_HEAD_ENTRY( ( ( xList * ) &xTasksWaitingTermination ) );
+    15be:	d6 01       	movw	r26, r12
+    15c0:	ed 91       	ld	r30, X+
+    15c2:	fc 91       	ld	r31, X
+    15c4:	c6 81       	ldd	r28, Z+6	; 0x06
+    15c6:	d7 81       	ldd	r29, Z+7	; 0x07
+					vListRemove( &( pxTCB->xGenericListItem ) );
+    15c8:	ce 01       	movw	r24, r28
+    15ca:	02 96       	adiw	r24, 0x02	; 2
+    15cc:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+					--uxCurrentNumberOfTasks;
+    15d0:	80 91 18 2a 	lds	r24, 0x2A18
+    15d4:	81 50       	subi	r24, 0x01	; 1
+    15d6:	80 93 18 2a 	sts	0x2A18, r24
+					--uxTasksDeleted;
+    15da:	80 91 19 2a 	lds	r24, 0x2A19
+    15de:	81 50       	subi	r24, 0x01	; 1
+    15e0:	80 93 19 2a 	sts	0x2A19, r24
+				}
+				taskEXIT_CRITICAL();
+    15e4:	0f 90       	pop	r0
+    15e6:	0f be       	out	0x3f, r0	; 63
+		want to allocate and clean RAM statically. */
+		portCLEAN_UP_TCB( pxTCB );
+
+		/* Free up the memory allocated by the scheduler for the task.  It is up to
+		the task to free any memory allocated at the application level. */
+		vPortFreeAligned( pxTCB->pxStack );
+    15e8:	8f 89       	ldd	r24, Y+23	; 0x17
+    15ea:	98 8d       	ldd	r25, Y+24	; 0x18
+    15ec:	0e 94 be 00 	call	0x17c	; 0x17c <vPortFree>
+		vPortFree( pxTCB );
+    15f0:	ce 01       	movw	r24, r28
+    15f2:	0e 94 be 00 	call	0x17c	; 0x17c <vPortFree>
+
+			A critical region is not required here as we are just reading from
+			the list, and an occasional incorrect value will not matter.  If
+			the ready list at the idle priority contains more than one task
+			then a task other than the idle task is ready to execute. */
+			if( listCURRENT_LIST_LENGTH( &( pxReadyTasksLists[ tskIDLE_PRIORITY ] ) ) > ( unsigned portBASE_TYPE ) 1 )
+    15f6:	f8 01       	movw	r30, r16
+    15f8:	80 81       	ld	r24, Z
+    15fa:	82 30       	cpi	r24, 0x02	; 2
+    15fc:	10 f0       	brcs	.+4      	; 0x1602 <prvIdleTask+0x7e>
+			{
+				taskYIELD();
+    15fe:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+			/* Call the user defined function from within the idle task.  This
+			allows the application designer to add background functionality
+			without the overhead of a separate task.
+			NOTE: vApplicationIdleHook() MUST NOT, UNDER ANY CIRCUMSTANCES,
+			CALL A FUNCTION THAT MIGHT BLOCK. */
+			vApplicationIdleHook();
+    1602:	0e 94 b3 01 	call	0x366	; 0x366 <vApplicationIdleHook>
+		}
+		#endif
+	}
+    1606:	cc cf       	rjmp	.-104    	; 0x15a0 <prvIdleTask+0x1c>
+
+00001608 <vTaskDelay>:
+/*-----------------------------------------------------------*/
+
+#if ( INCLUDE_vTaskDelay == 1 )
+
+	void vTaskDelay( portTickType xTicksToDelay )
+	{
+    1608:	cf 93       	push	r28
+    160a:	df 93       	push	r29
+    160c:	ec 01       	movw	r28, r24
+	portTickType xTimeToWake;
+	signed portBASE_TYPE xAlreadyYielded = pdFALSE;
+
+		/* A delay time of zero just forces a reschedule. */
+		if( xTicksToDelay > ( portTickType ) 0U )
+    160e:	00 97       	sbiw	r24, 0x00	; 0
+    1610:	b1 f0       	breq	.+44     	; 0x163e <vTaskDelay+0x36>
+		{
+			vTaskSuspendAll();
+    1612:	0e 94 54 09 	call	0x12a8	; 0x12a8 <vTaskSuspendAll>
+				This task cannot be in an event list as it is the currently
+				executing task. */
+
+				/* Calculate the time to wake - this may overflow but this is
+				not a problem. */
+				xTimeToWake = xTickCount + xTicksToDelay;
+    1616:	80 91 16 2a 	lds	r24, 0x2A16
+    161a:	90 91 17 2a 	lds	r25, 0x2A17
+    161e:	c8 0f       	add	r28, r24
+    1620:	d9 1f       	adc	r29, r25
+
+				/* We must remove ourselves from the ready list before adding
+				ourselves to the blocked list as the same list item is used for
+				both lists. */
+				vListRemove( ( xListItem * ) &( pxCurrentTCB->xGenericListItem ) );
+    1622:	80 91 0e 2a 	lds	r24, 0x2A0E
+    1626:	90 91 0f 2a 	lds	r25, 0x2A0F
+    162a:	02 96       	adiw	r24, 0x02	; 2
+    162c:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+				prvAddCurrentTaskToDelayedList( xTimeToWake );
+    1630:	ce 01       	movw	r24, r28
+    1632:	0e 94 62 06 	call	0xcc4	; 0xcc4 <prvAddCurrentTaskToDelayedList>
+			}
+			xAlreadyYielded = xTaskResumeAll();
+    1636:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+		}
+
+		/* Force a reschedule if xTaskResumeAll has not already done so, we may
+		have put ourselves to sleep. */
+		if( xAlreadyYielded == pdFALSE )
+    163a:	88 23       	and	r24, r24
+    163c:	11 f4       	brne	.+4      	; 0x1642 <vTaskDelay+0x3a>
+		{
+			portYIELD_WITHIN_API();
+    163e:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+		}
+	}
+    1642:	df 91       	pop	r29
+    1644:	cf 91       	pop	r28
+    1646:	08 95       	ret
+
+00001648 <vTaskDelayUntil>:
+ *----------------------------------------------------------*/
+
+#if ( INCLUDE_vTaskDelayUntil == 1 )
+
+	void vTaskDelayUntil( portTickType * const pxPreviousWakeTime, portTickType xTimeIncrement )
+	{
+    1648:	0f 93       	push	r16
+    164a:	1f 93       	push	r17
+    164c:	cf 93       	push	r28
+    164e:	df 93       	push	r29
+    1650:	8c 01       	movw	r16, r24
+    1652:	eb 01       	movw	r28, r22
+	portBASE_TYPE xAlreadyYielded, xShouldDelay = pdFALSE;
+
+		configASSERT( pxPreviousWakeTime );
+		configASSERT( ( xTimeIncrement > 0U ) );
+
+		vTaskSuspendAll();
+    1654:	0e 94 54 09 	call	0x12a8	; 0x12a8 <vTaskSuspendAll>
+		{
+			/* Generate the tick time at which the task wants to wake. */
+			xTimeToWake = *pxPreviousWakeTime + xTimeIncrement;
+    1658:	f8 01       	movw	r30, r16
+    165a:	80 81       	ld	r24, Z
+    165c:	91 81       	ldd	r25, Z+1	; 0x01
+    165e:	c8 0f       	add	r28, r24
+    1660:	d9 1f       	adc	r29, r25
+
+			if( xTickCount < *pxPreviousWakeTime )
+    1662:	20 91 16 2a 	lds	r18, 0x2A16
+    1666:	30 91 17 2a 	lds	r19, 0x2A17
+    166a:	28 17       	cp	r18, r24
+    166c:	39 07       	cpc	r19, r25
+    166e:	68 f4       	brcc	.+26     	; 0x168a <vTaskDelayUntil+0x42>
+				/* The tick count has overflowed since this function was
+				lasted called.  In this case the only time we should ever
+				actually delay is if the wake time has also	overflowed,
+				and the wake time is greater than the tick time.  When this
+				is the case it is as if neither time had overflowed. */
+				if( ( xTimeToWake < *pxPreviousWakeTime ) && ( xTimeToWake > xTickCount ) )
+    1670:	c8 17       	cp	r28, r24
+    1672:	d9 07       	cpc	r29, r25
+    1674:	50 f5       	brcc	.+84     	; 0x16ca <vTaskDelayUntil+0x82>
+    1676:	80 91 16 2a 	lds	r24, 0x2A16
+    167a:	90 91 17 2a 	lds	r25, 0x2A17
+					xShouldDelay = pdTRUE;
+				}
+			}
+
+			/* Update the wake time ready for the next call. */
+			*pxPreviousWakeTime = xTimeToWake;
+    167e:	d1 83       	std	Z+1, r29	; 0x01
+    1680:	c0 83       	st	Z, r28
+
+			if( xShouldDelay != pdFALSE )
+    1682:	8c 17       	cp	r24, r28
+    1684:	9d 07       	cpc	r25, r29
+    1686:	b0 f4       	brcc	.+44     	; 0x16b4 <vTaskDelayUntil+0x6c>
+    1688:	0b c0       	rjmp	.+22     	; 0x16a0 <vTaskDelayUntil+0x58>
+			else
+			{
+				/* The tick time has not overflowed.  In this case we will
+				delay if either the wake time has overflowed, and/or the
+				tick time is less than the wake time. */
+				if( ( xTimeToWake < *pxPreviousWakeTime ) || ( xTimeToWake > xTickCount ) )
+    168a:	c8 17       	cp	r28, r24
+    168c:	d9 07       	cpc	r29, r25
+    168e:	c8 f0       	brcs	.+50     	; 0x16c2 <vTaskDelayUntil+0x7a>
+    1690:	80 91 16 2a 	lds	r24, 0x2A16
+    1694:	90 91 17 2a 	lds	r25, 0x2A17
+    1698:	8c 17       	cp	r24, r28
+    169a:	9d 07       	cpc	r25, r29
+    169c:	90 f0       	brcs	.+36     	; 0x16c2 <vTaskDelayUntil+0x7a>
+    169e:	15 c0       	rjmp	.+42     	; 0x16ca <vTaskDelayUntil+0x82>
+				traceTASK_DELAY_UNTIL();
+
+				/* We must remove ourselves from the ready list before adding
+				ourselves to the blocked list as the same list item is used for
+				both lists. */
+				vListRemove( ( xListItem * ) &( pxCurrentTCB->xGenericListItem ) );
+    16a0:	80 91 0e 2a 	lds	r24, 0x2A0E
+    16a4:	90 91 0f 2a 	lds	r25, 0x2A0F
+    16a8:	02 96       	adiw	r24, 0x02	; 2
+    16aa:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+				prvAddCurrentTaskToDelayedList( xTimeToWake );
+    16ae:	ce 01       	movw	r24, r28
+    16b0:	0e 94 62 06 	call	0xcc4	; 0xcc4 <prvAddCurrentTaskToDelayedList>
+			}
+		}
+		xAlreadyYielded = xTaskResumeAll();
+    16b4:	0e 94 32 0a 	call	0x1464	; 0x1464 <xTaskResumeAll>
+
+		/* Force a reschedule if xTaskResumeAll has not already done so, we may
+		have put ourselves to sleep. */
+		if( xAlreadyYielded == pdFALSE )
+    16b8:	88 23       	and	r24, r24
+    16ba:	59 f4       	brne	.+22     	; 0x16d2 <vTaskDelayUntil+0x8a>
+		{
+			portYIELD_WITHIN_API();
+    16bc:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+    16c0:	08 c0       	rjmp	.+16     	; 0x16d2 <vTaskDelayUntil+0x8a>
+					xShouldDelay = pdTRUE;
+				}
+			}
+
+			/* Update the wake time ready for the next call. */
+			*pxPreviousWakeTime = xTimeToWake;
+    16c2:	f8 01       	movw	r30, r16
+    16c4:	d1 83       	std	Z+1, r29	; 0x01
+    16c6:	c0 83       	st	Z, r28
+    16c8:	eb cf       	rjmp	.-42     	; 0x16a0 <vTaskDelayUntil+0x58>
+    16ca:	f8 01       	movw	r30, r16
+    16cc:	d1 83       	std	Z+1, r29	; 0x01
+    16ce:	c0 83       	st	Z, r28
+    16d0:	f1 cf       	rjmp	.-30     	; 0x16b4 <vTaskDelayUntil+0x6c>
+		have put ourselves to sleep. */
+		if( xAlreadyYielded == pdFALSE )
+		{
+			portYIELD_WITHIN_API();
+		}
+	}
+    16d2:	df 91       	pop	r29
+    16d4:	cf 91       	pop	r28
+    16d6:	1f 91       	pop	r17
+    16d8:	0f 91       	pop	r16
+    16da:	08 95       	ret
+
+000016dc <vTaskSwitchContext>:
+#endif
+/*-----------------------------------------------------------*/
+
+void vTaskSwitchContext( void )
+{
+	if( uxSchedulerSuspended != ( unsigned portBASE_TYPE ) pdFALSE )
+    16dc:	80 91 13 2a 	lds	r24, 0x2A13
+    16e0:	88 23       	and	r24, r24
+    16e2:	99 f4       	brne	.+38     	; 0x170a <vTaskSwitchContext+0x2e>
+	
+		taskFIRST_CHECK_FOR_STACK_OVERFLOW();
+		taskSECOND_CHECK_FOR_STACK_OVERFLOW();
+	
+		/* Find the highest priority queue that contains ready tasks. */
+		while( listLIST_IS_EMPTY( &( pxReadyTasksLists[ uxTopReadyPriority ] ) ) )
+    16e4:	80 91 15 2a 	lds	r24, 0x2A15
+    16e8:	90 e0       	ldi	r25, 0x00	; 0
+    16ea:	fc 01       	movw	r30, r24
+    16ec:	ee 0f       	add	r30, r30
+    16ee:	ff 1f       	adc	r31, r31
+    16f0:	ee 0f       	add	r30, r30
+    16f2:	ff 1f       	adc	r31, r31
+    16f4:	ee 0f       	add	r30, r30
+    16f6:	ff 1f       	adc	r31, r31
+    16f8:	8e 0f       	add	r24, r30
+    16fa:	9f 1f       	adc	r25, r31
+    16fc:	fc 01       	movw	r30, r24
+    16fe:	e0 5e       	subi	r30, 0xE0	; 224
+    1700:	f5 4d       	sbci	r31, 0xD5	; 213
+    1702:	80 81       	ld	r24, Z
+    1704:	88 23       	and	r24, r24
+    1706:	29 f0       	breq	.+10     	; 0x1712 <vTaskSwitchContext+0x36>
+    1708:	1b c0       	rjmp	.+54     	; 0x1740 <vTaskSwitchContext+0x64>
+{
+	if( uxSchedulerSuspended != ( unsigned portBASE_TYPE ) pdFALSE )
+	{
+		/* The scheduler is currently suspended - do not allow a context
+		switch. */
+		xMissedYield = pdTRUE;
+    170a:	81 e0       	ldi	r24, 0x01	; 1
+    170c:	80 93 11 2a 	sts	0x2A11, r24
+    1710:	08 95       	ret
+	
+		/* Find the highest priority queue that contains ready tasks. */
+		while( listLIST_IS_EMPTY( &( pxReadyTasksLists[ uxTopReadyPriority ] ) ) )
+		{
+			configASSERT( uxTopReadyPriority );
+			--uxTopReadyPriority;
+    1712:	80 91 15 2a 	lds	r24, 0x2A15
+    1716:	81 50       	subi	r24, 0x01	; 1
+    1718:	80 93 15 2a 	sts	0x2A15, r24
+	
+		taskFIRST_CHECK_FOR_STACK_OVERFLOW();
+		taskSECOND_CHECK_FOR_STACK_OVERFLOW();
+	
+		/* Find the highest priority queue that contains ready tasks. */
+		while( listLIST_IS_EMPTY( &( pxReadyTasksLists[ uxTopReadyPriority ] ) ) )
+    171c:	80 91 15 2a 	lds	r24, 0x2A15
+    1720:	90 e0       	ldi	r25, 0x00	; 0
+    1722:	fc 01       	movw	r30, r24
+    1724:	ee 0f       	add	r30, r30
+    1726:	ff 1f       	adc	r31, r31
+    1728:	ee 0f       	add	r30, r30
+    172a:	ff 1f       	adc	r31, r31
+    172c:	ee 0f       	add	r30, r30
+    172e:	ff 1f       	adc	r31, r31
+    1730:	8e 0f       	add	r24, r30
+    1732:	9f 1f       	adc	r25, r31
+    1734:	fc 01       	movw	r30, r24
+    1736:	e0 5e       	subi	r30, 0xE0	; 224
+    1738:	f5 4d       	sbci	r31, 0xD5	; 213
+    173a:	80 81       	ld	r24, Z
+    173c:	88 23       	and	r24, r24
+    173e:	49 f3       	breq	.-46     	; 0x1712 <vTaskSwitchContext+0x36>
+			--uxTopReadyPriority;
+		}
+	
+		/* listGET_OWNER_OF_NEXT_ENTRY walks through the list, so the tasks of the
+		same priority get an equal share of the processor time. */
+		listGET_OWNER_OF_NEXT_ENTRY( pxCurrentTCB, &( pxReadyTasksLists[ uxTopReadyPriority ] ) );
+    1740:	80 91 15 2a 	lds	r24, 0x2A15
+    1744:	90 e0       	ldi	r25, 0x00	; 0
+    1746:	fc 01       	movw	r30, r24
+    1748:	ee 0f       	add	r30, r30
+    174a:	ff 1f       	adc	r31, r31
+    174c:	ee 0f       	add	r30, r30
+    174e:	ff 1f       	adc	r31, r31
+    1750:	ee 0f       	add	r30, r30
+    1752:	ff 1f       	adc	r31, r31
+    1754:	e8 0f       	add	r30, r24
+    1756:	f9 1f       	adc	r31, r25
+    1758:	e0 5e       	subi	r30, 0xE0	; 224
+    175a:	f5 4d       	sbci	r31, 0xD5	; 213
+    175c:	a1 81       	ldd	r26, Z+1	; 0x01
+    175e:	b2 81       	ldd	r27, Z+2	; 0x02
+    1760:	12 96       	adiw	r26, 0x02	; 2
+    1762:	0d 90       	ld	r0, X+
+    1764:	bc 91       	ld	r27, X
+    1766:	a0 2d       	mov	r26, r0
+    1768:	b2 83       	std	Z+2, r27	; 0x02
+    176a:	a1 83       	std	Z+1, r26	; 0x01
+    176c:	cf 01       	movw	r24, r30
+    176e:	03 96       	adiw	r24, 0x03	; 3
+    1770:	a8 17       	cp	r26, r24
+    1772:	b9 07       	cpc	r27, r25
+    1774:	31 f4       	brne	.+12     	; 0x1782 <vTaskSwitchContext+0xa6>
+    1776:	12 96       	adiw	r26, 0x02	; 2
+    1778:	8d 91       	ld	r24, X+
+    177a:	9c 91       	ld	r25, X
+    177c:	13 97       	sbiw	r26, 0x03	; 3
+    177e:	92 83       	std	Z+2, r25	; 0x02
+    1780:	81 83       	std	Z+1, r24	; 0x01
+    1782:	01 80       	ldd	r0, Z+1	; 0x01
+    1784:	f2 81       	ldd	r31, Z+2	; 0x02
+    1786:	e0 2d       	mov	r30, r0
+    1788:	86 81       	ldd	r24, Z+6	; 0x06
+    178a:	97 81       	ldd	r25, Z+7	; 0x07
+    178c:	90 93 0f 2a 	sts	0x2A0F, r25
+    1790:	80 93 0e 2a 	sts	0x2A0E, r24
+    1794:	08 95       	ret
+
+00001796 <vTaskSuspend>:
+/*-----------------------------------------------------------*/
+
+#if ( INCLUDE_vTaskSuspend == 1 )
+
+	void vTaskSuspend( xTaskHandle pxTaskToSuspend )
+	{
+    1796:	ef 92       	push	r14
+    1798:	ff 92       	push	r15
+    179a:	0f 93       	push	r16
+    179c:	1f 93       	push	r17
+    179e:	cf 93       	push	r28
+    17a0:	df 93       	push	r29
+    17a2:	7c 01       	movw	r14, r24
+	tskTCB *pxTCB;
+
+		taskENTER_CRITICAL();
+    17a4:	0f b6       	in	r0, 0x3f	; 63
+    17a6:	f8 94       	cli
+    17a8:	0f 92       	push	r0
+		{
+			/* Ensure a yield is performed if the current task is being
+			suspended. */
+			if( pxTaskToSuspend == pxCurrentTCB )
+    17aa:	80 91 0e 2a 	lds	r24, 0x2A0E
+    17ae:	90 91 0f 2a 	lds	r25, 0x2A0F
+    17b2:	e8 16       	cp	r14, r24
+    17b4:	f9 06       	cpc	r15, r25
+    17b6:	21 f0       	breq	.+8      	; 0x17c0 <vTaskSuspend+0x2a>
+			{
+				pxTaskToSuspend = NULL;
+			}
+
+			/* If null is passed in here then we are suspending ourselves. */
+			pxTCB = prvGetTCBFromHandle( pxTaskToSuspend );
+    17b8:	e1 14       	cp	r14, r1
+    17ba:	f1 04       	cpc	r15, r1
+    17bc:	41 f4       	brne	.+16     	; 0x17ce <vTaskSuspend+0x38>
+    17be:	02 c0       	rjmp	.+4      	; 0x17c4 <vTaskSuspend+0x2e>
+		{
+			/* Ensure a yield is performed if the current task is being
+			suspended. */
+			if( pxTaskToSuspend == pxCurrentTCB )
+			{
+				pxTaskToSuspend = NULL;
+    17c0:	ee 24       	eor	r14, r14
+    17c2:	ff 24       	eor	r15, r15
+			}
+
+			/* If null is passed in here then we are suspending ourselves. */
+			pxTCB = prvGetTCBFromHandle( pxTaskToSuspend );
+    17c4:	c0 91 0e 2a 	lds	r28, 0x2A0E
+    17c8:	d0 91 0f 2a 	lds	r29, 0x2A0F
+    17cc:	01 c0       	rjmp	.+2      	; 0x17d0 <vTaskSuspend+0x3a>
+    17ce:	e7 01       	movw	r28, r14
+
+			traceTASK_SUSPEND( pxTCB );
+
+			/* Remove task from the ready/delayed list and place in the	suspended list. */
+			vListRemove( &( pxTCB->xGenericListItem ) );
+    17d0:	8e 01       	movw	r16, r28
+    17d2:	0e 5f       	subi	r16, 0xFE	; 254
+    17d4:	1f 4f       	sbci	r17, 0xFF	; 255
+    17d6:	c8 01       	movw	r24, r16
+    17d8:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+
+			/* Is the task waiting on an event also? */
+			if( pxTCB->xEventListItem.pvContainer != NULL )
+    17dc:	8c 89       	ldd	r24, Y+20	; 0x14
+    17de:	9d 89       	ldd	r25, Y+21	; 0x15
+    17e0:	00 97       	sbiw	r24, 0x00	; 0
+    17e2:	21 f0       	breq	.+8      	; 0x17ec <vTaskSuspend+0x56>
+			{
+				vListRemove( &( pxTCB->xEventListItem ) );
+    17e4:	ce 01       	movw	r24, r28
+    17e6:	0c 96       	adiw	r24, 0x0c	; 12
+    17e8:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+			}
+
+			vListInsertEnd( ( xList * ) &xSuspendedTaskList, &( pxTCB->xGenericListItem ) );
+    17ec:	81 e7       	ldi	r24, 0x71	; 113
+    17ee:	9a e2       	ldi	r25, 0x2A	; 42
+    17f0:	b8 01       	movw	r22, r16
+    17f2:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+		}
+		taskEXIT_CRITICAL();
+    17f6:	0f 90       	pop	r0
+    17f8:	0f be       	out	0x3f, r0	; 63
+
+		if( ( void * ) pxTaskToSuspend == NULL )
+    17fa:	e1 14       	cp	r14, r1
+    17fc:	f1 04       	cpc	r15, r1
+    17fe:	a1 f4       	brne	.+40     	; 0x1828 <vTaskSuspend+0x92>
+		{
+			if( xSchedulerRunning != pdFALSE )
+    1800:	80 91 14 2a 	lds	r24, 0x2A14
+    1804:	88 23       	and	r24, r24
+    1806:	19 f0       	breq	.+6      	; 0x180e <vTaskSuspend+0x78>
+			{
+				/* We have just suspended the current task. */
+				portYIELD_WITHIN_API();
+    1808:	0e 94 8d 02 	call	0x51a	; 0x51a <vPortYield>
+    180c:	0d c0       	rjmp	.+26     	; 0x1828 <vTaskSuspend+0x92>
+			else
+			{
+				/* The scheduler is not running, but the task that was pointed
+				to by pxCurrentTCB has just been suspended and pxCurrentTCB
+				must be adjusted to point to a different task. */
+				if( listCURRENT_LIST_LENGTH( &xSuspendedTaskList ) == uxCurrentNumberOfTasks )
+    180e:	90 91 71 2a 	lds	r25, 0x2A71
+    1812:	80 91 18 2a 	lds	r24, 0x2A18
+    1816:	98 17       	cp	r25, r24
+    1818:	29 f4       	brne	.+10     	; 0x1824 <vTaskSuspend+0x8e>
+				{
+					/* No other tasks are ready, so set pxCurrentTCB back to
+					NULL so when the next task is created pxCurrentTCB will
+					be set to point to it no matter what its relative priority
+					is. */
+					pxCurrentTCB = NULL;
+    181a:	10 92 0f 2a 	sts	0x2A0F, r1
+    181e:	10 92 0e 2a 	sts	0x2A0E, r1
+    1822:	02 c0       	rjmp	.+4      	; 0x1828 <vTaskSuspend+0x92>
+				}
+				else
+				{
+					vTaskSwitchContext();
+    1824:	0e 94 6e 0b 	call	0x16dc	; 0x16dc <vTaskSwitchContext>
+				}
+			}
+		}
+	}
+    1828:	df 91       	pop	r29
+    182a:	cf 91       	pop	r28
+    182c:	1f 91       	pop	r17
+    182e:	0f 91       	pop	r16
+    1830:	ff 90       	pop	r15
+    1832:	ef 90       	pop	r14
+    1834:	08 95       	ret
+
+00001836 <vTaskPlaceOnEventList>:
+	}
+}
+/*-----------------------------------------------------------*/
+
+void vTaskPlaceOnEventList( const xList * const pxEventList, portTickType xTicksToWait )
+{
+    1836:	cf 93       	push	r28
+    1838:	df 93       	push	r29
+    183a:	eb 01       	movw	r28, r22
+	SCHEDULER SUSPENDED. */
+
+	/* Place the event list item of the TCB in the appropriate event list.
+	This is placed in the list in priority order so the highest priority task
+	is the first to be woken by the event. */
+	vListInsert( ( xList * ) pxEventList, ( xListItem * ) &( pxCurrentTCB->xEventListItem ) );
+    183c:	60 91 0e 2a 	lds	r22, 0x2A0E
+    1840:	70 91 0f 2a 	lds	r23, 0x2A0F
+    1844:	64 5f       	subi	r22, 0xF4	; 244
+    1846:	7f 4f       	sbci	r23, 0xFF	; 255
+    1848:	0e 94 08 01 	call	0x210	; 0x210 <vListInsert>
+
+	/* We must remove ourselves from the ready list before adding ourselves
+	to the blocked list as the same list item is used for both lists.  We have
+	exclusive access to the ready lists as the scheduler is locked. */
+	vListRemove( ( xListItem * ) &( pxCurrentTCB->xGenericListItem ) );
+    184c:	80 91 0e 2a 	lds	r24, 0x2A0E
+    1850:	90 91 0f 2a 	lds	r25, 0x2A0F
+    1854:	02 96       	adiw	r24, 0x02	; 2
+    1856:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+
+
+	#if ( INCLUDE_vTaskSuspend == 1 )
+	{
+		if( xTicksToWait == portMAX_DELAY )
+    185a:	8f ef       	ldi	r24, 0xFF	; 255
+    185c:	cf 3f       	cpi	r28, 0xFF	; 255
+    185e:	d8 07       	cpc	r29, r24
+    1860:	59 f4       	brne	.+22     	; 0x1878 <vTaskPlaceOnEventList+0x42>
+		{
+			/* Add ourselves to the suspended task list instead of a delayed task
+			list to ensure we are not woken by a timing event.  We will block
+			indefinitely. */
+			vListInsertEnd( ( xList * ) &xSuspendedTaskList, ( xListItem * ) &( pxCurrentTCB->xGenericListItem ) );
+    1862:	60 91 0e 2a 	lds	r22, 0x2A0E
+    1866:	70 91 0f 2a 	lds	r23, 0x2A0F
+    186a:	6e 5f       	subi	r22, 0xFE	; 254
+    186c:	7f 4f       	sbci	r23, 0xFF	; 255
+    186e:	81 e7       	ldi	r24, 0x71	; 113
+    1870:	9a e2       	ldi	r25, 0x2A	; 42
+    1872:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+    1876:	08 c0       	rjmp	.+16     	; 0x1888 <vTaskPlaceOnEventList+0x52>
+		}
+		else
+		{
+			/* Calculate the time at which the task should be woken if the event does
+			not occur.  This may overflow but this doesn't matter. */
+			xTimeToWake = xTickCount + xTicksToWait;
+    1878:	80 91 16 2a 	lds	r24, 0x2A16
+    187c:	90 91 17 2a 	lds	r25, 0x2A17
+			prvAddCurrentTaskToDelayedList( xTimeToWake );
+    1880:	8c 0f       	add	r24, r28
+    1882:	9d 1f       	adc	r25, r29
+    1884:	0e 94 62 06 	call	0xcc4	; 0xcc4 <prvAddCurrentTaskToDelayedList>
+			not occur.  This may overflow but this doesn't matter. */
+			xTimeToWake = xTickCount + xTicksToWait;
+			prvAddCurrentTaskToDelayedList( xTimeToWake );
+	}
+	#endif
+}
+    1888:	df 91       	pop	r29
+    188a:	cf 91       	pop	r28
+    188c:	08 95       	ret
+
+0000188e <xTaskRemoveFromEventList>:
+	
+#endif /* configUSE_TIMERS */
+/*-----------------------------------------------------------*/
+
+signed portBASE_TYPE xTaskRemoveFromEventList( const xList * const pxEventList )
+{
+    188e:	0f 93       	push	r16
+    1890:	1f 93       	push	r17
+    1892:	cf 93       	push	r28
+    1894:	df 93       	push	r29
+	get called - the lock count on the queue will get modified instead.  This
+	means we can always expect exclusive access to the event list here.
+	
+	This function assumes that a check has already been made to ensure that
+	pxEventList is not empty. */
+	pxUnblockedTCB = ( tskTCB * ) listGET_OWNER_OF_HEAD_ENTRY( pxEventList );
+    1896:	dc 01       	movw	r26, r24
+    1898:	15 96       	adiw	r26, 0x05	; 5
+    189a:	ed 91       	ld	r30, X+
+    189c:	fc 91       	ld	r31, X
+    189e:	16 97       	sbiw	r26, 0x06	; 6
+    18a0:	06 81       	ldd	r16, Z+6	; 0x06
+    18a2:	17 81       	ldd	r17, Z+7	; 0x07
+	configASSERT( pxUnblockedTCB );
+	vListRemove( &( pxUnblockedTCB->xEventListItem ) );
+    18a4:	e8 01       	movw	r28, r16
+    18a6:	2c 96       	adiw	r28, 0x0c	; 12
+    18a8:	ce 01       	movw	r24, r28
+    18aa:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+
+	if( uxSchedulerSuspended == ( unsigned portBASE_TYPE ) pdFALSE )
+    18ae:	80 91 13 2a 	lds	r24, 0x2A13
+    18b2:	88 23       	and	r24, r24
+    18b4:	e9 f4       	brne	.+58     	; 0x18f0 <xTaskRemoveFromEventList+0x62>
+	{
+		vListRemove( &( pxUnblockedTCB->xGenericListItem ) );
+    18b6:	e8 01       	movw	r28, r16
+    18b8:	22 96       	adiw	r28, 0x02	; 2
+    18ba:	ce 01       	movw	r24, r28
+    18bc:	0e 94 45 01 	call	0x28a	; 0x28a <vListRemove>
+		prvAddTaskToReadyQueue( pxUnblockedTCB );
+    18c0:	f8 01       	movw	r30, r16
+    18c2:	86 89       	ldd	r24, Z+22	; 0x16
+    18c4:	90 91 15 2a 	lds	r25, 0x2A15
+    18c8:	98 17       	cp	r25, r24
+    18ca:	10 f4       	brcc	.+4      	; 0x18d0 <xTaskRemoveFromEventList+0x42>
+    18cc:	80 93 15 2a 	sts	0x2A15, r24
+    18d0:	90 e0       	ldi	r25, 0x00	; 0
+    18d2:	9c 01       	movw	r18, r24
+    18d4:	22 0f       	add	r18, r18
+    18d6:	33 1f       	adc	r19, r19
+    18d8:	22 0f       	add	r18, r18
+    18da:	33 1f       	adc	r19, r19
+    18dc:	22 0f       	add	r18, r18
+    18de:	33 1f       	adc	r19, r19
+    18e0:	82 0f       	add	r24, r18
+    18e2:	93 1f       	adc	r25, r19
+    18e4:	80 5e       	subi	r24, 0xE0	; 224
+    18e6:	95 4d       	sbci	r25, 0xD5	; 213
+    18e8:	be 01       	movw	r22, r28
+    18ea:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+    18ee:	05 c0       	rjmp	.+10     	; 0x18fa <xTaskRemoveFromEventList+0x6c>
+	}
+	else
+	{
+		/* We cannot access the delayed or ready lists, so will hold this
+		task pending until the scheduler is resumed. */
+		vListInsertEnd( ( xList * ) &( xPendingReadyList ), &( pxUnblockedTCB->xEventListItem ) );
+    18f0:	8f e5       	ldi	r24, 0x5F	; 95
+    18f2:	9a e2       	ldi	r25, 0x2A	; 42
+    18f4:	be 01       	movw	r22, r28
+    18f6:	0e 94 df 00 	call	0x1be	; 0x1be <vListInsertEnd>
+	}
+
+	if( pxUnblockedTCB->uxPriority >= pxCurrentTCB->uxPriority )
+    18fa:	e0 91 0e 2a 	lds	r30, 0x2A0E
+    18fe:	f0 91 0f 2a 	lds	r31, 0x2A0F
+	else
+	{
+		xReturn = pdFALSE;
+	}
+
+	return xReturn;
+    1902:	81 e0       	ldi	r24, 0x01	; 1
+    1904:	d8 01       	movw	r26, r16
+    1906:	56 96       	adiw	r26, 0x16	; 22
+    1908:	2c 91       	ld	r18, X
+    190a:	56 97       	sbiw	r26, 0x16	; 22
+    190c:	96 89       	ldd	r25, Z+22	; 0x16
+    190e:	29 17       	cp	r18, r25
+    1910:	08 f4       	brcc	.+2      	; 0x1914 <xTaskRemoveFromEventList+0x86>
+    1912:	80 e0       	ldi	r24, 0x00	; 0
+}
+    1914:	df 91       	pop	r29
+    1916:	cf 91       	pop	r28
+    1918:	1f 91       	pop	r17
+    191a:	0f 91       	pop	r16
+    191c:	08 95       	ret
+
+0000191e <vTaskSetTimeOutState>:
+/*-----------------------------------------------------------*/
+
+void vTaskSetTimeOutState( xTimeOutType * const pxTimeOut )
+{
+    191e:	fc 01       	movw	r30, r24
+	configASSERT( pxTimeOut );
+	pxTimeOut->xOverflowCount = xNumOfOverflows;
+    1920:	80 91 10 2a 	lds	r24, 0x2A10
+    1924:	80 83       	st	Z, r24
+	pxTimeOut->xTimeOnEntering = xTickCount;
+    1926:	80 91 16 2a 	lds	r24, 0x2A16
+    192a:	90 91 17 2a 	lds	r25, 0x2A17
+    192e:	92 83       	std	Z+2, r25	; 0x02
+    1930:	81 83       	std	Z+1, r24	; 0x01
+}
+    1932:	08 95       	ret
+
+00001934 <xTaskCheckForTimeOut>:
+/*-----------------------------------------------------------*/
+
+portBASE_TYPE xTaskCheckForTimeOut( xTimeOutType * const pxTimeOut, portTickType * const pxTicksToWait )
+{
+    1934:	fc 01       	movw	r30, r24
+    1936:	db 01       	movw	r26, r22
+portBASE_TYPE xReturn;
+
+	configASSERT( pxTimeOut );
+	configASSERT( pxTicksToWait );
+
+	taskENTER_CRITICAL();
+    1938:	0f b6       	in	r0, 0x3f	; 63
+    193a:	f8 94       	cli
+    193c:	0f 92       	push	r0
+	{
+		#if ( INCLUDE_vTaskSuspend == 1 )
+			/* If INCLUDE_vTaskSuspend is set to 1 and the block time specified is
+			the maximum block time then the task should block indefinitely, and
+			therefore never time out. */
+			if( *pxTicksToWait == portMAX_DELAY )
+    193e:	4d 91       	ld	r20, X+
+    1940:	5c 91       	ld	r21, X
+    1942:	11 97       	sbiw	r26, 0x01	; 1
+    1944:	6f ef       	ldi	r22, 0xFF	; 255
+    1946:	4f 3f       	cpi	r20, 0xFF	; 255
+    1948:	56 07       	cpc	r21, r22
+    194a:	51 f1       	breq	.+84     	; 0x19a0 <xTaskCheckForTimeOut+0x6c>
+				xReturn = pdFALSE;
+			}
+			else /* We are not blocking indefinitely, perform the checks below. */
+		#endif
+
+		if( ( xNumOfOverflows != pxTimeOut->xOverflowCount ) && ( ( portTickType ) xTickCount >= ( portTickType ) pxTimeOut->xTimeOnEntering ) )
+    194c:	80 91 10 2a 	lds	r24, 0x2A10
+    1950:	90 81       	ld	r25, Z
+    1952:	98 17       	cp	r25, r24
+    1954:	49 f0       	breq	.+18     	; 0x1968 <xTaskCheckForTimeOut+0x34>
+    1956:	20 91 16 2a 	lds	r18, 0x2A16
+    195a:	30 91 17 2a 	lds	r19, 0x2A17
+    195e:	81 81       	ldd	r24, Z+1	; 0x01
+    1960:	92 81       	ldd	r25, Z+2	; 0x02
+    1962:	28 17       	cp	r18, r24
+    1964:	39 07       	cpc	r19, r25
+    1966:	f0 f4       	brcc	.+60     	; 0x19a4 <xTaskCheckForTimeOut+0x70>
+			was called, but has also overflowed since vTaskSetTimeOut() was called.
+			It must have wrapped all the way around and gone past us again. This
+			passed since vTaskSetTimeout() was called. */
+			xReturn = pdTRUE;
+		}
+		else if( ( ( portTickType ) ( ( portTickType ) xTickCount - ( portTickType ) pxTimeOut->xTimeOnEntering ) ) < ( portTickType ) *pxTicksToWait )
+    1968:	80 91 16 2a 	lds	r24, 0x2A16
+    196c:	90 91 17 2a 	lds	r25, 0x2A17
+    1970:	21 81       	ldd	r18, Z+1	; 0x01
+    1972:	32 81       	ldd	r19, Z+2	; 0x02
+    1974:	82 1b       	sub	r24, r18
+    1976:	93 0b       	sbc	r25, r19
+    1978:	84 17       	cp	r24, r20
+    197a:	95 07       	cpc	r25, r21
+    197c:	a8 f4       	brcc	.+42     	; 0x19a8 <xTaskCheckForTimeOut+0x74>
+		{
+			/* Not a genuine timeout. Adjust parameters for time remaining. */
+			*pxTicksToWait -= ( ( portTickType ) xTickCount - ( portTickType ) pxTimeOut->xTimeOnEntering );
+    197e:	80 91 16 2a 	lds	r24, 0x2A16
+    1982:	90 91 17 2a 	lds	r25, 0x2A17
+    1986:	b9 01       	movw	r22, r18
+    1988:	68 1b       	sub	r22, r24
+    198a:	79 0b       	sbc	r23, r25
+    198c:	cb 01       	movw	r24, r22
+    198e:	84 0f       	add	r24, r20
+    1990:	95 1f       	adc	r25, r21
+    1992:	8d 93       	st	X+, r24
+    1994:	9c 93       	st	X, r25
+			vTaskSetTimeOutState( pxTimeOut );
+    1996:	cf 01       	movw	r24, r30
+    1998:	0e 94 8f 0c 	call	0x191e	; 0x191e <vTaskSetTimeOutState>
+			xReturn = pdFALSE;
+    199c:	80 e0       	ldi	r24, 0x00	; 0
+    199e:	05 c0       	rjmp	.+10     	; 0x19aa <xTaskCheckForTimeOut+0x76>
+			/* If INCLUDE_vTaskSuspend is set to 1 and the block time specified is
+			the maximum block time then the task should block indefinitely, and
+			therefore never time out. */
+			if( *pxTicksToWait == portMAX_DELAY )
+			{
+				xReturn = pdFALSE;
+    19a0:	80 e0       	ldi	r24, 0x00	; 0
+    19a2:	03 c0       	rjmp	.+6      	; 0x19aa <xTaskCheckForTimeOut+0x76>
+		{
+			/* The tick count is greater than the time at which vTaskSetTimeout()
+			was called, but has also overflowed since vTaskSetTimeOut() was called.
+			It must have wrapped all the way around and gone past us again. This
+			passed since vTaskSetTimeout() was called. */
+			xReturn = pdTRUE;
+    19a4:	81 e0       	ldi	r24, 0x01	; 1
+    19a6:	01 c0       	rjmp	.+2      	; 0x19aa <xTaskCheckForTimeOut+0x76>
+			vTaskSetTimeOutState( pxTimeOut );
+			xReturn = pdFALSE;
+		}
+		else
+		{
+			xReturn = pdTRUE;
+    19a8:	81 e0       	ldi	r24, 0x01	; 1
+		}
+	}
+	taskEXIT_CRITICAL();
+    19aa:	0f 90       	pop	r0
+    19ac:	0f be       	out	0x3f, r0	; 63
+
+	return xReturn;
+}
+    19ae:	08 95       	ret
+
+000019b0 <vTaskMissedYield>:
+/*-----------------------------------------------------------*/
+
+void vTaskMissedYield( void )
+{
+	xMissedYield = pdTRUE;
+    19b0:	81 e0       	ldi	r24, 0x01	; 1
+    19b2:	80 93 11 2a 	sts	0x2A11, r24
+}
+    19b6:	08 95       	ret
+
+000019b8 <memcpy>:
+    19b8:	fb 01       	movw	r30, r22
+    19ba:	dc 01       	movw	r26, r24
+    19bc:	02 c0       	rjmp	.+4      	; 0x19c2 <memcpy+0xa>
+    19be:	01 90       	ld	r0, Z+
+    19c0:	0d 92       	st	X+, r0
+    19c2:	41 50       	subi	r20, 0x01	; 1
+    19c4:	50 40       	sbci	r21, 0x00	; 0
+    19c6:	d8 f7       	brcc	.-10     	; 0x19be <memcpy+0x6>
+    19c8:	08 95       	ret
+
+000019ca <memset>:
+    19ca:	dc 01       	movw	r26, r24
+    19cc:	01 c0       	rjmp	.+2      	; 0x19d0 <memset+0x6>
+    19ce:	6d 93       	st	X+, r22
+    19d0:	41 50       	subi	r20, 0x01	; 1
+    19d2:	50 40       	sbci	r21, 0x00	; 0
+    19d4:	e0 f7       	brcc	.-8      	; 0x19ce <memset+0x4>
+    19d6:	08 95       	ret
+
+000019d8 <strncpy>:
+    19d8:	fb 01       	movw	r30, r22
+    19da:	dc 01       	movw	r26, r24
+    19dc:	41 50       	subi	r20, 0x01	; 1
+    19de:	50 40       	sbci	r21, 0x00	; 0
+    19e0:	48 f0       	brcs	.+18     	; 0x19f4 <strncpy+0x1c>
+    19e2:	01 90       	ld	r0, Z+
+    19e4:	0d 92       	st	X+, r0
+    19e6:	00 20       	and	r0, r0
+    19e8:	c9 f7       	brne	.-14     	; 0x19dc <strncpy+0x4>
+    19ea:	01 c0       	rjmp	.+2      	; 0x19ee <strncpy+0x16>
+    19ec:	1d 92       	st	X+, r1
+    19ee:	41 50       	subi	r20, 0x01	; 1
+    19f0:	50 40       	sbci	r21, 0x00	; 0
+    19f2:	e0 f7       	brcc	.-8      	; 0x19ec <strncpy+0x14>
+    19f4:	08 95       	ret
+
+000019f6 <_exit>:
+    19f6:	f8 94       	cli
+
+000019f8 <__stop_program>:
+    19f8:	ff cf       	rjmp	.-2      	; 0x19f8 <__stop_program>

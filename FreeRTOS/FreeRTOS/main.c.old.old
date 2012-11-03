@@ -1,0 +1,31 @@
+/* \file main
+ * \brief Main task runner
+ */
+
+#include "FreeRTOSConfig.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "mytasks.h"
+
+int main(void) {
+	/* Try to make anything work */
+	DDRA = 0xFF;	// This works
+	PORTA = 0x0F;	// And this
+	DDRB = 0xFF;	// Also this
+	
+
+	PORTA = 0xAA;	// When this is placed after the function xTastCreate, the LEDs blink very quickly.  The
+					// LEDs that are supposed to be off have an extremely small positive duty cycle, and the
+					// ones that are supposed to be lit have a very large duty cycle.  I am unsure of the	
+					// frequency.  When either xTaskCreate or vTaskStartScheduler are commented out, this
+					// phenomenon stops.  I am unsure why this is happening.
+					
+	/* Create ready light task */
+	xTaskCreate( vLEDFlashTask, (signed char *) "LED", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
+	
+	/* Start scheduler */
+	vTaskStartScheduler();
+	PORTA = 0xBC;	// Not reaching here, which is good
+	
+	return 0;
+}

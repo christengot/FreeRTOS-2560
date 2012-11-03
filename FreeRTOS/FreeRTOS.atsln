@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "FreeRTOS", "FreeRTOS\FreeRTOS.cproj", "{FE53D71C-72C7-4A10-BD57-0B7E7D030858}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE53D71C-72C7-4A10-BD57-0B7E7D030858}.Debug|AVR.ActiveCfg = Debug|AVR
+		{FE53D71C-72C7-4A10-BD57-0B7E7D030858}.Debug|AVR.Build.0 = Debug|AVR
+		{FE53D71C-72C7-4A10-BD57-0B7E7D030858}.Release|AVR.ActiveCfg = Release|AVR
+		{FE53D71C-72C7-4A10-BD57-0B7E7D030858}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
